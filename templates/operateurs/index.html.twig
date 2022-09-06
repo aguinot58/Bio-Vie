@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Operateurs index{% endblock %}
+
+{% block body %}
+    <h1>Operateurs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumeroBio</th>
+                <th>Siret</th>
+                <th>CodeNAF</th>
+                <th>Gerant</th>
+                <th>RaisonSociale</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>SiteWeb</th>
+                <th>DateMAJ</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for operateur in operateurs %}
+            <tr>
+                <td>{{ operateur.id }}</td>
+                <td>{{ operateur.numeroBio }}</td>
+                <td>{{ operateur.siret }}</td>
+                <td>{{ operateur.codeNAF }}</td>
+                <td>{{ operateur.gerant }}</td>
+                <td>{{ operateur.raisonSociale }}</td>
+                <td>{{ operateur.email }}</td>
+                <td>{{ operateur.telephone }}</td>
+                <td>{{ operateur.siteWeb }}</td>
+                <td>{{ operateur.dateMAJ ? operateur.dateMAJ|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_operateurs_show', {'id': operateur.id}) }}">show</a>
+                    <a href="{{ path('app_operateurs_edit', {'id': operateur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_operateurs_new') }}">Create new</a>
+{% endblock %}

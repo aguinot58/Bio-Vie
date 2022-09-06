@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Operateurs{% endblock %}
+
+{% block body %}
+    <h1>Create new Operateurs</h1>
+
+    {{ include('operateurs/_form.html.twig') }}
+
+    <a href="{{ path('app_operateurs_index') }}">back to list</a>
+{% endblock %}

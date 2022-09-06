@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Operateurs{% endblock %}
+
+{% block body %}
+    <h1>Edit Operateurs</h1>
+
+    {{ include('operateurs/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_operateurs_index') }}">back to list</a>
+
+    {{ include('operateurs/_delete_form.html.twig') }}
+{% endblock %}

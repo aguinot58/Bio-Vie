@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Operateurs{% endblock %}
+
+{% block body %}
+    <h1>Operateurs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ operateur.id }}</td>
+            </tr>
+            <tr>
+                <th>NumeroBio</th>
+                <td>{{ operateur.numeroBio }}</td>
+            </tr>
+            <tr>
+                <th>Siret</th>
+                <td>{{ operateur.siret }}</td>
+            </tr>
+            <tr>
+                <th>CodeNAF</th>
+                <td>{{ operateur.codeNAF }}</td>
+            </tr>
+            <tr>
+                <th>Gerant</th>
+                <td>{{ operateur.gerant }}</td>
+            </tr>
+            <tr>
+                <th>RaisonSociale</th>
+                <td>{{ operateur.raisonSociale }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ operateur.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ operateur.telephone }}</td>
+            </tr>
+            <tr>
+                <th>SiteWeb</th>
+                <td>{{ operateur.siteWeb }}</td>
+            </tr>
+            <tr>
+                <th>DateMAJ</th>
+                <td>{{ operateur.dateMAJ ? operateur.dateMAJ|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_operateurs_index') }}">back to list</a>
+
+    <a href="{{ path('app_operateurs_edit', {'id': operateur.id}) }}">edit</a>
+
+    {{ include('operateurs/_delete_form.html.twig') }}
+{% endblock %}

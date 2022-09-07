@@ -165,6 +165,6 @@ class __TwigTemplate_62ae8f591b002cee389e9da536dcb72a extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "C:\\laragon\\www\\Bio_et_Vie\\Bio\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "C:\\laragon\\www\\Bio-Vie\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\explain.html.twig");
     }
 }

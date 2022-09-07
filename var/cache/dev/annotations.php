@@ -66,14 +66,42 @@ return [[
 '[C]App%5CController%5CActivitesController' => 1,
 'App%5CController%5CActivitesController%23index' => 0,
 '[C]App%5CController%5CActivitesController%23index' => 1,
+'App%5CController%5CActivitesController%23new' => 0,
+'[C]App%5CController%5CActivitesController%23new' => 1,
+'App%5CController%5CActivitesController%23show' => 0,
+'[C]App%5CController%5CActivitesController%23show' => 1,
+'App%5CController%5CActivitesController%23edit' => 0,
+'[C]App%5CController%5CActivitesController%23edit' => 1,
+'App%5CController%5CActivitesController%23delete' => 0,
+'[C]App%5CController%5CActivitesController%23delete' => 1,
 'App%5CController%5CCategoriesController' => 0,
 '[C]App%5CController%5CCategoriesController' => 1,
 'App%5CController%5CCategoriesController%23index' => 0,
 '[C]App%5CController%5CCategoriesController%23index' => 1,
+'App%5CController%5CCategoriesController%23new' => 0,
+'[C]App%5CController%5CCategoriesController%23new' => 1,
+'App%5CController%5CCategoriesController%23show' => 0,
+'[C]App%5CController%5CCategoriesController%23show' => 1,
+'App%5CController%5CCategoriesController%23edit' => 0,
+'[C]App%5CController%5CCategoriesController%23edit' => 1,
+'App%5CController%5CCategoriesController%23delete' => 0,
+'[C]App%5CController%5CCategoriesController%23delete' => 1,
+'App%5CController%5CHomeController' => 0,
+'[C]App%5CController%5CHomeController' => 1,
+'App%5CController%5CHomeController%23home' => 2,
+'[C]App%5CController%5CHomeController%23home' => 1,
 'App%5CController%5COperateursController' => 0,
 '[C]App%5CController%5COperateursController' => 1,
 'App%5CController%5COperateursController%23index' => 0,
 '[C]App%5CController%5COperateursController%23index' => 1,
+'App%5CController%5COperateursController%23new' => 0,
+'[C]App%5CController%5COperateursController%23new' => 1,
+'App%5CController%5COperateursController%23show' => 0,
+'[C]App%5CController%5COperateursController%23show' => 1,
+'App%5CController%5COperateursController%23edit' => 0,
+'[C]App%5CController%5COperateursController%23edit' => 1,
+'App%5CController%5COperateursController%23delete' => 0,
+'[C]App%5CController%5COperateursController%23delete' => 1,
 'App%5CEntity%5CActivites' => 0,
 '[C]App%5CEntity%5CActivites' => 1,
 'App%5CEntity%5CActivites%23__construct' => 0,
@@ -664,6 +692,28 @@ return [[
 ], [
 
 0 => [],
-1 => 1662458669,
+1 => 1662538459,
+2 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/',
+                ],
+                'name' => [
+                    'home',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
 
 ]];

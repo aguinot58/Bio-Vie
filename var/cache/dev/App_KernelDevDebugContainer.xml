@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">C:\laragon\www\Bio_et_Vie\Bio</parameter>
+    <parameter key="kernel.project_dir">C:\laragon\www\Bio-Vie</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\laragon\www\Bio_et_Vie\Bio\var\log</parameter>
+    <parameter key="kernel.build_dir">C:\laragon\www\Bio-Vie\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\laragon\www\Bio-Vie\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\laragon\www\Bio-Vie\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -18,27 +18,27 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">C:\laragon\www\Bio_et_Vie\Bio\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">C:\laragon\www\Bio-Vie\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">C:\laragon\www\Bio_et_Vie\Bio\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">C:\laragon\www\Bio-Vie\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">C:\laragon\www\Bio_et_Vie\Bio\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="path">C:\laragon\www\Bio-Vie\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">C:\laragon\www\Bio_et_Vie\Bio\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">C:\laragon\www\Bio-Vie\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">C:\laragon\www\Bio_et_Vie\Bio\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">C:\laragon\www\Bio-Vie\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
-        <parameter key="path">C:\laragon\www\Bio_et_Vie\Bio\vendor\sensio\framework-extra-bundle\src</parameter>
+        <parameter key="path">C:\laragon\www\Bio-Vie\vendor\sensio\framework-extra-bundle\src</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
     </parameter>
@@ -72,15 +72,17 @@
     <parameter key="kernel.enabled_locales" type="collection"/>
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">null</parameter>
+    <parameter key="asset.request_context.base_path">null</parameter>
+    <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\laragon\www\Bio-Vie\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="cache.prefix.seed">_C:\laragon\www\Bio_et_Vie\Bio.App_KernelDevDebugContainer</parameter>
+    <parameter key="cache.prefix.seed">_C:\laragon\www\Bio-Vie.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -89,11 +91,11 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:\laragon\www\Bio-Vie\var\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\laragon\www\Bio-Vie\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="doctrine.dbal.logger.chain.class">Doctrine\DBAL\Logging\LoggerChain</parameter>
@@ -162,14 +164,14 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\laragon\www\Bio-Vie\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\laragon\www\Bio_et_Vie\Bio/templates</parameter>
+    <parameter key="twig.default_path">C:\laragon\www\Bio-Vie/templates</parameter>
     <parameter key="console.command.ids" type="collection"/>
   </parameters>
   <services>
@@ -190,6 +192,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\CategoriesController"/>
+      </call>
+    </service>
+    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\HomeController"/>
       </call>
     </service>
     <service id="App\Controller\OperateursController" class="App\Controller\OperateursController" public="true" autowire="true" autoconfigure="true">
@@ -289,7 +298,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/http_cache</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -299,7 +308,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -453,7 +462,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -486,7 +495,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -649,7 +658,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -827,9 +836,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>JIJf5RO1dK</argument>
+      <argument>mAA1Udy8IA</argument>
       <argument>0</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/app</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -841,50 +850,50 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>He-Dxr+ait</argument>
+      <argument>g2wgjb6pNG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/system</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>jPcbRWEPCC</argument>
+      <argument>0NzG4lPahE</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/system</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>mZJGPTeNxq</argument>
+      <argument>RopNnAUirm</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/system</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>9V3RBt3M66</argument>
+      <argument>hE75ELwPtt</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/system</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>q8AhbCcin5</argument>
+      <argument>Hih-x34f1j</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/system</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -894,7 +903,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/system</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -924,7 +933,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/app</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1036,6 +1045,56 @@
         <argument key="cache.doctrine.orm.default.result" type="service" id="cache.doctrine.orm.default.result" on-invalid="ignore_uninitialized"/>
         <argument key="cache.doctrine.orm.default.query" type="service" id="cache.doctrine.orm.default.query" on-invalid="ignore_uninitialized"/>
       </argument>
+    </service>
+    <service id="assets.packages" class="Symfony\Component\Asset\Packages">
+      <argument type="service" id="assets._default_package"/>
+      <argument type="tagged_iterator" tag="assets.package" index-by="package" default-index-method="getDefaultPackageName" default-priority-method="getDefaultPackagePriority"/>
+    </service>
+    <service id="assets.empty_package" class="Symfony\Component\Asset\Package">
+      <argument type="service" id="assets.empty_version_strategy"/>
+    </service>
+    <service id="assets.context" class="Symfony\Component\Asset\Context\RequestStackContext">
+      <argument type="service" id="request_stack"/>
+      <argument type="service">
+        <service class="string">
+          <factory service="router.request_context" method="getBaseUrl"/>
+        </service>
+      </argument>
+      <argument type="service">
+        <service class="bool">
+          <factory service="router.request_context" method="isSecure"/>
+        </service>
+      </argument>
+    </service>
+    <service id="assets.path_package" class="Symfony\Component\Asset\PathPackage" abstract="true">
+      <argument type="abstract">base path</argument>
+      <argument type="abstract">version strategy</argument>
+      <argument type="service" id="assets.context"/>
+    </service>
+    <service id="assets.url_package" class="Symfony\Component\Asset\UrlPackage" abstract="true">
+      <argument type="abstract">base URLs</argument>
+      <argument type="abstract">version strategy</argument>
+      <argument type="service" id="assets.context"/>
+    </service>
+    <service id="assets.static_version_strategy" class="Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy" abstract="true">
+      <argument type="abstract">version</argument>
+      <argument type="abstract">format</argument>
+    </service>
+    <service id="assets.empty_version_strategy" class="Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy"/>
+    <service id="assets.json_manifest_version_strategy" class="Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy" abstract="true">
+      <argument type="abstract">manifest path</argument>
+      <argument type="service" id="http_client" on-invalid="null"/>
+      <argument>false</argument>
+    </service>
+    <service id="assets.remote_json_manifest_version_strategy" class="Symfony\Component\Asset\VersionStrategy\RemoteJsonManifestVersionStrategy" abstract="true">
+      <argument type="abstract">manifest url</argument>
+      <argument type="service" id="http_client"/>
+      <deprecated package="symfony/framework-bundle" version="5.3">The "%service_id%" service is deprecated, use "assets.json_manifest_version_strategy" instead.</deprecated>
+    </service>
+    <service id="assets._default_package" class="Symfony\Component\Asset\PathPackage">
+      <argument></argument>
+      <argument type="service" id="assets.empty_version_strategy"/>
+      <argument type="service" id="assets.context"/>
     </service>
     <service id="debug.debug_handlers_listener" class="Symfony\Component\HttpKernel\EventListener\DebugHandlersListener">
       <tag name="kernel.event_subscriber"/>
@@ -1411,7 +1470,7 @@
       <argument type="service" id=".service_locator.UxjivMC.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev</argument>
+        <argument key="cache_dir">C:\laragon\www\Bio-Vie\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1450,7 +1509,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -1518,13 +1577,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/annotations.php</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/annotations.php</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1542,7 +1601,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>C:\laragon\www\Bio-Vie/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString">
@@ -1551,7 +1610,7 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>C:\laragon\www\Bio_et_Vie\Bio/.env.dev.local</argument>
+      <argument>C:\laragon\www\Bio-Vie/.env.dev.local</argument>
     </service>
     <service id="property_info" class="Symfony\Component\PropertyInfo\PropertyInfoExtractor">
       <argument type="iterator">
@@ -1628,7 +1687,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/sessions</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -1660,7 +1719,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/sessions</argument>
+          <argument>C:\laragon\www\Bio-Vie\var\cache\dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -1808,7 +1867,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\laragon\www\Bio_et_Vie\Bio\vendor\symfony\form/Resources/config/validation.xml</argument>
+          <argument>C:\laragon\www\Bio-Vie\vendor\symfony\form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1836,10 +1895,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/validation.php</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/validation.php</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1853,10 +1912,10 @@
     <service id="cache.validator_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>hf8mquHcle</argument>
+      <argument>hjUyrUzQJY</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/pools/system</argument>
+      <argument>C:\laragon\www\Bio-Vie\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2014,7 +2073,7 @@
       <argument type="service" id="doctrine.debug_data_holder"/>
       <argument type="service" id="debug.stopwatch" on-invalid="null"/>
     </service>
-    <service id=".1_ServiceLocator~3WAr6D3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".1_ServiceLocator~2gSVXGx" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -2225,7 +2284,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:\laragon\www\Bio-Vie\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -2257,7 +2316,7 @@
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio\src\Entity</argument>
+        <argument>C:\laragon\www\Bio-Vie\src\Entity</argument>
       </argument>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
@@ -2299,8 +2358,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio/templates</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
+      <argument>C:\laragon\www\Bio-Vie/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -2457,7 +2516,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
       <tag name="maker.command"/>
@@ -2488,7 +2547,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>C:\laragon\www\Bio_et_Vie\Bio/migrations</argument>
+        <argument>C:\laragon\www\Bio-Vie/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -2638,7 +2697,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\laragon\www\Bio_et_Vie\Bio\var\cache\dev/twig</argument>
+        <argument key="cache">C:\laragon\www\Bio-Vie\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -2651,6 +2710,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.trans"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.assets"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.code"/>
@@ -2702,9 +2764,9 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
-        <argument key="C:\laragon\www\Bio_et_Vie\Bio\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
+        <argument key="C:\laragon\www\Bio-Vie\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio/templates</argument>
+      <argument>C:\laragon\www\Bio-Vie/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -2715,28 +2777,28 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
       <call method="addPath">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\laragon\www\Bio-Vie\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\laragon\www\Bio-Vie\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\laragon\www\Bio-Vie\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\laragon\www\Bio-Vie\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio/templates</argument>
+        <argument>C:\laragon\www\Bio-Vie/templates</argument>
       </call>
       <call method="addPath">
-        <argument>C:\laragon\www\Bio_et_Vie\Bio\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\laragon\www\Bio-Vie\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -2755,10 +2817,14 @@
       <tag name="twig.extension"/>
       <argument>null</argument>
     </service>
+    <service id="twig.extension.assets" class="Symfony\Bridge\Twig\Extension\AssetExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="assets.packages"/>
+    </service>
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension">
@@ -2835,9 +2901,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio</argument>
+      <argument>C:\laragon\www\Bio-Vie</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>C:\laragon\www\Bio_et_Vie\Bio/templates</argument>
+      <argument>C:\laragon\www\Bio-Vie/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -2920,6 +2986,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CategoriesController" class="App\Controller\CategoriesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CategoriesController" class="App\Controller\CategoriesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CategoriesController" class="App\Controller\CategoriesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OperateursController" class="App\Controller\OperateursController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OperateursController" class="App\Controller\OperateursController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\OperateursController" class="App\Controller\OperateursController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -3488,6 +3557,12 @@
     <service id=".service_locator.mx0UMmY.App\Controller\CategoriesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\CategoriesController"/>
       <argument>App\Controller\CategoriesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -4188,6 +4263,7 @@
     </service>
     <service id="Symfony\Contracts\Cache\CacheInterface" alias="cache.app"/>
     <service id="Symfony\Contracts\Cache\TagAwareCacheInterface" alias="cache.app.taggable"/>
+    <service id="Symfony\Component\Asset\Packages" alias="assets.packages"/>
     <service id="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" alias="debug.file_link_formatter"/>
     <service id="Symfony\Component\Stopwatch\Stopwatch" alias="debug.stopwatch"/>
     <service id="router" alias="router.default" public="true"/>

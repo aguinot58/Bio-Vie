@@ -2,8 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bio_et_Vie{% endblock %}</title>
+
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        <script src="{{ asset('javascript/front.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('styles/front.css') }}">
+
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -13,7 +18,28 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <div class="container">
+                <div class="site">
+                    <a class="nom-site" href="/"><p>BIO&VIE</p></a>
+                </div>
+                <div class="barre-nav">
+                    <a class="lien-nav" href="/"><p>ACCUEIL</p></a>
+                    <p class="sep-nav">|</p>
+                    <a class="lien-nav" href="/pro"><p>NOS PROFESSIONNELS</p></a>
+                    <p class="sep-nav">|</p>
+                    <a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a>
+                </div>
+            </div>
+        </header>
+
+        {% block body %}
+        
+        {% endblock %}
+
+
     </body>
+
 </html>

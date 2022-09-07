@@ -57,7 +57,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
         // line 4
         echo "
-    <div>
+    <section>
 
         \"test\"
 
@@ -67,7 +67,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
         
 
-\t</div>
+\t</section>
 
 ";
         
@@ -96,7 +96,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
 {% block body %}
 
-    <div>
+    <section>
 
         \"test\"
 
@@ -106,7 +106,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
         
 
-\t</div>
+\t</section>
 
 {% endblock %}", "home/home.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\home\\home.html.twig");
     }

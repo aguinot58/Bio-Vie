@@ -1,13 +1,25 @@
-@vertC: #93ffe9;
-@vertF: #4accb1;
-@grisC: #2a2e34;
-@grisF: #202327;
-@fontR: 'montserrat-regular';
-@fontM: 'montserrat-medium';
-@fontG: 'montserrat-bold';
-@fontB: 'montserrat-black';
+@vertC: #93ffe9; @vertF: #4accb1; @grisC: #2a2e34; @grisF: #202327;
+@fontR: 'montserrat-regular'; @fontM: 'montserrat-medium'; @fontG: 'montserrat-bold'; @fontB: 'montserrat-black';
 
-@import "fonts";
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url('./../fonts/Montserrat-Regular.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'montserrat-medium';
+    src: url('./../fonts/Montserrat-Medium.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url('./../fonts/Montserrat-Bold.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'montserrat-black';
+    src: url('./../fonts/Montserrat-Black.otf') format('otf');
+}
 
 *{
     margin: 0;
@@ -52,7 +64,6 @@ header{
         text-decoration: none;
         font-family: @fontB;
         font-size: 22px;
-        font-weight: bold;
         color: @grisF;
         :visited{
             color: @grisF;

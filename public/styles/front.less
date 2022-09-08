@@ -1,4 +1,4 @@
-@vertC: #93ffe9; @vertF: #4accb1; @grisC: #2a2e34; @grisF: #202327;
+@Couleur1: #93ffe9; @Couleur2: #4accb1; @Couleur3: #2a2e34; @Couleur4: #202327;
 @fontR: 'montserrat-regular'; @fontM: 'montserrat-medium'; @fontG: 'montserrat-bold'; @fontB: 'montserrat-black';
 
 @font-face {
@@ -28,7 +28,7 @@
 
 header{
     width: 100%;
-    height: 10vh;
+    height: 8vh;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -50,9 +50,9 @@ header{
         .lien-nav {
             text-decoration: none;
             font-family: @fontR;
-            color: @grisF;
+            color: @Couleur4;
             :visited{
-                color: @grisF;
+                color: @Couleur4;
             }
         }
         .sep-nav{
@@ -64,9 +64,72 @@ header{
         text-decoration: none;
         font-family: @fontB;
         font-size: 22px;
-        color: @grisF;
+        color: @Couleur4;
         :visited{
-            color: @grisF;
+            color: @Couleur4;
+        }
+    }
+}
+
+#section-titre{
+    width: 100%;
+    background-image: url(./../images/index/bandeau-desktop.jpg);
+    background-repeat: no-repeat;
+    padding-top: 30vh;
+    padding-bottom: 20vh;
+    .container{
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        h1{
+            color: white;
+            font-size: 20vh;
+            font-family: @fontB;
+        }
+        h3{
+            color: white;
+            font-size: 6.5vh;
+            font-family: @fontR;
+        }
+    }
+}
+
+#section-nombre{
+    width: 75%;
+    position: absolute;
+    z-index: 1;
+    left: 12.5vw;
+    top: 82vh;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    .infos{
+        width: 25vw;
+        height: 368px;
+        background-color: @Couleur3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3vh;
+        
+        img{
+            width: 4.5vw;
+        }
+        p{
+            color: @Couleur1;
+            font-size: 2.5vh;
+            font-family: @fontR;
+        }
+        .nombre{
+            font-size: 7vh;
+            color: @Couleur1;
+            margin-top: -10px;
+        }
+        #img-France{
+            margin: 2vh 0vw;
         }
     }
 }

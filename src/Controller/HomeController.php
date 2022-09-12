@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\OperateursRepository;
 use App\Entity\Operateurs;
+use App\Repository\CategoriesRepository;
+use App\Entity\Categories;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 
 class HomeController extends AbstractController
@@ -15,26 +18,34 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home(Request $request): Response
+    public function home(Request $request, CategoriesRepository $repoCategories, OperateursRepository $repoOperateurs, $page = 1): Response
     {
-        // 1. Obtain doctrine manager
-        $em = $this->getDoctrine()->getManager();
-        
-        // 2. Setup repository of some entity
-        $repoOperateurs = $em->getRepository(Operateurs::class);
-        
-        // 3. Query how many rows are there in the Articles table
+        /* Nombre total d'opérateurs */
         $totalOperateurs = $repoOperateurs->createQueryBuilder('a')
             ->select('count(a.id)')
             ->getQuery()
             ->getSingleScalarResult();
         
-        // 4. Return a number as response
-        //$data = new Response($totalOperateurs);
+        /* Extraction de tous les opérateurs */
+        $paginator = $repoOperateurs->getAllOperateurs($page);
+
+        $limit = 12;
+        $maxPages = ceil($paginator->count() / $limit);
+        $thisPage = $page;
+
+        /* Liste des catégories */
+        $categories = $repoCategories->createQueryBuilder('a')
+            ->select('a.nom')
+            ->getQuery()
+            ->getScalarResult();
 
         return $this->render('home/home.html.twig', [
             'controller_name' => 'Home_Ctrl',
+            'maxPages' => $maxPages, 
+            'thisPage' => $thisPage,
             'donnees' => $totalOperateurs,
+            'categories' => $categories,
+            'operateurs' => $paginator,
         ]);
     }
 

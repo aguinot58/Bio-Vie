@@ -3370,6 +3370,13 @@
         <argument key="category" type="service_closure" id=".errored..service_locator.wLJWiJM.App\Entity\Categories"/>
       </argument>
     </service>
+    <service id=".service_locator.JkrcIJY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repoCategories" type="service_closure" id="App\Repository\CategoriesRepository"/>
+        <argument key="repoOperateurs" type="service_closure" id="App\Repository\OperateursRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.M.xfFsQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -3389,7 +3396,7 @@
         <argument key="operateursRepository" type="service_closure" id="App\Repository\OperateursRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.EMVgRgt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Su2ioqa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ActivitesController::delete" type="service_closure" id=".service_locator.vHkAjcu"/>
@@ -3402,6 +3409,7 @@
         <argument key="App\Controller\CategoriesController::index" type="service_closure" id=".service_locator.Ksprajg"/>
         <argument key="App\Controller\CategoriesController::new" type="service_closure" id=".service_locator.Ksprajg"/>
         <argument key="App\Controller\CategoriesController::show" type="service_closure" id=".service_locator.gFHHwHB"/>
+        <argument key="App\Controller\HomeController::home" type="service_closure" id=".service_locator.JkrcIJY"/>
         <argument key="App\Controller\OperateursController::delete" type="service_closure" id=".service_locator.dEvZXs5"/>
         <argument key="App\Controller\OperateursController::edit" type="service_closure" id=".service_locator.dEvZXs5"/>
         <argument key="App\Controller\OperateursController::index" type="service_closure" id=".service_locator.M.xfFsQ"/>
@@ -3423,6 +3431,7 @@
         <argument key="App\Controller\CategoriesController:index" type="service_closure" id=".service_locator.Ksprajg"/>
         <argument key="App\Controller\CategoriesController:new" type="service_closure" id=".service_locator.Ksprajg"/>
         <argument key="App\Controller\CategoriesController:show" type="service_closure" id=".service_locator.gFHHwHB"/>
+        <argument key="App\Controller\HomeController:home" type="service_closure" id=".service_locator.JkrcIJY"/>
         <argument key="App\Controller\OperateursController:delete" type="service_closure" id=".service_locator.dEvZXs5"/>
         <argument key="App\Controller\OperateursController:edit" type="service_closure" id=".service_locator.dEvZXs5"/>
         <argument key="App\Controller\OperateursController:index" type="service_closure" id=".service_locator.M.xfFsQ"/>
@@ -3671,12 +3680,12 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.EMVgRgt"/>
+      <argument type="service" id=".service_locator.Su2ioqa"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.EMVgRgt"/>
+      <argument type="service" id=".service_locator.Su2ioqa"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -4324,7 +4333,7 @@
     <service id="Twig\Environment" alias="twig"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.EMVgRgt"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Su2ioqa"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -4333,7 +4342,7 @@
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.6mkBufV" alias=".service_locator.wLJWiJM"/>
-    <service id=".service_locator.knEAa.3" alias=".service_locator.EMVgRgt"/>
+    <service id=".service_locator.jb2DjRU" alias=".service_locator.Su2ioqa"/>
     <service id=".service_locator.bkUSUfi" alias=".service_locator.AHPGEE6"/>
     <service id=".service_locator.B6H1OoN" alias=".service_locator.BY70gxL"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
@@ -4359,6 +4368,7 @@
     <service id=".service_locator.am6nKt5" alias=".service_locator.Ksprajg"/>
     <service id=".service_locator.wKyVj.F" alias=".service_locator.gFHHwHB"/>
     <service id=".service_locator.87pyCL." alias=".service_locator.wLJWiJM"/>
+    <service id=".service_locator.la328lw" alias=".service_locator.JkrcIJY"/>
     <service id=".service_locator.bjIObnd" alias=".service_locator.M.xfFsQ"/>
     <service id=".service_locator.0mNwfqD" alias=".service_locator.Cz1pa2b"/>
     <service id=".service_locator.zSO0oad" alias=".service_locator.dEvZXs5"/>

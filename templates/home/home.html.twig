@@ -6,7 +6,7 @@
 
         <div class="container">
             <h1>BIO&VIE</h1>
-            <h3>Votre catalogue</h3>
+            <h3 class="sous-titre">Votre catalogue</h3>
             <h3>des professionnels certifiés bio</h3>
         </div>
 
@@ -15,14 +15,14 @@
     <section id="section-nombre">
             
             <div class="image">
-                <img title="icon-blé" src="./../images/index/infos.jpg" alt="logo représentant des épis de blés">
+                <img title="Photo décorative femme asiatique cueillant olives vertes" src="{{ asset('images/index/infos.jpg') }}" alt="femme asiatique cueillant des olives vertes">
             </div>
 
             <div class="infos">
-                <img title="icon-blé" src="./../images/icons/icon-ble.png" alt="logo représentant des épis de blés">
+                <img title="icon-blé" src="{{ asset('images/icons/icon-ble.png') }}" alt="logo représentant des épis de blés">
                 <p class="nombre">{{ donnees }}</p>
                 <p>professionnels</p>
-                <img id="img-France" title="icon-france" src="./../images/icons/icon-france.png" alt="logo représentant la carte de France">
+                <img id="img-France" title="icon-france" src="{{ asset('images/icons/icon-france.png') }}" alt="logo représentant la carte de France">
                 <p>Dans la France entière</p>
             </div>
 
@@ -31,10 +31,89 @@
     <section id="section-presentation">
 
         <div class="container">
-            
 
+            <div class="image">
+                <img src="{{ asset('images/index/presentation.jpg') }}" alt="couple d'une cinquantaine d'années tenant des barquettes en plastique de boutures de plantes">
+                <div class="bande-verte-2"></div>
+            </div>
+
+            <div class="infos">
+                <h2>Qui sont-ils ?</h2>
+                <div class="bande-verte-1"></div>
+                <p>Lorem ipsum dolor sit amet. Ut corporis galisum ad facilis deserunt quo pariatur culpa eum impedit nulla ut recusandae iste. 
+                    Sit magni consequatur eum cumque commodi est incidunt nihil et voluptatem consectetur nam reprehenderit quidem ad voluptate 
+                    illum in soluta minima. 
+                </p>
+            </div>
+            
         </div>
 
 	</section>
+
+    <section id="section-categories">
+
+        <div class="container">
+
+            {% for categorie in categories %}
+
+                {% if categorie.nom != "En conversion" %}
+
+                    <article>
+                        <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}">
+                        <p class="nom-cat">{{ categorie.nom }}</p>
+                    </article>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+    <section id="section-artisans">
+
+        <div class="container">
+
+            <h2>Les professionnels</h2>
+            <div class="bande-verte-3"></div>
+
+            <div class="container-artisans">
+
+                {% for operateur in operateurs %}
+
+                    {% include 'operateurs/_card.html.twig' with {operateur: operateur} only %}
+
+                {% endfor %}
+
+            </div>
+
+            {% if maxPages > 1 %}
+                <ul>
+                    {# `«` arrow  #}
+                    <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                        {#<a href="{{ path('routeName', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>#}
+                        <a href="{page: thisPage-1 < 1 ? 1 : thisPage-1}">«</a>
+                    </li>
+
+                    {# Render each page number #}
+                    {% for i in 1..maxPages %}
+                        <li {{ thisPage == i ? 'class="active"' }}>
+                        {#<a href="{{ path('routeName', {page: i}) }}">{{ i }}</a>#}
+                        <a href="{page: i}">{{ i }}</a>
+                        </li>
+                    {% endfor %}
+
+                    {# `»` arrow #}
+                    <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                        {#<a href="{{ path('routeName', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>#}
+                        <a href="{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}">»</a>
+                    </li>
+                </ul>
+            {% endif %}
+            
+        </div>
+
+    </section>
 
 {% endblock %}

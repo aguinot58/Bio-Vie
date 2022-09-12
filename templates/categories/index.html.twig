@@ -1,9 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
 {% block title %}Categories index{% endblock %}
 
 {% block body %}
-    <h1>Categories index</h1>
+    <h1>Ici vous pouvez gérer les catégories</h1>
+
+    <a href="{{ path('app_categories_new') }}">Create new</a>
 
     <table class="table">
         <thead>
@@ -19,17 +21,22 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.nom }}</td>
                 <td>
-                    <a href="{{ path('app_categories_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('app_categories_edit', {'id': category.id}) }}">edit</a>
+                    <form method="post" action="{{ path('app_categories_edit', {'id': category.id}) }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ category.id) }}">
+                        <button class="btn">Modifier</button>
+                    </form>
+                    <form method="post" action="{{ path('app_categories_delete', {'id': category.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cette catégorie ?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
+                        <button class="btn">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun enregistrement trouvé !</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_categories_new') }}">Create new</a>
 {% endblock %}

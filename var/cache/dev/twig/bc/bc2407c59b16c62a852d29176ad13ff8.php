@@ -82,10 +82,6 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index");
         echo "\">back to list</a>
 
-    ";
-        // line 12
-        echo twig_include($this->env, $context, "categories/_delete_form.html.twig");
-        echo "
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -104,7 +100,7 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  87 => 12,  82 => 10,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  82 => 10,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -120,7 +116,6 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
 
     <a href=\"{{ path('app_categories_index') }}\">back to list</a>
 
-    {{ include('categories/_delete_form.html.twig') }}
 {% endblock %}
 ", "categories/edit.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\categories\\edit.html.twig");
     }

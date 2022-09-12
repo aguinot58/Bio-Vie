@@ -26,11 +26,15 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  position: sticky;
+  top: 0px;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
 }
 header .container {
   display: flex;
   flex-direction: row;
-  width: 75%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between;
@@ -44,10 +48,10 @@ header .barre-nav {
 header .barre-nav .lien-nav {
   text-decoration: none;
   font-family: 'montserrat-regular';
-  color: #202327;
+  color: black;
 }
 header .barre-nav .lien-nav :visited {
-  color: #202327;
+  color: black;
 }
 header .barre-nav .sep-nav {
   margin-left: 2vw;
@@ -57,20 +61,20 @@ header .nom-site {
   text-decoration: none;
   font-family: 'montserrat-black';
   font-size: 22px;
-  color: #202327;
+  color: black;
 }
 header .nom-site :visited {
-  color: #202327;
+  color: black;
 }
 #section-titre {
   width: 100%;
+  height: 100vh;
   background-image: url(../images/index/bandeau-desktop.jpg);
   background-repeat: no-repeat;
   padding-top: 30vh;
-  padding-bottom: 20vh;
 }
 #section-titre .container {
-  width: 75%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -84,12 +88,16 @@ header .nom-site :visited {
   font-size: 6.5vh;
   font-family: 'montserrat-regular';
 }
+#section-titre .container .sous-titre {
+  margin-top: -3vh;
+  margin-bottom: -2vh;
+}
 #section-nombre {
-  width: 75%;
+  width: 70%;
   position: absolute;
   z-index: 1;
-  left: 12.5vw;
-  top: 82vh;
+  left: 15vw;
+  top: 78vh;
   white-space: nowrap;
   overflow: hidden;
   display: flex;
@@ -108,17 +116,232 @@ header .nom-site :visited {
 }
 #section-nombre .infos img {
   width: 4.5vw;
+  color: white;
 }
 #section-nombre .infos p {
-  color: #93ffe9;
   font-size: 2.5vh;
   font-family: 'montserrat-regular';
+  color: #93ffe9;
 }
 #section-nombre .infos .nombre {
   font-size: 7vh;
+  font-family: 'montserrat-regular';
   color: #93ffe9;
   margin-top: -10px;
 }
 #section-nombre .infos #img-France {
   margin: 2vh 0vw;
+}
+#section-presentation {
+  width: 100%;
+  height: 75vh;
+  margin-top: -2vh;
+}
+#section-presentation .container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  z-index: 1;
+}
+#section-presentation .container .image {
+  z-index: 1;
+}
+#section-presentation .container .image img {
+  z-index: 1;
+}
+#section-presentation .container .image .bande-verte-2 {
+  width: 13vw;
+  min-height: 5vh;
+  background-color: #93ffe9;
+  margin-left: -100px;
+  margin-top: -25px;
+  z-index: 5;
+}
+#section-presentation .container .infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vh 3vw;
+  align-items: flex-start;
+}
+#section-presentation .container .infos h2 {
+  text-align: left;
+  font-size: 6vh;
+  font-family: 'montserrat-black';
+  color: black;
+  z-index: 5;
+}
+#section-presentation .container .infos .bande-verte-1 {
+  width: 20vw;
+  min-height: 3vh;
+  background-color: #93ffe9;
+  z-index: 1;
+  margin-left: -28px;
+  margin-top: -18px;
+  margin-bottom: 4vh;
+}
+#section-presentation .container .infos p {
+  text-align: left;
+  font-size: 3vh;
+  font-family: 'montserrat-regular';
+  color: black;
+}
+#section-categories {
+  width: 100%;
+  height: 80vh;
+  margin-top: -2vh;
+}
+#section-categories .container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#section-categories .container article {
+  background-color: #202327;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  padding-bottom: 4vh;
+  width: 15vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+#section-categories .container article p {
+  color: #93ffe9;
+  font-family: 'montserrat-bold';
+  background-color: #202327;
+  font-size: 4vh;
+  text-align: center;
+  padding-top: 1.5vh;
+}
+#section-categories .container article:hover {
+  background-color: #2a2e34;
+}
+#section-categories .container article:hover p {
+  background-color: #2a2e34;
+  color: white;
+}
+#section-artisans {
+  width: 100%;
+  height: 90vh;
+  margin-top: -2vh;
+}
+#section-artisans .container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#section-artisans .container h2 {
+  text-align: left;
+  font-size: 6vh;
+  font-family: 'montserrat-black';
+  color: black;
+  z-index: 5;
+}
+#section-artisans .container .bande-verte-3 {
+  width: 19.5vw;
+  height: 2.5vh;
+  background-color: #93ffe9;
+  margin-left: -35px;
+  margin-top: -25px;
+  z-index: 1;
+}
+#section-artisans .container .container-artisans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-top: 10vh;
+}
+#section-artisans .container .container-artisans .card {
+  box-shadow: 2px 2px 2px 2px rgba(240, 240, 240, 0.5);
+}
+#section-artisans .container .container-artisans .card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#section-artisans .container .container-artisans .card .card-body h5 {
+  color: #4accb1;
+  font-family: 'montserrat-bold';
+  font-size: 2vh;
+  font-weight: bold;
+}
+#section-artisans .container .container-artisans .card .card-body .card-infos {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 0vw;
+  align-items: center;
+  font-size: 2vh;
+}
+#section-artisans .container .container-artisans .card .card-body .card-infos .gras {
+  font-weight: bold;
+  color: black;
+}
+#section-artisans .container ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+#section-artisans .container ul li {
+  font-weight: bold;
+  font-size: 3vh;
+  margin: 0px 5px;
+}
+#section-artisans .container ul li .active {
+  color: #4accb1;
+}
+#section-artisans .container ul li a {
+  text-decoration: none;
+  color: black;
+}
+#section-artisans .container ul li a :visited {
+  color: black;
+}
+footer {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../images/bandeau-footer.jpg);
+  background-repeat: no-repeat;
+}
+footer .container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15vh;
+}
+footer .container .pied {
+  width: 25%;
+}
+footer .container .pied a {
+  text-decoration: none;
+  box-sizing: content-box;
+}
+footer .container .pied h2 {
+  font-size: 10vh;
+  color: white;
+  font-family: 'montserrat-black';
+  margin-bottom: 2vh;
+}
+footer .container .pied p {
+  font-size: 3vh;
+  color: #93ffe9;
+  font-family: 'montserrat-regular';
+  margin-bottom: 1vh;
 }

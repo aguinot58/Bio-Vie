@@ -94,6 +94,15 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         $this->displayBlock('body', $context, $blocks);
         // line 41
         echo "
+        <footer>
+            <div class=\"container\">
+                <div class=\"pied\">
+                    <a href=\"/\"><h2>BIO&VIE</h2></a>
+                    <a href=\"/contact\"><p>Contactez-nous</p></a>
+                    <p>Mentions légales</p>
+                </div>
+            </div>
+        </footer>
 
     </body>
 
@@ -178,7 +187,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  162 => 39,  155 => 38,  145 => 18,  138 => 17,  128 => 14,  121 => 13,  108 => 5,  96 => 41,  94 => 38,  74 => 20,  72 => 17,  69 => 16,  66 => 13,  61 => 10,  57 => 9,  50 => 5,  44 => 1,);
+        return array (  171 => 39,  164 => 38,  154 => 18,  147 => 17,  137 => 14,  130 => 13,  117 => 5,  96 => 41,  94 => 38,  74 => 20,  72 => 17,  69 => 16,  66 => 13,  61 => 10,  57 => 9,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -224,6 +233,15 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         
         {% endblock %}
 
+        <footer>
+            <div class=\"container\">
+                <div class=\"pied\">
+                    <a href=\"/\"><h2>BIO&VIE</h2></a>
+                    <a href=\"/contact\"><p>Contactez-nous</p></a>
+                    <p>Mentions légales</p>
+                </div>
+            </div>
+        </footer>
 
     </body>
 

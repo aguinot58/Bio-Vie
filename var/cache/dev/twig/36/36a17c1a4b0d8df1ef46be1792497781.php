@@ -33,7 +33,7 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,7 +42,7 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "categories/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "categories/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "categories/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -70,7 +70,12 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Categories index</h1>
+        echo "    <h1>Ici vous pouvez gérer les catégories</h1>
+
+    <a href=\"";
+        // line 8
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_new");
+        echo "\">Create new</a>
 
     <table class=\"table\">
         <thead>
@@ -82,53 +87,61 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
         </thead>
         <tbody>
         ";
-        // line 17
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 19, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 18
+            // line 20
             echo "            <tr>
                 <td>";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 19), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 20), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
                 <td>
-                    <a href=\"";
-            // line 22
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_show", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 22)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 23)]), "html", null, true);
-            echo "\">edit</a>
+                    <form method=\"post\" action=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            echo "\">
+                        <input type=\"hidden\" name=\"_token\" value=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("edit" . twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 25))), "html", null, true);
+            echo "\">
+                        <button class=\"btn\">Modifier</button>
+                    </form>
+                    <form method=\"post\" action=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            echo "\" onsubmit=\"return confirm('Etes-vous certain de vouloir supprimer cette catégorie ?');\">
+                        <input type=\"hidden\" name=\"_token\" value=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 29))), "html", null, true);
+            echo "\">
+                        <button class=\"btn\">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 27
+            // line 35
             echo "            <tr>
-                <td colspan=\"3\">no records found</td>
+                <td colspan=\"3\">Aucun enregistrement trouvé !</td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 39
         echo "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 34
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_new");
-        echo "\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -147,17 +160,19 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
 
     public function getDebugInfo()
     {
-        return array (  130 => 34,  125 => 31,  116 => 27,  107 => 23,  103 => 22,  98 => 20,  94 => 19,  91 => 18,  86 => 17,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  142 => 39,  133 => 35,  122 => 29,  118 => 28,  112 => 25,  108 => 24,  103 => 22,  99 => 21,  96 => 20,  91 => 19,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
 {% block title %}Categories index{% endblock %}
 
 {% block body %}
-    <h1>Categories index</h1>
+    <h1>Ici vous pouvez gérer les catégories</h1>
+
+    <a href=\"{{ path('app_categories_new') }}\">Create new</a>
 
     <table class=\"table\">
         <thead>
@@ -173,19 +188,24 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
                 <td>{{ category.id }}</td>
                 <td>{{ category.nom }}</td>
                 <td>
-                    <a href=\"{{ path('app_categories_show', {'id': category.id}) }}\">show</a>
-                    <a href=\"{{ path('app_categories_edit', {'id': category.id}) }}\">edit</a>
+                    <form method=\"post\" action=\"{{ path('app_categories_edit', {'id': category.id}) }}\">
+                        <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('edit' ~ category.id) }}\">
+                        <button class=\"btn\">Modifier</button>
+                    </form>
+                    <form method=\"post\" action=\"{{ path('app_categories_delete', {'id': category.id}) }}\" onsubmit=\"return confirm('Etes-vous certain de vouloir supprimer cette catégorie ?');\">
+                        <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ category.id) }}\">
+                        <button class=\"btn\">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan=\"3\">no records found</td>
+                <td colspan=\"3\">Aucun enregistrement trouvé !</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_categories_new') }}\">Create new</a>
 {% endblock %}
 ", "categories/index.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\categories\\index.html.twig");
     }

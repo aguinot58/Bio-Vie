@@ -33,7 +33,7 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,7 +42,7 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "categories/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "categories/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "categories/edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -56,7 +56,7 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit Categories";
+        echo "Modification Catégorie";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -70,17 +70,19 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Categories</h1>
+        echo "    <div class=\"container-body\">
+        <h1>Modification Catégorie</h1>
 
-    ";
-        // line 8
+        ";
+        // line 9
         echo twig_include($this->env, $context, "categories/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
-    <a href=\"";
-        // line 10
+        <a class=\"retour\" href=\"";
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index");
-        echo "\">back to list</a>
+        echo "\">Retour à la liste des catégories</a>
+    </div>
 
 ";
         
@@ -100,21 +102,23 @@ class __TwigTemplate_8a68fdb63e3885596d4a803f904a03a7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  82 => 10,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  83 => 11,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
-{% block title %}Edit Categories{% endblock %}
+{% block title %}Modification Catégorie{% endblock %}
 
 {% block body %}
-    <h1>Edit Categories</h1>
+    <div class=\"container-body\">
+        <h1>Modification Catégorie</h1>
 
-    {{ include('categories/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('categories/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href=\"{{ path('app_categories_index') }}\">back to list</a>
+        <a class=\"retour\" href=\"{{ path('app_categories_index') }}\">Retour à la liste des catégories</a>
+    </div>
 
 {% endblock %}
 ", "categories/edit.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\categories\\edit.html.twig");

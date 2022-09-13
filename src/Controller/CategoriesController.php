@@ -9,15 +9,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 #[Route('/categories')]
 class CategoriesController extends AbstractController
 {
     #[Route('/', name: 'app_categories_index', methods: ['GET'])]
-    public function index(CategoriesRepository $categoriesRepository): Response
+    public function index(CategoriesRepository $categoriesRepository, $page = 1): Response
     {
+        /* Extraction de toutes les catégories */
+        $paginator = $categoriesRepository->getAllCategories($page);
+
+        $limit = 7;
+        $maxPages = ceil($paginator->count() / $limit);
+        $thisPage = $page;
+
         return $this->render('categories/index.html.twig', [
-            'categories' => $categoriesRepository->findAll(),
+            'categories' => $paginator,
+            'maxPages' => $maxPages, 
+            'thisPage' => $thisPage,
         ]);
     }
 

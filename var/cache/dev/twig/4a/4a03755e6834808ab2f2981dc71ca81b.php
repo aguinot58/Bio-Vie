@@ -33,7 +33,7 @@ class __TwigTemplate_6f59705434709c5e75743491e8b2fb5f extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,7 +42,7 @@ class __TwigTemplate_6f59705434709c5e75743491e8b2fb5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "operateurs/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "operateurs/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "operateurs/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -56,7 +56,7 @@ class __TwigTemplate_6f59705434709c5e75743491e8b2fb5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Operateurs index";
+        echo "Index Artisans";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -70,105 +70,130 @@ class __TwigTemplate_6f59705434709c5e75743491e8b2fb5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Operateurs index</h1>
+        echo "
+    <div class=\"container-body\">
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>NumeroBio</th>
-                <th>Siret</th>
-                <th>CodeNAF</th>
-                <th>Gerant</th>
-                <th>RaisonSociale</th>
-                <th>Email</th>
-                <th>Telephone</th>
-                <th>SiteWeb</th>
-                <th>DateMAJ</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 25
+        <h1>Ici vous pouvez gérer les artisans</h1>
+
+        <a href=\"";
+        // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_new");
+        echo "\">Ajouter nouvel artisan</a>
+
+        <table class=\"table\">
+            <thead>
+                <tr>
+                    <th>RaisonSociale</th>
+                </tr>
+            </thead>
+            <tbody>
+            ";
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["operateurs"]) || array_key_exists("operateurs", $context) ? $context["operateurs"] : (function () { throw new RuntimeError('Variable "operateurs" does not exist.', 25, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["operateurs"]) || array_key_exists("operateurs", $context) ? $context["operateurs"] : (function () { throw new RuntimeError('Variable "operateurs" does not exist.', 20, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["operateur"]) {
+            // line 21
+            echo "                <tr>
+                    <td>
+                        <div>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "raisonSociale", [], "any", false, false, false, 23), "html", null, true);
+            echo "</div>
+                        <div class=\"actions\">
+                            <form method=\"post\" action=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+            echo "\">
+                                <input type=\"hidden\" name=\"_token\" value=\"";
             // line 26
-            echo "            <tr>
-                <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 27), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "numeroBio", [], "any", false, false, false, 28), "html", null, true);
-            echo "</td>
-                <td>";
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("edit" . twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 26))), "html", null, true);
+            echo "\">
+                                <button class=\"btn modification\">Modifier</button>
+                            </form>
+                            <form method=\"post\" action=\"";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "siret", [], "any", false, false, false, 29), "html", null, true);
-            echo "</td>
-                <td>";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo "\" onsubmit=\"return confirm('Etes-vous certain de vouloir supprimer cet artisan ?');\">
+                                <input type=\"hidden\" name=\"_token\" value=\"";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "codeNAF", [], "any", false, false, false, 30), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "gerant", [], "any", false, false, false, 31), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "raisonSociale", [], "any", false, false, false, 32), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "email", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "telephone", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "siteWeb", [], "any", false, false, false, 35), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 36
-            ((twig_get_attribute($this->env, $this->source, $context["operateur"], "dateMAJ", [], "any", false, false, false, 36)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "dateMAJ", [], "any", false, false, false, 36), "Y-m-d"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>
-                    <a href=\"";
-            // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_show", ["id" => twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 38)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
-            // line 39
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 39)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
-            </tr>
-        ";
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 30))), "html", null, true);
+            echo "\">
+                                <button class=\"btn suppression\">Supprimer</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 43
-            echo "            <tr>
-                <td colspan=\"11\">no records found</td>
-            </tr>
-        ";
+            // line 37
+            echo "                <tr>
+                    <td colspan=\"11\">no records found</td>
+                </tr>
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['operateur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
-        echo "        </tbody>
-    </table>
+        // line 41
+        echo "            </tbody>
+        </table>
 
-    <a href=\"";
-        // line 50
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_new");
-        echo "\">Create new</a>
+        ";
+        // line 44
+        if (((isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 44, $this->source); })()) > 1)) {
+            // line 45
+            echo "            <ul>
+                ";
+            // line 47
+            echo "                <li ";
+            echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 47, $this->source); })()) == 1)) ? ("class=\"disabled\"") : (""));
+            echo ">
+                    ";
+            // line 49
+            echo "                    <a href=\"{page: thisPage-1 < 1 ? 1 : thisPage-1}\">«</a>
+                </li>
+
+                ";
+            // line 53
+            echo "                ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 53, $this->source); })())));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 54
+                echo "                    <li ";
+                echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 54, $this->source); })()) == $context["i"])) ? ("class=\"active\"") : (""));
+                echo ">
+                    ";
+                // line 56
+                echo "                    <a href=\"{page: i}\">";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                echo "</a>
+                    </li>
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 59
+            echo "
+                ";
+            // line 61
+            echo "                <li ";
+            echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 61, $this->source); })()) == (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 61, $this->source); })()))) ? ("class=\"disabled\"") : (""));
+            echo ">
+                    ";
+            // line 63
+            echo "                    <a href=\"{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}\">»</a>
+                </li>
+            </ul>
+        ";
+        }
+        // line 67
+        echo "    </div>
+    
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -187,61 +212,79 @@ class __TwigTemplate_6f59705434709c5e75743491e8b2fb5f extends Template
 
     public function getDebugInfo()
     {
-        return array (  170 => 50,  165 => 47,  156 => 43,  147 => 39,  143 => 38,  138 => 36,  134 => 35,  130 => 34,  126 => 33,  122 => 32,  118 => 31,  114 => 30,  110 => 29,  106 => 28,  102 => 27,  99 => 26,  94 => 25,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  195 => 67,  189 => 63,  184 => 61,  181 => 59,  171 => 56,  166 => 54,  161 => 53,  156 => 49,  151 => 47,  148 => 45,  146 => 44,  141 => 41,  132 => 37,  120 => 30,  116 => 29,  110 => 26,  106 => 25,  101 => 23,  97 => 21,  92 => 20,  80 => 11,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
-{% block title %}Operateurs index{% endblock %}
+{% block title %}Index Artisans{% endblock %}
 
 {% block body %}
-    <h1>Operateurs index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>NumeroBio</th>
-                <th>Siret</th>
-                <th>CodeNAF</th>
-                <th>Gerant</th>
-                <th>RaisonSociale</th>
-                <th>Email</th>
-                <th>Telephone</th>
-                <th>SiteWeb</th>
-                <th>DateMAJ</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for operateur in operateurs %}
-            <tr>
-                <td>{{ operateur.id }}</td>
-                <td>{{ operateur.numeroBio }}</td>
-                <td>{{ operateur.siret }}</td>
-                <td>{{ operateur.codeNAF }}</td>
-                <td>{{ operateur.gerant }}</td>
-                <td>{{ operateur.raisonSociale }}</td>
-                <td>{{ operateur.email }}</td>
-                <td>{{ operateur.telephone }}</td>
-                <td>{{ operateur.siteWeb }}</td>
-                <td>{{ operateur.dateMAJ ? operateur.dateMAJ|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href=\"{{ path('app_operateurs_show', {'id': operateur.id}) }}\">show</a>
-                    <a href=\"{{ path('app_operateurs_edit', {'id': operateur.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"11\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class=\"container-body\">
 
-    <a href=\"{{ path('app_operateurs_new') }}\">Create new</a>
+        <h1>Ici vous pouvez gérer les artisans</h1>
+
+        <a href=\"{{ path('app_operateurs_new') }}\">Ajouter nouvel artisan</a>
+
+        <table class=\"table\">
+            <thead>
+                <tr>
+                    <th>RaisonSociale</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for operateur in operateurs %}
+                <tr>
+                    <td>
+                        <div>{{ operateur.raisonSociale }}</div>
+                        <div class=\"actions\">
+                            <form method=\"post\" action=\"{{ path('app_operateurs_edit', {'id': operateur.id}) }}\">
+                                <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('edit' ~ operateur.id) }}\">
+                                <button class=\"btn modification\">Modifier</button>
+                            </form>
+                            <form method=\"post\" action=\"{{ path('app_operateurs_delete', {'id': operateur.id}) }}\" onsubmit=\"return confirm('Etes-vous certain de vouloir supprimer cet artisan ?');\">
+                                <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ operateur.id) }}\">
+                                <button class=\"btn suppression\">Supprimer</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan=\"11\">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if maxPages > 1 %}
+            <ul>
+                {# `«` arrow  #}
+                <li {{ thisPage == 1 ? 'class=\"disabled\"' }}>
+                    {#<a href=\"{{ path('routeName', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}\">«</a>#}
+                    <a href=\"{page: thisPage-1 < 1 ? 1 : thisPage-1}\">«</a>
+                </li>
+
+                {# Render each page number #}
+                {% for i in 1..maxPages %}
+                    <li {{ thisPage == i ? 'class=\"active\"' }}>
+                    {#<a href=\"{{ path('routeName', {page: i}) }}\">{{ i }}</a>#}
+                    <a href=\"{page: i}\">{{ i }}</a>
+                    </li>
+                {% endfor %}
+
+                {# `»` arrow #}
+                <li {{ thisPage == maxPages ? 'class=\"disabled\"' }}>
+                    {#<a href=\"{{ path('routeName', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}\">»</a>#}
+                    <a href=\"{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}\">»</a>
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+    
 {% endblock %}
 ", "operateurs/index.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\operateurs\\index.html.twig");
     }

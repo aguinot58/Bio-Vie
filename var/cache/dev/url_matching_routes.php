@@ -10,6 +10,7 @@ return [
     [ // $staticRoutes
         '/activites' => [[['_route' => 'app_activites_index', '_controller' => 'App\\Controller\\ActivitesController::index'], null, ['GET' => 0], null, true, false, null]],
         '/activites/new' => [[['_route' => 'app_activites_new', '_controller' => 'App\\Controller\\ActivitesController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/back' => [[['_route' => 'back', '_controller' => 'App\\Controller\\BackOfficeController::back'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'app_categories_index', '_controller' => 'App\\Controller\\CategoriesController::index'], null, ['GET' => 0], null, true, false, null]],
         '/categories/new' => [[['_route' => 'app_categories_new', '_controller' => 'App\\Controller\\CategoriesController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],

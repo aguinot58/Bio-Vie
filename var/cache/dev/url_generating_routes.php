@@ -8,6 +8,7 @@ return [
     'app_activites_show' => [['id'], ['_controller' => 'App\\Controller\\ActivitesController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/activites']], [], [], []],
     'app_activites_edit' => [['id'], ['_controller' => 'App\\Controller\\ActivitesController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/activites']], [], [], []],
     'app_activites_delete' => [['id'], ['_controller' => 'App\\Controller\\ActivitesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/activites']], [], [], []],
+    'back' => [[], ['_controller' => 'App\\Controller\\BackOfficeController::back'], [], [['text', '/back']], [], [], []],
     'app_categories_index' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories/']], [], [], []],
     'app_categories_new' => [[], ['_controller' => 'App\\Controller\\CategoriesController::new'], [], [['text', '/categories/new']], [], [], []],
     'app_categories_show' => [['id'], ['_controller' => 'App\\Controller\\CategoriesController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/categories']], [], [], []],

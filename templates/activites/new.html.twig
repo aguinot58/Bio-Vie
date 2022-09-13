@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}New Activites{% endblock %}
+{% block title %}Nouvelle Activité{% endblock %}
 
 {% block body %}
-    <h1>Create new Activites</h1>
+    <div class="container-body">
+        <h1>Création nouvelle activité</h1>
 
-    {{ include('activites/_form.html.twig') }}
+        {{ include('activites/_form.html.twig') }}
 
-    <a href="{{ path('app_activites_index') }}">back to list</a>
+        <a class="retour" href="{{ path('app_activites_index') }}">Retour à la liste des activités</a>
+    </div>
 {% endblock %}

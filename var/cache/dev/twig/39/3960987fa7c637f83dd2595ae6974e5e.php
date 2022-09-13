@@ -43,7 +43,7 @@ class __TwigTemplate_1e1cf35a328e750dcae7702184a99183 extends Template
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button class=\"btn\">";
+    <button class=\"btn sauvegarde\">";
         // line 3
         echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
@@ -76,7 +76,7 @@ class __TwigTemplate_1e1cf35a328e750dcae7702184a99183 extends Template
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    <button class=\"btn sauvegarde\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 ", "operateurs/_form.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\operateurs\\_form.html.twig");
     }

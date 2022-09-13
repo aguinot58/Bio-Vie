@@ -52,7 +52,6 @@ class OperateursRepository extends ServiceEntityRepository
 
 
     /**
-     * Our new getAllPosts() method
      *
      * 1. Create & pass query to paginate method
      * 2. Paginate will return a `\Doctrine\ORM\Tools\Pagination\Paginator` object
@@ -93,7 +92,7 @@ class OperateursRepository extends ServiceEntityRepository
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */
-    public function paginate($dql, $page = 1, $limit = 12)
+    public function paginate($dql, $page = 1, $limit = 10)
     {
         $paginator = new Paginator($dql);
 

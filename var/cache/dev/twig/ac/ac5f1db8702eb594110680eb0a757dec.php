@@ -54,11 +54,11 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
 
         <script src=\"";
         // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("javascript/front.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("javascript/back.js"), "html", null, true);
         echo "\"></script>
         <link rel=\"stylesheet\" href=\"";
         // line 10
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/front.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/back.css"), "html", null, true);
         echo "\">
 
         ";
@@ -75,11 +75,33 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
 
     <body>
 
-        ";
-        // line 24
+        <div class=\"container-back\">
+
+            <header>
+                <div class=\"container\">
+                    <div class=\"site\">
+                        <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
+                        <img class=\"image-site\" title=\"icon-blé\" src=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/icons/icon-ble.png"), "html", null, true);
+        echo "\" alt=\"logo représentant des épis de blés\">
+                    </div>
+                    <div class=\"barre-nav\">
+                        <a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a>
+                        <a class=\"lien-nav\" href=\"/operateurs\"><p>Gérer les artisans</p></a>
+                        <a class=\"lien-nav\" href=\"/categories\"><p>Gérer les catégories</p></a>
+                        <a class=\"lien-nav\" href=\"/activites\"><p>Gérer les activités</p></a>
+                    </div>
+                </div>
+            </header>
+
+            ";
+        // line 41
         $this->displayBlock('body', $context, $blocks);
-        // line 27
+        // line 44
         echo "
+        </div>
+
     </body>
 
 </html>";
@@ -135,16 +157,16 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
 
     }
 
-    // line 24
+    // line 41
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 25
-        echo "        
-        ";
+        // line 42
+        echo "            
+            ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -162,7 +184,7 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
 
     public function getDebugInfo()
     {
-        return array (  146 => 25,  139 => 24,  129 => 18,  122 => 17,  112 => 14,  105 => 13,  92 => 5,  82 => 27,  80 => 24,  74 => 20,  72 => 17,  69 => 16,  66 => 13,  61 => 10,  57 => 9,  50 => 5,  44 => 1,);
+        return array (  168 => 42,  161 => 41,  151 => 18,  144 => 17,  134 => 14,  127 => 13,  114 => 5,  102 => 44,  100 => 41,  86 => 30,  74 => 20,  72 => 17,  69 => 16,  66 => 13,  61 => 10,  57 => 9,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -175,8 +197,8 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
 
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
 
-        <script src=\"{{ asset('javascript/front.js') }}\"></script>
-        <link rel=\"stylesheet\" href=\"{{ asset('styles/front.css') }}\">
+        <script src=\"{{ asset('javascript/back.js') }}\"></script>
+        <link rel=\"stylesheet\" href=\"{{ asset('styles/back.css') }}\">
 
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -190,9 +212,28 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
 
     <body>
 
-        {% block body %}
-        
-        {% endblock %}
+        <div class=\"container-back\">
+
+            <header>
+                <div class=\"container\">
+                    <div class=\"site\">
+                        <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
+                        <img class=\"image-site\" title=\"icon-blé\" src=\"{{ asset('images/icons/icon-ble.png') }}\" alt=\"logo représentant des épis de blés\">
+                    </div>
+                    <div class=\"barre-nav\">
+                        <a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a>
+                        <a class=\"lien-nav\" href=\"/operateurs\"><p>Gérer les artisans</p></a>
+                        <a class=\"lien-nav\" href=\"/categories\"><p>Gérer les catégories</p></a>
+                        <a class=\"lien-nav\" href=\"/activites\"><p>Gérer les activités</p></a>
+                    </div>
+                </div>
+            </header>
+
+            {% block body %}
+            
+            {% endblock %}
+
+        </div>
 
     </body>
 

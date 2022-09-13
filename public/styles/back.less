@@ -1,0 +1,174 @@
+@Couleur1: #93ffe9; @Couleur2: #4accb1; @Couleur3: #2a2e34; @Couleur4: #202327;
+@fontR: 'montserrat-regular'; @fontM: 'montserrat-medium'; @fontG: 'montserrat-bold'; @fontB: 'montserrat-black';
+
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url('./../fonts/Montserrat-Regular.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'montserrat-medium';
+    src: url('./../fonts/Montserrat-Medium.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url('./../fonts/Montserrat-Bold.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'montserrat-black';
+    src: url('./../fonts/Montserrat-Black.otf') format('otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container-back{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    header{
+        width: 20%;
+        height: 100%;
+        background-color: @Couleur3;
+        .container{
+            width: 60%;
+            height: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .site{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                a{
+                    color: @Couleur2;
+                    font-family: @fontR;
+                    font-size: clamp( 2vmin, 4vmin, 8vmin);
+                    margin-bottom: 2vh;
+                    text-decoration: none;
+                    :visited{
+                        color: @Couleur2;
+                    }
+                }
+                img{
+                    width: clamp( 5vmin, 10vmin, 15vmin);
+                }
+            }
+            .barre-nav{
+                a{
+                    color: @Couleur2;
+                    font-family: @fontR;
+                    font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+                    text-decoration: none;
+                    :visited{
+                        color: @Couleur2;
+                    }
+                    p{
+                        margin-bottom: 1vh;
+                    }
+                }
+            }
+        }
+    }
+    .container-body{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 5vh 1vw;
+        h1{
+            font-family: @fontM;
+            margin-bottom: 10vh;
+        }
+        a{
+            font-family: @fontR;
+            font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+            color: black;
+            margin-bottom: 5vh;
+            :visited{
+                color: black;
+            }
+        }
+        table{
+            width: 95%;
+            th{
+                text-align: left;
+                font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+                color: @Couleur2;
+                font-family: @fontR;
+                background-color: @Couleur4;
+                border-radius: 10px 10px 0 0;
+                padding-left: 1vh;
+                line-height: 4vh;
+            }
+            td{
+                padding-left: 1vh;
+                line-height: 5vh;
+                font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+                font-family: @fontR;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                .actions{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    .btn{
+                        margin-right: 3vh;
+                        font-size: clamp( 1vmin, 2vmin, 6vmin);
+                        font-family: @fontR;
+                        padding: 0.5vh 1vw;
+                        border-radius: 10px;
+                        border: none;
+                    }
+                    .modification{
+                        background-color: @Couleur2;
+                    }
+                    .suppression{
+                        background-color: rgb(255, 68, 68);
+                    }
+                }
+            }
+        }
+        ul{
+            margin-top: 3vh;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            li{
+                margin-right: 1vh;
+                background-color: @Couleur3;
+                padding: 1vmin;
+                a{
+                    text-decoration: none;
+                    font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+                    font-family: @fontR;
+                    color: @Couleur2;
+                    :visited{
+                        color: @Couleur2
+                    }
+                }
+            }
+        }
+        .retour{
+            margin-top: 5vh;
+        }
+    }
+}
+

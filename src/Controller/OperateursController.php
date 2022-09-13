@@ -9,15 +9,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 #[Route('/operateurs')]
 class OperateursController extends AbstractController
 {
     #[Route('/', name: 'app_operateurs_index', methods: ['GET'])]
-    public function index(OperateursRepository $operateursRepository): Response
+    public function index(OperateursRepository $operateursRepository, $page = 1): Response
     {
+        /* Extraction de toutes les artisans */
+        $paginator = $operateursRepository->getAllOperateurs($page);
+
+        $limit = 7;
+        $maxPages = ceil($paginator->count() / $limit);
+        $thisPage = $page;
+
         return $this->render('operateurs/index.html.twig', [
-            'operateurs' => $operateursRepository->findAll(),
+            'operateurs' => $paginator,
+            'maxPages' => $maxPages, 
+            'thisPage' => $thisPage,
         ]);
     }
 

@@ -1,35 +1,68 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Activites index{% endblock %}
+{% block title %}Index Activités{% endblock %}
 
 {% block body %}
-    <h1>Activites index</h1>
+    <div class="container-body">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom_activite</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for activite in activites %}
-            <tr>
-                <td>{{ activite.id }}</td>
-                <td>{{ activite.nomActivite }}</td>
-                <td>
-                    <a href="{{ path('app_activites_show', {'id': activite.id}) }}">show</a>
-                    <a href="{{ path('app_activites_edit', {'id': activite.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <h1>Ici vous pouvez gérer les activités</h1>
 
-    <a href="{{ path('app_activites_new') }}">Create new</a>
+        <a href="{{ path('app_activites_new') }}">Ajouter nouvelle activité</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Activité</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for activite in activites %}
+                <tr>
+                    <td>
+                        <div>{{ activite.nomActivite }}</div>
+                        <div class="actions">
+                            <form method="post" action="{{ path('app_activites_edit', {'id': activite.id}) }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ activite.id) }}">
+                                <button class="btn modification">Modifier</button>
+                            </form>
+                            <form method="post" action="{{ path('app_activites_delete', {'id': activite.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cette activité ?');">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ activite.id) }}">
+                                <button class="btn suppression">Supprimer</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="1">Aucun enregistrement trouvé !</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if maxPages > 1 %}
+            <ul>
+                {# `«` arrow  #}
+                <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                    {#<a href="{{ path('routeName', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>#}
+                    <a href="{page: thisPage-1 < 1 ? 1 : thisPage-1}">«</a>
+                </li>
+
+                {# Render each page number #}
+                {% for i in 1..maxPages %}
+                    <li {{ thisPage == i ? 'class="active"' }}>
+                    {#<a href="{{ path('routeName', {page: i}) }}">{{ i }}</a>#}
+                    <a href="{page: i}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+
+                {# `»` arrow #}
+                <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                    {#<a href="{{ path('routeName', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>#}
+                    <a href="{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}">»</a>
+                </li>
+            </ul>
+        {% endif %}
+
+    </div>
 {% endblock %}

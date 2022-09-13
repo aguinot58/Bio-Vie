@@ -33,7 +33,7 @@ class __TwigTemplate_0729d54b4034b4082e31e27ae0f2eaa8 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,7 +42,7 @@ class __TwigTemplate_0729d54b4034b4082e31e27ae0f2eaa8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "operateurs/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "operateurs/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "operateurs/edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -56,7 +56,7 @@ class __TwigTemplate_0729d54b4034b4082e31e27ae0f2eaa8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit Operateurs";
+        echo "Modification Artisan";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -70,22 +70,19 @@ class __TwigTemplate_0729d54b4034b4082e31e27ae0f2eaa8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Operateurs</h1>
+        echo "    <div class=\"container-body\">
+        <h1>Modification Artisan</h1>
 
-    ";
-        // line 8
+        ";
+        // line 9
         echo twig_include($this->env, $context, "operateurs/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
-    <a href=\"";
-        // line 10
+        <a class=\"retour\" href=\"";
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_index");
-        echo "\">back to list</a>
-
-    ";
-        // line 12
-        echo twig_include($this->env, $context, "operateurs/_delete_form.html.twig");
-        echo "
+        echo "\">Retour à la liste des artisans</a>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -104,23 +101,23 @@ class __TwigTemplate_0729d54b4034b4082e31e27ae0f2eaa8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  87 => 12,  82 => 10,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  83 => 11,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
-{% block title %}Edit Operateurs{% endblock %}
+{% block title %}Modification Artisan{% endblock %}
 
 {% block body %}
-    <h1>Edit Operateurs</h1>
+    <div class=\"container-body\">
+        <h1>Modification Artisan</h1>
 
-    {{ include('operateurs/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('operateurs/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href=\"{{ path('app_operateurs_index') }}\">back to list</a>
-
-    {{ include('operateurs/_delete_form.html.twig') }}
+        <a class=\"retour\" href=\"{{ path('app_operateurs_index') }}\">Retour à la liste des artisans</a>
+    </div>
 {% endblock %}
 ", "operateurs/edit.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\operateurs\\edit.html.twig");
     }

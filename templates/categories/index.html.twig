@@ -1,42 +1,80 @@
 {% extends 'back.html.twig' %}
 
-{% block title %}Categories index{% endblock %}
+{% block title %}Index Categories{% endblock %}
 
 {% block body %}
-    <h1>Ici vous pouvez gérer les catégories</h1>
+    <div class="container-body">
 
-    <a href="{{ path('app_categories_new') }}">Create new</a>
+        <h1>Ici vous pouvez gérer les catégories</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.nom }}</td>
-                <td>
-                    <form method="post" action="{{ path('app_categories_edit', {'id': category.id}) }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ category.id) }}">
-                        <button class="btn">Modifier</button>
-                    </form>
-                    <form method="post" action="{{ path('app_categories_delete', {'id': category.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cette catégorie ?');">
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
-                        <button class="btn">Supprimer</button>
-                    </form>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">Aucun enregistrement trouvé !</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <a href="{{ path('app_categories_new') }}">Ajouter nouvelle catégorie</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+                {% if category.nom != "En conversion" %}
+                    <tr>
+                        <td>
+                            <div>{{ category.nom }}</div>
+                            <div class="actions">
+                                <form method="post" action="{{ path('app_categories_edit', {'id': category.id}) }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ category.id) }}">
+                                    <button class="btn modification">Modifier</button>
+                                </form>
+                                <form method="post" action="{{ path('app_categories_delete', {'id': category.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cette catégorie ?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
+                                    <button class="btn suppression">Supprimer</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% else %}
+                <tr>
+                    <td colspan="1">Aucun enregistrement trouvé !</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if maxPages > 1 %}
+            <ul>
+                {# `«` arrow  #}
+                <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                    {#<a href="{{ path('routeName', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>#}
+                    <a href="{page: thisPage-1 < 1 ? 1 : thisPage-1}">«</a>
+                </li>
+
+                {# Render each page number #}
+                {% for i in 1..maxPages %}
+                    <li {{ thisPage == i ? 'class="active"' }}>
+                    {#<a href="{{ path('routeName', {page: i}) }}">{{ i }}</a>#}
+                    <a href="{page: i}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+
+                {# `»` arrow #}
+                <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                    {#<a href="{{ path('routeName', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>#}
+                    <a href="{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}">»</a>
+                </li>
+            </ul>
+        {#{% else %}
+            <ul>
+                {% for i in 1..maxPages %}
+                    <li {{ thisPage == i ? 'class="active"' }}>
+                    <a href="{{ path('routeName', {page: i}) }}">{{ i }}</a>
+                    <a href="{page: i}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+            </ul>#}
+        {% endif %}
+
+    </div>
 
 {% endblock %}

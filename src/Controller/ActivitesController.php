@@ -9,15 +9,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 #[Route('/activites')]
 class ActivitesController extends AbstractController
 {
     #[Route('/', name: 'app_activites_index', methods: ['GET'])]
-    public function index(ActivitesRepository $activitesRepository): Response
+    public function index(ActivitesRepository $activitesRepository, $page = 1): Response
     {
+        /* Extraction de toutes les activités */
+        $paginator = $activitesRepository->getAllActivites($page);
+
+        $limit = 7;
+        $maxPages = ceil($paginator->count() / $limit);
+        $thisPage = $page;
+
         return $this->render('activites/index.html.twig', [
-            'activites' => $activitesRepository->findAll(),
+            'activites' => $paginator,
+            'maxPages' => $maxPages, 
+            'thisPage' => $thisPage,
         ]);
     }
 

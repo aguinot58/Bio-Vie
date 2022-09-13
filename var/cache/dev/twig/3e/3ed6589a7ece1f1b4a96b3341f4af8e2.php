@@ -33,7 +33,7 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,7 +42,7 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "activites/new.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "activites/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "activites/new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -56,7 +56,7 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Activites";
+        echo "Nouvelle Activité";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -70,17 +70,19 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Activites</h1>
+        echo "    <div class=\"container-body\">
+        <h1>Création nouvelle activité</h1>
 
-    ";
-        // line 8
+        ";
+        // line 9
         echo twig_include($this->env, $context, "activites/_form.html.twig");
         echo "
 
-    <a href=\"";
-        // line 10
+        <a class=\"retour\" href=\"";
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activites_index");
-        echo "\">back to list</a>
+        echo "\">Retour à la liste des activités</a>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -99,21 +101,23 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  82 => 10,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  83 => 11,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
-{% block title %}New Activites{% endblock %}
+{% block title %}Nouvelle Activité{% endblock %}
 
 {% block body %}
-    <h1>Create new Activites</h1>
+    <div class=\"container-body\">
+        <h1>Création nouvelle activité</h1>
 
-    {{ include('activites/_form.html.twig') }}
+        {{ include('activites/_form.html.twig') }}
 
-    <a href=\"{{ path('app_activites_index') }}\">back to list</a>
+        <a class=\"retour\" href=\"{{ path('app_activites_index') }}\">Retour à la liste des activités</a>
+    </div>
 {% endblock %}
 ", "activites/new.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\activites\\new.html.twig");
     }

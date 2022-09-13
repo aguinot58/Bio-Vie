@@ -43,6 +43,11 @@ class Activites
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->nom_activite;
+    }
+
     /**
      * @return Collection<int, Operateurs>
      */

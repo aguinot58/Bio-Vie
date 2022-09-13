@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}New Operateurs{% endblock %}
+{% block title %}Nouvel Artisan{% endblock %}
 
 {% block body %}
-    <h1>Create new Operateurs</h1>
+    <div class="container-body">
+        <h1>Création nouvel artisan</h1>
 
-    {{ include('operateurs/_form.html.twig') }}
+        {{ include('operateurs/_form.html.twig') }}
 
-    <a href="{{ path('app_operateurs_index') }}">back to list</a>
+        <a class="retour" href="{{ path('app_operateurs_index') }}">Retour à la liste des artisans</a>
+    </div>
 {% endblock %}

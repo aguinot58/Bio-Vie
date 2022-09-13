@@ -1,51 +1,69 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Operateurs index{% endblock %}
+{% block title %}Index Artisans{% endblock %}
 
 {% block body %}
-    <h1>Operateurs index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>NumeroBio</th>
-                <th>Siret</th>
-                <th>CodeNAF</th>
-                <th>Gerant</th>
-                <th>RaisonSociale</th>
-                <th>Email</th>
-                <th>Telephone</th>
-                <th>SiteWeb</th>
-                <th>DateMAJ</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for operateur in operateurs %}
-            <tr>
-                <td>{{ operateur.id }}</td>
-                <td>{{ operateur.numeroBio }}</td>
-                <td>{{ operateur.siret }}</td>
-                <td>{{ operateur.codeNAF }}</td>
-                <td>{{ operateur.gerant }}</td>
-                <td>{{ operateur.raisonSociale }}</td>
-                <td>{{ operateur.email }}</td>
-                <td>{{ operateur.telephone }}</td>
-                <td>{{ operateur.siteWeb }}</td>
-                <td>{{ operateur.dateMAJ ? operateur.dateMAJ|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_operateurs_show', {'id': operateur.id}) }}">show</a>
-                    <a href="{{ path('app_operateurs_edit', {'id': operateur.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="container-body">
 
-    <a href="{{ path('app_operateurs_new') }}">Create new</a>
+        <h1>Ici vous pouvez gérer les artisans</h1>
+
+        <a href="{{ path('app_operateurs_new') }}">Ajouter nouvel artisan</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>RaisonSociale</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for operateur in operateurs %}
+                <tr>
+                    <td>
+                        <div>{{ operateur.raisonSociale }}</div>
+                        <div class="actions">
+                            <form method="post" action="{{ path('app_operateurs_edit', {'id': operateur.id}) }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ operateur.id) }}">
+                                <button class="btn modification">Modifier</button>
+                            </form>
+                            <form method="post" action="{{ path('app_operateurs_delete', {'id': operateur.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cet artisan ?');">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ operateur.id) }}">
+                                <button class="btn suppression">Supprimer</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="11">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if maxPages > 1 %}
+            <ul>
+                {# `«` arrow  #}
+                <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                    {#<a href="{{ path('routeName', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>#}
+                    <a href="{page: thisPage-1 < 1 ? 1 : thisPage-1}">«</a>
+                </li>
+
+                {# Render each page number #}
+                {% for i in 1..maxPages %}
+                    <li {{ thisPage == i ? 'class="active"' }}>
+                    {#<a href="{{ path('routeName', {page: i}) }}">{{ i }}</a>#}
+                    <a href="{page: i}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+
+                {# `»` arrow #}
+                <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                    {#<a href="{{ path('routeName', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>#}
+                    <a href="{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}">»</a>
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+    
 {% endblock %}

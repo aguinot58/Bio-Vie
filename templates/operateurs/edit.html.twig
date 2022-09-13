@@ -1,13 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Edit Operateurs{% endblock %}
+{% block title %}Modification Artisan{% endblock %}
 
 {% block body %}
-    <h1>Edit Operateurs</h1>
+    <div class="container-body">
+        <h1>Modification Artisan</h1>
 
-    {{ include('operateurs/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('operateurs/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_operateurs_index') }}">back to list</a>
-
-    {{ include('operateurs/_delete_form.html.twig') }}
+        <a class="retour" href="{{ path('app_operateurs_index') }}">Retour à la liste des artisans</a>
+    </div>
 {% endblock %}

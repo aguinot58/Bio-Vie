@@ -144,6 +144,9 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
+.container-back .container-body ul .active {
+  background-color: #525a66;
+}
 .container-back .container-body ul li {
   margin-right: 1vh;
   background-color: #2a2e34;

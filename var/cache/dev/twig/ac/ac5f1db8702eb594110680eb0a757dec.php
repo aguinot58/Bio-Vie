@@ -88,9 +88,9 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
                     </div>
                     <div class=\"barre-nav\">
                         <a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a>
-                        <a class=\"lien-nav\" href=\"/operateurs\"><p>Gérer les artisans</p></a>
-                        <a class=\"lien-nav\" href=\"/categories\"><p>Gérer les catégories</p></a>
-                        <a class=\"lien-nav\" href=\"/activites\"><p>Gérer les activités</p></a>
+                        <a class=\"lien-nav\" href=\"/operateurs/?page=1\"><p>Gérer les artisans</p></a>
+                        <a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a>
+                        <a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a>
                     </div>
                 </div>
             </header>
@@ -222,9 +222,9 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
                     </div>
                     <div class=\"barre-nav\">
                         <a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a>
-                        <a class=\"lien-nav\" href=\"/operateurs\"><p>Gérer les artisans</p></a>
-                        <a class=\"lien-nav\" href=\"/categories\"><p>Gérer les catégories</p></a>
-                        <a class=\"lien-nav\" href=\"/activites\"><p>Gérer les activités</p></a>
+                        <a class=\"lien-nav\" href=\"/operateurs/?page=1\"><p>Gérer les artisans</p></a>
+                        <a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a>
+                        <a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a>
                     </div>
                 </div>
             </header>

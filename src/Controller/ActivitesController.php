@@ -15,8 +15,13 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 class ActivitesController extends AbstractController
 {
     #[Route('/', name: 'app_activites_index', methods: ['GET'])]
-    public function index(ActivitesRepository $activitesRepository, $page = 1): Response
+    public function index(ActivitesRepository $activitesRepository, Request $request, $page = 1): Response
     {
+        $request->getUri();
+
+        $Tblpage = explode("?page=", $request);
+        $page = (int)$Tblpage[1];
+
         /* Extraction de toutes les activités */
         $paginator = $activitesRepository->getAllActivites($page);
 

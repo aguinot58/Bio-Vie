@@ -61,7 +61,7 @@ class OperateursRepository extends ServiceEntityRepository
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */
-    public function getAllOperateurs($currentPage = 1)
+    public function getAllOperateurs($currentPage)
     {
         // Create our query
         $query = $this->createQueryBuilder('o')
@@ -70,7 +70,7 @@ class OperateursRepository extends ServiceEntityRepository
 
         // No need to manually get get the result ($query->getResult())
 
-        $paginator = $this->paginate($query, $currentPage);
+        $paginator = $this->paginate($query, $currentPage, 10);
 
         return $paginator;
     }
@@ -92,7 +92,7 @@ class OperateursRepository extends ServiceEntityRepository
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */
-    public function paginate($dql, $page = 1, $limit = 10)
+    public function paginate($dql, $page, $limit)
     {
         $paginator = new Paginator($dql);
 

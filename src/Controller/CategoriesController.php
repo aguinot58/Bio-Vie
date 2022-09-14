@@ -15,8 +15,13 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 class CategoriesController extends AbstractController
 {
     #[Route('/', name: 'app_categories_index', methods: ['GET'])]
-    public function index(CategoriesRepository $categoriesRepository, $page = 1): Response
+    public function index(CategoriesRepository $categoriesRepository, Request $request, $page = 1): Response
     {
+        $request->getUri();
+
+        $Tblpage = explode("?page=", $request);
+        $page = (int)$Tblpage[1];
+
         /* Extraction de toutes les catégories */
         $paginator = $categoriesRepository->getAllCategories($page);
 

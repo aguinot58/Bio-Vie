@@ -15,8 +15,13 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 class OperateursController extends AbstractController
 {
     #[Route('/', name: 'app_operateurs_index', methods: ['GET'])]
-    public function index(OperateursRepository $operateursRepository, $page = 1): Response
+    public function index(OperateursRepository $operateursRepository, Request $request, $page = 1): Response
     {
+        $request->getUri();
+
+        $Tblpage = explode("?page=", $request);
+        $page = (int)$Tblpage[1];
+
         /* Extraction de toutes les artisans */
         $paginator = $operateursRepository->getAllOperateurs($page);
 

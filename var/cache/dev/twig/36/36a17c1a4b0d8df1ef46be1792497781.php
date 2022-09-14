@@ -156,24 +156,26 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
             echo "                <li ";
             echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 48, $this->source); })()) == 1)) ? ("class=\"disabled\"") : (""));
             echo ">
-                    ";
-            // line 50
-            echo "                    <a href=\"{page: thisPage-1 < 1 ? 1 : thisPage-1}\">«</a>
+                    <a href=\"";
+            // line 49
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index", ["page" => (((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 49, $this->source); })()) - 1) < 1)) ? (1) : (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 49, $this->source); })()) - 1)))]), "html", null, true);
+            echo "\">«</a>
                 </li>
 
                 ";
-            // line 54
+            // line 53
             echo "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 54, $this->source); })())));
+            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 53, $this->source); })())));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 55
+                // line 54
                 echo "                    <li ";
-                echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 55, $this->source); })()) == $context["i"])) ? ("class=\"active\"") : (""));
+                echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 54, $this->source); })()) == $context["i"])) ? ("class=\"active\"") : (""));
                 echo ">
-                    ";
-                // line 57
-                echo "                    <a href=\"{page: i}\">";
+                    <a href=\"";
+                // line 55
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index", ["page" => $context["i"]]), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                 echo "</a>
                     </li>
@@ -182,23 +184,22 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 60
+            // line 58
             echo "
                 ";
-            // line 62
+            // line 60
             echo "                <li ";
-            echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 62, $this->source); })()) == (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 62, $this->source); })()))) ? ("class=\"disabled\"") : (""));
+            echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 60, $this->source); })()) == (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 60, $this->source); })()))) ? ("class=\"disabled\"") : (""));
             echo ">
-                    ";
-            // line 64
-            echo "                    <a href=\"{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}\">»</a>
+                    <a href=\"";
+            // line 61
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index", ["page" => (((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 61, $this->source); })()) + 1) <= (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 61, $this->source); })()))) ? (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 61, $this->source); })()) + 1)) : ((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 61, $this->source); })())))]), "html", null, true);
+            echo "\">»</a>
                 </li>
             </ul>
         ";
-            // line 76
-            echo "        ";
         }
-        // line 77
+        // line 65
         echo "
     </div>
 
@@ -220,7 +221,7 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
 
     public function getDebugInfo()
     {
-        return array (  202 => 77,  199 => 76,  194 => 64,  189 => 62,  186 => 60,  176 => 57,  171 => 55,  166 => 54,  161 => 50,  156 => 48,  153 => 46,  151 => 45,  146 => 42,  137 => 38,  132 => 37,  122 => 30,  118 => 29,  112 => 26,  108 => 25,  103 => 23,  99 => 21,  96 => 20,  91 => 19,  79 => 10,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  203 => 65,  196 => 61,  191 => 60,  188 => 58,  177 => 55,  172 => 54,  167 => 53,  161 => 49,  156 => 48,  153 => 46,  151 => 45,  146 => 42,  137 => 38,  132 => 37,  122 => 30,  118 => 29,  112 => 26,  108 => 25,  103 => 23,  99 => 21,  96 => 20,  91 => 19,  79 => 10,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -273,33 +274,21 @@ class __TwigTemplate_0fad3bde2747e933129cd7698bd8660d extends Template
             <ul>
                 {# `«` arrow  #}
                 <li {{ thisPage == 1 ? 'class=\"disabled\"' }}>
-                    {#<a href=\"{{ path('routeName', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}\">«</a>#}
-                    <a href=\"{page: thisPage-1 < 1 ? 1 : thisPage-1}\">«</a>
+                    <a href=\"{{ path('app_categories_index', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}\">«</a>
                 </li>
 
                 {# Render each page number #}
                 {% for i in 1..maxPages %}
                     <li {{ thisPage == i ? 'class=\"active\"' }}>
-                    {#<a href=\"{{ path('routeName', {page: i}) }}\">{{ i }}</a>#}
-                    <a href=\"{page: i}\">{{ i }}</a>
+                    <a href=\"{{ path('app_categories_index', {page: i}) }}\">{{ i }}</a>
                     </li>
                 {% endfor %}
 
                 {# `»` arrow #}
                 <li {{ thisPage == maxPages ? 'class=\"disabled\"' }}>
-                    {#<a href=\"{{ path('routeName', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}\">»</a>#}
-                    <a href=\"{page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}\">»</a>
+                    <a href=\"{{ path('app_categories_index', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}\">»</a>
                 </li>
             </ul>
-        {#{% else %}
-            <ul>
-                {% for i in 1..maxPages %}
-                    <li {{ thisPage == i ? 'class=\"active\"' }}>
-                    <a href=\"{{ path('routeName', {page: i}) }}\">{{ i }}</a>
-                    <a href=\"{page: i}\">{{ i }}</a>
-                    </li>
-                {% endfor %}
-            </ul>#}
         {% endif %}
 
     </div>

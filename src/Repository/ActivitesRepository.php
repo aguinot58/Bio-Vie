@@ -50,7 +50,7 @@ class ActivitesRepository extends ServiceEntityRepository
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */
-    public function getAllActivites($currentPage = 1)
+    public function getAllActivites($currentPage)
     {
         // Create our query
         $query = $this->createQueryBuilder('a')
@@ -58,7 +58,7 @@ class ActivitesRepository extends ServiceEntityRepository
             ->getQuery();
 
         // No need to manually get get the result ($query->getResult())
-        $paginator = $this->paginate($query, $currentPage);
+        $paginator = $this->paginate($query, $currentPage, 7);
 
         return $paginator;
     }
@@ -80,7 +80,7 @@ class ActivitesRepository extends ServiceEntityRepository
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */
-    public function paginate($dql, $page = 1, $limit = 7)
+    public function paginate($dql, $page, $limit)
     {
         $paginator = new Paginator($dql);
 

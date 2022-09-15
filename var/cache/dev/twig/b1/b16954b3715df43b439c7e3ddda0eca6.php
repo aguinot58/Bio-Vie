@@ -52,25 +52,28 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
 
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css\" integrity=\"sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css\" integrity=\"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
+
         <script src=\"";
-        // line 9
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("javascript/front.js"), "html", null, true);
         echo "\"></script>
         <link rel=\"stylesheet\" href=\"";
-        // line 10
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/front.css"), "html", null, true);
         echo "\">
 
         ";
-        // line 13
+        // line 16
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 19
         echo "
         ";
-        // line 17
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 20
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 23
         echo "    </head>
 
     <body>
@@ -90,9 +93,9 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         </header>
 
         ";
-        // line 38
-        $this->displayBlock('body', $context, $blocks);
         // line 41
+        $this->displayBlock('body', $context, $blocks);
+        // line 44
         echo "
         <footer>
             <div class=\"container\">
@@ -126,14 +129,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 13
+    // line 16
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 14
+        // line 17
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -143,14 +146,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 17
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 18
+        // line 21
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -160,14 +163,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 38
+    // line 41
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 39
+        // line 42
         echo "        
         ";
         
@@ -187,7 +190,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  171 => 39,  164 => 38,  154 => 18,  147 => 17,  137 => 14,  130 => 13,  117 => 5,  96 => 41,  94 => 38,  74 => 20,  72 => 17,  69 => 16,  66 => 13,  61 => 10,  57 => 9,  50 => 5,  44 => 1,);
+        return array (  174 => 42,  167 => 41,  157 => 21,  150 => 20,  140 => 17,  133 => 16,  120 => 5,  99 => 44,  97 => 41,  77 => 23,  75 => 20,  72 => 19,  69 => 16,  64 => 13,  60 => 12,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -199,6 +202,9 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         <title>{% block title %}Bio_et_Vie{% endblock %}</title>
 
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css\" integrity=\"sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css\" integrity=\"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
 
         <script src=\"{{ asset('javascript/front.js') }}\"></script>
         <link rel=\"stylesheet\" href=\"{{ asset('styles/front.css') }}\">

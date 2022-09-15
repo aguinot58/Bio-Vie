@@ -57,7 +57,45 @@ class __TwigTemplate_9d9746c3705c162e445fd1dffc304242 extends Template
 
         // line 4
         echo "
-    <h1>Formulaire de contact</h1>
+    <section id=\"section-contact\">
+
+        <div class=\"container\">
+
+            <div class=\"formulaire\">
+                <h1>CONTACTEZ-NOUS</h1>
+                ";
+        // line 11
+        echo twig_include($this->env, $context, "contact/_form.html.twig");
+        echo "
+            </div>
+
+            <div class=\"disposition-droite\">
+
+                <div class=\"infos-droite\">
+                    <h2>NOS INFORMATIONS</h2>
+                    <div class=\"mail infos\">
+                        <i class=\"fa-sharp fa-solid fa-envelope-open-text\"></i>
+                        <p>contact@bio-et-vie.fr</p>
+                    </div>
+                    <div class=\"fixe infos\">
+                        <i class=\"fa-solid fa-phone-flip\"></i>
+                        <p>04 75 25 53 00</p>
+                    </div>
+                    <div class=\"mobile infos\">
+                        <i class=\"fa-solid fa-mobile-screen-button\"></i>
+                        <p>06 68 54 78 00</p>
+                    </div>
+                </div>
+            
+                <div class=\"map-droite\">
+                    <iframe src=\"https://www.google.com/maps/d/embed?mid=1939EUGCct0qvSjHoL6gfEzOAl8ZeNXM&ehbc=2E312F\"></iframe>
+                </div>
+
+            </div>
+
+        </div>
+
+\t</section>
 
 ";
         
@@ -77,7 +115,7 @@ class __TwigTemplate_9d9746c3705c162e445fd1dffc304242 extends Template
 
     public function getDebugInfo()
     {
-        return array (  59 => 4,  52 => 3,  35 => 1,);
+        return array (  68 => 11,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -86,7 +124,42 @@ class __TwigTemplate_9d9746c3705c162e445fd1dffc304242 extends Template
 
 {% block body %}
 
-    <h1>Formulaire de contact</h1>
+    <section id=\"section-contact\">
+
+        <div class=\"container\">
+
+            <div class=\"formulaire\">
+                <h1>CONTACTEZ-NOUS</h1>
+                {{ include('contact/_form.html.twig') }}
+            </div>
+
+            <div class=\"disposition-droite\">
+
+                <div class=\"infos-droite\">
+                    <h2>NOS INFORMATIONS</h2>
+                    <div class=\"mail infos\">
+                        <i class=\"fa-sharp fa-solid fa-envelope-open-text\"></i>
+                        <p>contact@bio-et-vie.fr</p>
+                    </div>
+                    <div class=\"fixe infos\">
+                        <i class=\"fa-solid fa-phone-flip\"></i>
+                        <p>04 75 25 53 00</p>
+                    </div>
+                    <div class=\"mobile infos\">
+                        <i class=\"fa-solid fa-mobile-screen-button\"></i>
+                        <p>06 68 54 78 00</p>
+                    </div>
+                </div>
+            
+                <div class=\"map-droite\">
+                    <iframe src=\"https://www.google.com/maps/d/embed?mid=1939EUGCct0qvSjHoL6gfEzOAl8ZeNXM&ehbc=2E312F\"></iframe>
+                </div>
+
+            </div>
+
+        </div>
+
+\t</section>
 
 {% endblock %}", "contact/contact.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\contact\\contact.html.twig");
     }

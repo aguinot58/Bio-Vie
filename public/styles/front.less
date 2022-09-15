@@ -330,6 +330,73 @@ header{
     }
 }
 
+#section-contact{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./../images/contact/bandeau-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: left 0 top -80px;
+    .container{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .formulaire{
+            width: 62%;
+            margin-top: 20vh;
+        }
+        .disposition-droite{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 32%;
+            margin-top: 10vh;
+            box-sizing: content-box;
+            box-shadow: 0px 0px 3px 5px rgba(226, 226, 226, 0.5);
+            .infos-droite{
+                min-height: 20vh;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                background-color: @Couleur4;
+                color: white;
+                padding: 7vh 0;
+                h2{
+                    color: @Couleur1;
+                    margin-bottom: 3vh;
+                    font-size: clamp( 2vmin, 3vmin, 8vmin);
+                    font-family: @fontB;
+                    margin-left: 3.5vw;
+                }
+                .infos{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    margin-bottom: 1vh;
+                    align-items: center;
+                    margin-left: 3.5vw;
+                    i{
+                        width: 2vw;
+                    }
+                    p{
+                        font-size: clamp( 1vmin, 2.25vmin, 4vmin);
+                        font-family: @fontR;
+                        margin-left: 0.9vw;
+                    }
+                }
+            }
+            .map-droite iframe{
+                box-sizing: border-box;
+                width: 100%;
+                height: 40vh;
+            }
+        }
+    }
+}
+
 
 
 

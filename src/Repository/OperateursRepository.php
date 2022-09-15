@@ -70,7 +70,7 @@ class OperateursRepository extends ServiceEntityRepository
 
         // No need to manually get get the result ($query->getResult())
 
-        $paginator = $this->paginate($query, $currentPage, 10);
+        $paginator = $this->paginate($query, $currentPage, 7);
 
         return $paginator;
     }

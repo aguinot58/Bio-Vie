@@ -25,6 +25,8 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -47,6 +49,40 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
 
     }
 
+    // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        echo "Accueil Administration";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 5
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 6
+        echo "
+    <div class=\"container-body\">
+
+        <h1>Bienvenue dans l'administration du site BIO&VIE</h1>
+
+    </div>
+
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "backOffice/backOffice.html.twig";
@@ -59,13 +95,23 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
 
     public function getDebugInfo()
     {
-        return array (  34 => 1,);
+        return array (  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'back.html.twig' %}
 
-", "backOffice/backOffice.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\backOffice\\backOffice.html.twig");
+{% block title %}Accueil Administration{% endblock %}
+
+{% block body %}
+
+    <div class=\"container-body\">
+
+        <h1>Bienvenue dans l'administration du site BIO&VIE</h1>
+
+    </div>
+
+{% endblock %}", "backOffice/backOffice.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\backOffice\\backOffice.html.twig");
     }
 }

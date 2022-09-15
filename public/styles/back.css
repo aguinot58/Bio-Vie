@@ -107,8 +107,8 @@
 }
 .container-back .container-body table td {
   padding-left: 1vh;
-  line-height: 5vh;
-  font-size: clamp(1vmin, 2.25vmin, 6vmin);
+  line-height: 6vh;
+  font-size: clamp(1vmin, 2vmin, 6vmin);
   font-family: 'montserrat-regular';
   display: flex;
   flex-direction: row;
@@ -122,14 +122,19 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  width: 20%;
+  justify-content: space-around;
+}
+.container-back .container-body table td .actions :hover {
+  cursor: pointer;
 }
 .container-back .container-body table td .actions .btn {
-  margin-right: 3vh;
   font-size: clamp(1vmin, 2vmin, 6vmin);
   font-family: 'montserrat-regular';
-  padding: 0.5vh 1vw;
+  padding: 0.75vh 1vw;
   border-radius: 10px;
   border: none;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
 }
 .container-back .container-body table td .actions .modification {
   background-color: #4accb1;
@@ -145,11 +150,17 @@
   flex-wrap: nowrap;
 }
 .container-back .container-body ul .active {
-  background-color: #525a66;
+  background-color: #2a2e34;
+}
+.container-back .container-body ul :hover:not(.active) {
+  background-color: #2a2e34;
+}
+.container-back .container-body ul .hidden {
+  display: none;
 }
 .container-back .container-body ul li {
   margin-right: 1vh;
-  background-color: #2a2e34;
+  background-color: #525a66;
   padding: 1vmin;
 }
 .container-back .container-body ul li a {

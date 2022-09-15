@@ -56,7 +56,7 @@ class __TwigTemplate_a2c177ab78cde9cc0a60a5d07e5235d3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Nouvelle Categorie";
+        echo "Nouvelle Catégorie";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -78,10 +78,7 @@ class __TwigTemplate_a2c177ab78cde9cc0a60a5d07e5235d3 extends Template
         echo twig_include($this->env, $context, "categories/_form.html.twig");
         echo "
 
-        <a class=\"retour\" href=\"";
-        // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index");
-        echo "\">Retour à la liste des catégories</a>
+        <a class=\"retour\" href=\"/categories/?page=1\">Retour à la liste des catégories</a>
     </div>
 ";
         
@@ -101,14 +98,14 @@ class __TwigTemplate_a2c177ab78cde9cc0a60a5d07e5235d3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  83 => 11,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'back.html.twig' %}
 
-{% block title %}Nouvelle Categorie{% endblock %}
+{% block title %}Nouvelle Catégorie{% endblock %}
 
 {% block body %}
     <div class=\"container-body\">
@@ -116,7 +113,7 @@ class __TwigTemplate_a2c177ab78cde9cc0a60a5d07e5235d3 extends Template
 
         {{ include('categories/_form.html.twig') }}
 
-        <a class=\"retour\" href=\"{{ path('app_categories_index') }}\">Retour à la liste des catégories</a>
+        <a class=\"retour\" href=\"/categories/?page=1\">Retour à la liste des catégories</a>
     </div>
 {% endblock %}
 ", "categories/new.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\categories\\new.html.twig");

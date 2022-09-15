@@ -19,8 +19,12 @@ class ActivitesController extends AbstractController
     {
         $request->getUri();
 
-        $Tblpage = explode("?page=", $request);
-        $page = (int)$Tblpage[1];
+        if (strpos($request, "?page=") !== FALSE) {
+            $Tblpage = explode("?page=", $request);
+            $page = (int)$Tblpage[1];
+        } else {
+            $page = 1;
+        }
 
         /* Extraction de toutes les activités */
         $paginator = $activitesRepository->getAllActivites($page);

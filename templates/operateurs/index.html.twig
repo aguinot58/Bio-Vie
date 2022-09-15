@@ -41,26 +41,87 @@
             </tbody>
         </table>
 
-        {% if maxPages > 1 %}
-            <ul>
-                {# `«` arrow  #}
-                <li {{ thisPage == 1 ? 'class="disabled"' }}>
-                    <a href="{{ path('app_operateurs_index', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>
-                </li>
+        {% apply spaceless %}
 
-                {# Render each page number #}
-                {% for i in 1..maxPages %}
-                    <li {{ thisPage == i ? 'class="active"' }}>
-                    <a href="{{ path('app_operateurs_index', {page: i}) }}">{{ i }}</a>
-                    </li>
-                {% endfor %}
+            {% if maxPages > 1 %}
+                
+                {# Page quantity to show around current page is 3 or a calculated minimum value #}
+                {% set defaultPageQuantityAround = 3 %}
+                {# Mininum value #}
+                {% set minimumPageQuantityAround = min(thisPage - 1, maxPages - thisPage) %}
+                {# Condition to show the right page numbers before current page: default or minimum value #}
+                {% set conditionBefore = thisPage != 1 and minimumPageQuantityAround <= thisPage - 1 %}
+                {# Condition to show the right page numbers after current page: default or minimum value #}
+                {% set conditionAfter = thisPage != maxPages and minimumPageQuantityAround <= maxPages - thisPage %}
+                {# Define page numbers before, other pages will be replaced by "..." #}
+                {% set PageQuantityAroundBefore = conditionBefore ? defaultPageQuantityAround : minimumPageQuantityAround %}
+                {# Define page numbers after, other pages will be replaced by "..." #}
+                {% set PageQuantityAroundAfter = conditionAfter ? defaultPageQuantityAround : minimumPageQuantityAround %}
 
-                {# `»` arrow #}
-                <li {{ thisPage == maxPages ? 'class="disabled"' }}>
-                    <a href="{{ path('app_operateurs_index', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>
-                </li>
-            </ul>
-        {% endif %}
+                <ul>
+                    
+                    {# Previous link #}
+                    {% if thisPage - 1 != 0 %}
+                        <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                            <a href="{{ path('app_operateurs_index', { 'page': thisPage - 1 }) }}" title="Previous">«</a>
+                        </li>
+                    {% endif %}
+
+
+                    {% for i in 1..maxPages %}
+
+                        {# Current page to show #}
+                        {% if thisPage == i %}
+                            <li class="active">
+                                <a href="#">{{ i }}</a>
+                            </li>
+                        {# Show "..." before current page depending on page numbers to show before #}
+                        {% elseif (i < thisPage and 1 != i) and (i == thisPage - PageQuantityAroundBefore - 1) %}
+                            <li>
+                                <a href="#">...</a>
+                            </li>
+                        {# Show "..." after current page depending on page numbers to show after #}
+                        {% elseif (i > thisPage and maxPages != i) and (i == thisPage + PageQuantityAroundAfter + 1) %}
+                            <li>
+                                <a href="#">...</a>
+                            </li>
+                        {# Hide pages under current page and before "..." excepted page 1 #}
+                        {% elseif (1 != i) and (i < thisPage - PageQuantityAroundBefore - 1) %}
+                            <li class="hidden">
+                                <a href="{{ path('app_operateurs_index', { 'page': i }) }}" title="Page {{ i }}">{{ i }}</a>
+                            </li>
+                        {# Hide pages over current page and after "..." excepted page with number "maxPages" (last) #}
+                        {% elseif (maxPages != i) and (i > thisPage + PageQuantityAroundAfter + 1) %}
+                            <li class="hidden">
+                                <a href="{{ path('app_operateurs_index', { 'page': i }) }}" title="Page {{ i }}">{{ i }}</a>
+                            </li>
+                        {# Apply particular style for lowest link corresponding to first page 1, and Highest link corresponding to page total count #}
+                        {% elseif i == 1 or i == maxPages %}
+                            <li>
+                                <a href="{{ path('app_operateurs_index', { 'page': i }) }}" title="Page {{ i }}">{{ i }}</a>
+                            </li>
+                        {# Normal links which are not concerned by conditions above #}
+                        {% else %}
+                            <li>
+                                <a href="{{ path('app_operateurs_index', { 'page': i }) }}" title="Page {{ i }}">{{ i }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+
+                    {# Next link #}
+                    {% if thisPage + 1 <= maxPages %}
+                        <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                            <a href="{{ path('app_operateurs_index', { 'page': thisPage + 1 }) }}" title="Next">»</a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+
+            {% endif %}
+
+        {% endapply %}
+
     </div>
     
 {% endblock %}

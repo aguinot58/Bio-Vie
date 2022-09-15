@@ -82,7 +82,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
                 <div class=\"barre-nav\">
                     <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>
                     <p class=\"sep-nav\">|</p>
-                    <a class=\"lien-nav\" href=\"/pro\"><p>NOS PROFESSIONNELS</p></a>
+                    <a class=\"lien-nav\" href=\"/#section-categories\"><p>NOS PROFESSIONNELS</p></a>
                     <p class=\"sep-nav\">|</p>
                     <a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a>
                 </div>
@@ -222,7 +222,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
                 <div class=\"barre-nav\">
                     <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>
                     <p class=\"sep-nav\">|</p>
-                    <a class=\"lien-nav\" href=\"/pro\"><p>NOS PROFESSIONNELS</p></a>
+                    <a class=\"lien-nav\" href=\"/#section-categories\"><p>NOS PROFESSIONNELS</p></a>
                     <p class=\"sep-nav\">|</p>
                     <a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a>
                 </div>

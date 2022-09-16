@@ -20,16 +20,32 @@ class HomeController extends AbstractController
      */
     public function home(Request $request, CategoriesRepository $repoCategories, OperateursRepository $repoOperateurs, $page = 1): Response
     {
+        $request->getUri();
+
+        if (strpos($request, "?page=") !== FALSE) {
+            $Tblpage = explode("?page=", $request);
+            $page = (int)$Tblpage[1];
+        } else {
+            $page = 1;
+        }
+
         /* Nombre total d'opérateurs */
         $totalOperateurs = $repoOperateurs->createQueryBuilder('a')
             ->select('count(a.id)')
             ->getQuery()
             ->getSingleScalarResult();
         
-        /* Extraction de tous les opérateurs */
-        $paginator = $repoOperateurs->getAllOperateurs($page);
+
+        /* Extraction de toutes les artisans */
+
+        // Create our query
+        $query = $repoOperateurs->createQueryBuilder('o')
+            ->orderBy('o.id', 'ASC')
+            ->getQuery();
 
         $limit = 12;
+
+        $paginator = $repoOperateurs->getAllOperateurs($query, $page, $limit);
         $maxPages = ceil($paginator->count() / $limit);
         $thisPage = $page;
 

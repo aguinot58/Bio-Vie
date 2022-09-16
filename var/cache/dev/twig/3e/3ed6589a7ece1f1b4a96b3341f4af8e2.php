@@ -78,10 +78,7 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
         echo twig_include($this->env, $context, "activites/_form.html.twig");
         echo "
 
-        <a class=\"retour\" href=\"";
-        // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activites_index");
-        echo "\">Retour à la liste des activités</a>
+        <a class=\"retour\" href=\"/activites/?page=1\">Retour à la liste des activités</a>
     </div>
 ";
         
@@ -101,7 +98,7 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  83 => 11,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -116,7 +113,7 @@ class __TwigTemplate_44b2f21e145014739dafc34a6e22f4f7 extends Template
 
         {{ include('activites/_form.html.twig') }}
 
-        <a class=\"retour\" href=\"{{ path('app_activites_index') }}\">Retour à la liste des activités</a>
+        <a class=\"retour\" href=\"/activites/?page=1\">Retour à la liste des activités</a>
     </div>
 {% endblock %}
 ", "activites/new.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\activites\\new.html.twig");

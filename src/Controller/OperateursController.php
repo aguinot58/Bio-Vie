@@ -27,9 +27,15 @@ class OperateursController extends AbstractController
         }
 
         /* Extraction de toutes les artisans */
-        $paginator = $operateursRepository->getAllOperateurs($page);
+
+        // Create our query
+        $query = $operateursRepository->createQueryBuilder('o')
+            ->orderBy('o.id', 'ASC')
+            ->getQuery();
 
         $limit = 7;
+
+        $paginator = $operateursRepository->getAllOperateurs($query, $page, $limit);
         $maxPages = ceil($paginator->count() / $limit);
         $thisPage = $page;
 

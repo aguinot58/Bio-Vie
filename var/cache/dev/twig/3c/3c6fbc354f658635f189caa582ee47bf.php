@@ -78,10 +78,7 @@ class __TwigTemplate_112e730a8ff93c2dedd5146a92fe41ee extends Template
         echo twig_include($this->env, $context, "operateurs/_form.html.twig");
         echo "
 
-        <a class=\"retour\" href=\"";
-        // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_index");
-        echo "\">Retour à la liste des artisans</a>
+        <a class=\"retour\" href=\"/operateurs/?page=1\">Retour à la liste des artisans</a>
     </div>
 ";
         
@@ -101,7 +98,7 @@ class __TwigTemplate_112e730a8ff93c2dedd5146a92fe41ee extends Template
 
     public function getDebugInfo()
     {
-        return array (  83 => 11,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -116,7 +113,7 @@ class __TwigTemplate_112e730a8ff93c2dedd5146a92fe41ee extends Template
 
         {{ include('operateurs/_form.html.twig') }}
 
-        <a class=\"retour\" href=\"{{ path('app_operateurs_index') }}\">Retour à la liste des artisans</a>
+        <a class=\"retour\" href=\"/operateurs/?page=1\">Retour à la liste des artisans</a>
     </div>
 {% endblock %}
 ", "operateurs/new.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\operateurs\\new.html.twig");

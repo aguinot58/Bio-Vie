@@ -45,7 +45,7 @@ class __TwigTemplate_14af6dad8c5b6852ff6f1f19fb505cb1 extends Template
         echo "
     <button class=\"btn sauvegarde\">";
         // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Enregistrer")) : ("Enregistrer")), "html", null, true);
         echo "</button>
 ";
         // line 4
@@ -76,7 +76,7 @@ class __TwigTemplate_14af6dad8c5b6852ff6f1f19fb505cb1 extends Template
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn sauvegarde\">{{ button_label|default('Save') }}</button>
+    <button class=\"btn sauvegarde\">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
 ", "categories/_form.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\categories\\_form.html.twig");
     }

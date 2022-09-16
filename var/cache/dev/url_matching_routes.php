@@ -20,35 +20,39 @@ return [
     ],
     [ // $regexpList
         0 => '{^(?'
-                .'|/activites/([^/]++)(?'
-                    .'|(*:29)'
-                    .'|/edit(*:41)'
-                    .'|(*:48)'
+                .'|/a(?'
+                    .'|ctivites/([^/]++)(?'
+                        .'|(*:32)'
+                        .'|/edit(*:44)'
+                        .'|(*:51)'
+                    .')'
+                    .'|rtisan/id(?:/([^/]++))?(*:82)'
                 .')'
                 .'|/categories/([^/]++)(?'
-                    .'|(*:79)'
-                    .'|/edit(*:91)'
-                    .'|(*:98)'
+                    .'|(*:113)'
+                    .'|/edit(*:126)'
+                    .'|(*:134)'
                 .')'
                 .'|/operateurs/([^/]++)(?'
-                    .'|(*:129)'
-                    .'|/edit(*:142)'
-                    .'|(*:150)'
+                    .'|(*:166)'
+                    .'|/edit(*:179)'
+                    .'|(*:187)'
                 .')'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:187)'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:224)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        29 => [[['_route' => 'app_activites_show', '_controller' => 'App\\Controller\\ActivitesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        41 => [[['_route' => 'app_activites_edit', '_controller' => 'App\\Controller\\ActivitesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        48 => [[['_route' => 'app_activites_delete', '_controller' => 'App\\Controller\\ActivitesController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        79 => [[['_route' => 'app_categories_show', '_controller' => 'App\\Controller\\CategoriesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        91 => [[['_route' => 'app_categories_edit', '_controller' => 'App\\Controller\\CategoriesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        98 => [[['_route' => 'app_categories_delete', '_controller' => 'App\\Controller\\CategoriesController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        129 => [[['_route' => 'app_operateurs_show', '_controller' => 'App\\Controller\\OperateursController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        142 => [[['_route' => 'app_operateurs_edit', '_controller' => 'App\\Controller\\OperateursController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        150 => [[['_route' => 'app_operateurs_delete', '_controller' => 'App\\Controller\\OperateursController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        187 => [
+        32 => [[['_route' => 'app_activites_show', '_controller' => 'App\\Controller\\ActivitesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        44 => [[['_route' => 'app_activites_edit', '_controller' => 'App\\Controller\\ActivitesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        51 => [[['_route' => 'app_activites_delete', '_controller' => 'App\\Controller\\ActivitesController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        82 => [[['_route' => 'artisan', 'id' => 3, '_controller' => 'App\\Controller\\ArtisanController::artisan'], ['id'], null, null, false, true, null]],
+        113 => [[['_route' => 'app_categories_show', '_controller' => 'App\\Controller\\CategoriesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        126 => [[['_route' => 'app_categories_edit', '_controller' => 'App\\Controller\\CategoriesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        134 => [[['_route' => 'app_categories_delete', '_controller' => 'App\\Controller\\CategoriesController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        166 => [[['_route' => 'app_operateurs_show', '_controller' => 'App\\Controller\\OperateursController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        179 => [[['_route' => 'app_operateurs_edit', '_controller' => 'App\\Controller\\OperateursController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        187 => [[['_route' => 'app_operateurs_delete', '_controller' => 'App\\Controller\\OperateursController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        224 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

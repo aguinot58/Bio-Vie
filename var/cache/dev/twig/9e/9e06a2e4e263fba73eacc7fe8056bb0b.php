@@ -75,6 +75,8 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
 
         <h1>Bienvenue dans l'administration du site BIO&VIE</h1>
 
+        
+
     </div>
 
 ";
@@ -109,6 +111,8 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
     <div class=\"container-body\">
 
         <h1>Bienvenue dans l'administration du site BIO&VIE</h1>
+
+        
 
     </div>
 

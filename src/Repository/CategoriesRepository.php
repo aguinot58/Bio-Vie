@@ -50,15 +50,11 @@ class CategoriesRepository extends ServiceEntityRepository
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */
-    public function getAllCategories($currentPage)
+    public function getAllCategories($query, $currentPage, $limit)
     {
-        // Create our query
-        $query = $this->createQueryBuilder('c')
-            ->orderBy('c.id', 'ASC')
-            ->getQuery();
 
         // No need to manually get get the result ($query->getResult())
-        $paginator = $this->paginate($query, $currentPage, 7);
+        $paginator = $this->paginate($query, $currentPage, $limit);
 
         return $paginator;
     }

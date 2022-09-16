@@ -27,9 +27,15 @@ class ActivitesController extends AbstractController
         }
 
         /* Extraction de toutes les activités */
-        $paginator = $activitesRepository->getAllActivites($page);
+
+        // Create our query
+        $query = $activitesRepository->createQueryBuilder('a')
+            ->orderBy('a.id', 'ASC')
+            ->getQuery();
 
         $limit = 7;
+
+        $paginator = $activitesRepository->getAllActivites($query, $page, $limit);
         $maxPages = ceil($paginator->count() / $limit);
         $thisPage = $page;
 

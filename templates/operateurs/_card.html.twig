@@ -1,12 +1,12 @@
 <div class="card">
-
-    <img src="" alt="image categorie" class="image-top">
-    <div class="card-body">
-        <h5 class="card-title">{{ operateur.raisonSociale }}</h5>
-        <div class="card-infos">
-            <p class="gras">{{ operateur.gerant }}</p>
-            <p>{{ operateur.telephone }}</p>
+    <a href="{{ path("artisan") }}/{{ operateur.id }}">
+        <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ operateur.categories|first }}{{ ("_gris.png") }}" alt="icône de la catégorie {{ operateur.categories|first }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ operateur.raisonSociale }}</h5>
+            <div class="card-infos">
+                <p class="gras">{{ operateur.gerant|upper }}</p>
+                <p>{{ operateur.telephone|slice(0, 2) }} {{ operateur.telephone|slice(2, 2) }} {{ operateur.telephone|slice(4, 2) }} {{ operateur.telephone|slice(6, 2) }} {{ operateur.telephone|slice(8, 2) }}</p>
+            </div>
         </div>
-    </div>
-
+    </a>
 </div>

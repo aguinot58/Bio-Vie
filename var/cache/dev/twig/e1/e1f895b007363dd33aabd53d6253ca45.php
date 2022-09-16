@@ -38,25 +38,45 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
 
         // line 1
         echo "<div class=\"card\">
-
-    <img src=\"\" alt=\"image categorie\" class=\"image-top\">
-    <div class=\"card-body\">
-        <h5 class=\"card-title\">";
+    <a href=\"";
+        // line 2
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("artisan");
+        echo "/";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2), "html", null, true);
+        echo "\">
+        <img class=\"img-cat\" src=\"";
+        // line 3
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/icons/icon-"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_first($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 3, $this->source); })()), "categories", [], "any", false, false, false, 3)), "html", null, true);
+        echo "_gris.png";
+        echo "\" alt=\"icône de la catégorie ";
+        echo twig_escape_filter($this->env, twig_first($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 3, $this->source); })()), "categories", [], "any", false, false, false, 3)), "html", null, true);
+        echo "\">
+        <div class=\"card-body\">
+            <h5 class=\"card-title\">";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 5, $this->source); })()), "raisonSociale", [], "any", false, false, false, 5), "html", null, true);
         echo "</h5>
-        <div class=\"card-infos\">
-            <p class=\"gras\">";
+            <div class=\"card-infos\">
+                <p class=\"gras\">";
         // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 7, $this->source); })()), "gerant", [], "any", false, false, false, 7), "html", null, true);
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 7, $this->source); })()), "gerant", [], "any", false, false, false, 7)), "html", null, true);
         echo "</p>
-            <p>";
+                <p>";
         // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), "html", null, true);
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 0, 2), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 2, 2), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 4, 2), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 6, 2), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 8, 2), "html", null, true);
         echo "</p>
+            </div>
         </div>
-    </div>
-
+    </a>
 </div>";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -75,22 +95,22 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  55 => 8,  51 => 7,  46 => 5,  40 => 1,);
+        return array (  67 => 8,  63 => 7,  58 => 5,  49 => 3,  43 => 2,  40 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div class=\"card\">
-
-    <img src=\"\" alt=\"image categorie\" class=\"image-top\">
-    <div class=\"card-body\">
-        <h5 class=\"card-title\">{{ operateur.raisonSociale }}</h5>
-        <div class=\"card-infos\">
-            <p class=\"gras\">{{ operateur.gerant }}</p>
-            <p>{{ operateur.telephone }}</p>
+    <a href=\"{{ path(\"artisan\") }}/{{ operateur.id }}\">
+        <img class=\"img-cat\" src=\"{{ asset(\"images/icons/icon-\")}}{{ operateur.categories|first }}{{ (\"_gris.png\") }}\" alt=\"icône de la catégorie {{ operateur.categories|first }}\">
+        <div class=\"card-body\">
+            <h5 class=\"card-title\">{{ operateur.raisonSociale }}</h5>
+            <div class=\"card-infos\">
+                <p class=\"gras\">{{ operateur.gerant|upper }}</p>
+                <p>{{ operateur.telephone|slice(0, 2) }} {{ operateur.telephone|slice(2, 2) }} {{ operateur.telephone|slice(4, 2) }} {{ operateur.telephone|slice(6, 2) }} {{ operateur.telephone|slice(8, 2) }}</p>
+            </div>
         </div>
-    </div>
-
+    </a>
 </div>", "operateurs/_card.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\operateurs\\_card.html.twig");
     }
 }

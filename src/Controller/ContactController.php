@@ -28,7 +28,6 @@ class ContactController extends AbstractController
                 ],
                 'attr' => [
                     'placeholder' => 'Nom',
-                    
                 ],
                 'label' => ' ',
             ])

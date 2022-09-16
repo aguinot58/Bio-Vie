@@ -1,25 +1,5 @@
-@Couleur1: #93ffe9; @Couleur2: #4accb1; @Couleur3: #2a2e34; @Couleur4: #202327;
-@fontR: 'montserrat-regular'; @fontM: 'montserrat-medium'; @fontG: 'montserrat-bold'; @fontB: 'montserrat-black';
-
-@font-face {
-    font-family: 'montserrat-regular';
-    src: url('./../fonts/Montserrat-Regular.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'montserrat-medium';
-    src: url('./../fonts/Montserrat-Medium.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'montserrat-bold';
-    src: url('./../fonts/Montserrat-Bold.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'montserrat-black';
-    src: url('./../fonts/Montserrat-Black.otf') format('otf');
-}
+@import "variables";
+@import "fonts";
 
 *{
     margin: 0;
@@ -68,7 +48,7 @@
                 a{
                     color: @Couleur2;
                     font-family: @fontR;
-                    font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+                    font-size: clamp( 1vmin, 2vmin, 6vmin);
                     text-decoration: none;
                     :visited{
                         color: @Couleur2;
@@ -104,7 +84,7 @@
             width: 95%;
             th{
                 text-align: left;
-                font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+                font-size: clamp( 1vmin, 2vmin, 6vmin);
                 color: @Couleur2;
                 font-family: @fontR;
                 background-color: @Couleur4;
@@ -115,7 +95,7 @@
             td{
                 padding-left: 1vh;
                 line-height: 6vh;
-                font-size: clamp( 1vmin, 2vmin, 6vmin);
+                font-size: clamp( 1vmin, 1.75vmin, 6vmin);
                 font-family: @fontR;
                 display: flex;
                 flex-direction: row;
@@ -130,11 +110,14 @@
                     flex-wrap: nowrap;
                     width: 20%;
                     justify-content: space-around;
+                    form{
+                        justify-content: space-evenly;
+                    }
                     :hover{
                         cursor: pointer;
                     }
                     .btn{
-                        font-size: clamp( 1vmin, 2vmin, 6vmin);
+                        font-size: clamp( 1vmin, 1.75vmin, 6vmin);
                         font-family: @fontR;
                         padding: 0.75vh 1vw;
                         border-radius: 10px;
@@ -171,7 +154,7 @@
                 padding: 1vmin;
                 a{
                     text-decoration: none;
-                    font-size: clamp( 1vmin, 2.25vmin, 6vmin);
+                    font-size: clamp( 1vmin, 2vmin, 6vmin);
                     font-family: @fontR;
                     color: @Couleur2;
                     :visited{
@@ -182,6 +165,12 @@
         }
         .retour{
             margin-top: 5vh;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+
         }
     }
 }

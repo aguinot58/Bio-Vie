@@ -1,25 +1,5 @@
-@Couleur1: #93ffe9; @Couleur2: #4accb1; @Couleur3: #2a2e34; @Couleur4: #202327;
-@fontR: 'montserrat-regular'; @fontM: 'montserrat-medium'; @fontG: 'montserrat-bold'; @fontB: 'montserrat-black';
-
-@font-face {
-    font-family: 'montserrat-regular';
-    src: url('./../fonts/Montserrat-Regular.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'montserrat-medium';
-    src: url('./../fonts/Montserrat-Medium.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'montserrat-bold';
-    src: url('./../fonts/Montserrat-Bold.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'montserrat-black';
-    src: url('./../fonts/Montserrat-Black.otf') format('otf');
-}
+@import "variables";
+@import "fonts";
 
 *{
     margin: 0;
@@ -37,7 +17,7 @@ header{
     position: sticky;
     top: 0px;
     transition: all 0.2s ease-in-out;
-    z-index: 10;
+    z-index: 50;
     .container{
         display: flex;
         flex-direction: row;
@@ -87,12 +67,12 @@ header{
         margin-right: auto;
         h1{
             color: white;
-            font-size: 20vh;
+            font-size: clamp( 10vmin, 18.5vmin, 25vmin);
             font-family: @fontB;
         }
         h3{
             color: white;
-            font-size: 6.5vh;
+            font-size: clamp( 2vmin, 5.25vmin, 10vmin);
             font-family: @fontR;
         }
         .sous-titre{
@@ -127,7 +107,7 @@ header{
             color: white;
         }
         p{
-            font-size: 2.5vh;
+            font-size: clamp( 0.75vmin, 2vmin, 6vmin);
             font-family: @fontR;
             color: @Couleur1;
         }
@@ -147,6 +127,7 @@ header{
     width: 100%;
     height: 75vh;
     margin-top: -2vh;
+    z-index: 1;
     .container{
         width: 70%;
         margin-left: auto;
@@ -160,14 +141,6 @@ header{
             img{
                 z-index: 1;
             }
-            .bande-verte-2{
-                width: 13vw;
-                min-height: 5vh;
-                background-color: @Couleur1;
-                margin-left: -100px;
-                margin-top: -25px;
-                z-index: 5;
-            }
         }
         .infos{
             display: flex;
@@ -177,13 +150,13 @@ header{
             align-items: flex-start;
             h2{
                 text-align: left;
-                font-size: 6vh;
+                font-size: clamp( 2vmin, 5.5vmin, 12vmin);
                 font-family: @fontB;
                 color: black;
                 z-index: 5;
             }
             .bande-verte-1{
-                width: 20vw;
+                width: 23vw;
                 min-height: 3vh;
                 background-color: @Couleur1;
                 z-index: 1;
@@ -193,12 +166,21 @@ header{
             }
             p{
                 text-align: left;
-                font-size: 3vh;
+                font-size: clamp( 0.75vmin, 2.5vmin, 6vmin);
                 font-family: @fontR;
                 color: black;
             }
         }
     }
+}
+.bande-verte-2{
+    position: absolute;
+    width: 13vw;
+    min-height: 4vh;
+    background-color: @Couleur1;
+    margin-left: 175px;
+    margin-top: -20px;
+    z-index: 25;
 }
 
 
@@ -229,7 +211,7 @@ header{
                 color: @Couleur1;
                 font-family: @fontG;
                 background-color: @Couleur4;
-                font-size: 4vh;
+                font-size: clamp( 1vmin, 3vmin, 6vmin);
                 text-align: center;
                 padding-top: 1.5vh;
             }
@@ -246,7 +228,7 @@ header{
 
 #section-artisans{
     width: 100%;
-    height: 90vh;
+    height: 160vh;
     margin-top: -2vh;
     .container{
         width: 70%;
@@ -257,13 +239,13 @@ header{
         flex-wrap: wrap;
         h2{
             text-align: left;
-            font-size: 6vh;
+            font-size: clamp( 2vmin, 6vmin, 10vmin);
             font-family: @fontB;
             color: black;
             z-index: 5;
         }
         .bande-verte-3{
-            width: 19.5vw;
+            width: 24.5vw;
             height: 2.5vh;
             background-color: @Couleur1;
             margin-left: -35px;
@@ -273,61 +255,99 @@ header{
         .container-artisans{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
+            grid-gap: 20px;
             grid-auto-rows: minmax(100px, auto);
             margin-top: 10vh;
+            z-index: 10;
             .card{
-                box-shadow: 2px 2px 2px 2px rgba(240, 240, 240, 0.5);
-                .card-body{
+                box-shadow: 0px 0px 3px 5px rgba(218, 218, 218, 0.5);
+                z-index: 10;
+                background-color: white;
+                padding: 12vh 0 2vh 0;
+                a{
+                    text-decoration: none;
+                    height: 22vh;
                     display: flex;
                     flex-direction: column;
                     flex-wrap: nowrap;
                     align-items: center;
-                    h5{
-                        color: @Couleur2;
-                        font-family: @fontG;
-                        font-size: 2vh;
-                        font-weight: bold;
+                    justify-content: flex-end;
+                    img{
+                        width: 8vw;
+                        max-height: 75%;
                     }
-                    .card-infos{
+                    .card-body{
                         display: flex;
                         flex-direction: column;
-                        padding: 2vh 0vw;
+                        flex-wrap: nowrap;
                         align-items: center;
-                        font-size: 2vh;
-                        .gras{
+                        height: 12vh;
+                        margin-top: 2vh;
+                        h5{
+                            color: @Couleur2;
+                            font-family: @fontG;
+                            font-size: clamp( 0.75vmin, 1.75vmin, 6vmin);
                             font-weight: bold;
+                        }
+                        .card-infos{
+                            display: flex;
+                            flex-direction: column;
+                            padding: 2vh 0vw;
+                            align-items: center;
+                            font-size: clamp( 0.75vmin, 2vmin, 6vmin);
                             color: black;
+                            .gras{
+                                font-family: @fontG;
+                                color: black;
+                                margin-bottom: 0.5vh;
+                                font-size: clamp( 0.75vmin, 1.75vmin, 6vmin);
+                            }
                         }
                     }
                 }
+                
             }
         }
         ul{
+            margin-top: 10vh;
+            list-style: none;
             display: flex;
             flex-direction: row;
-            list-style: none;
-            margin-top: 10vh;
-            margin-left:auto;
-            margin-right: auto;
+            flex-wrap: nowrap;
+            justify-content: center;
+            .hidden{
+                display: none;
+            }
             li{
-                font-weight: bold;
-                font-size: 3vh;
-                margin: 0px 5px;
-                .active{
-                    color: @Couleur2;
-                }
+                margin-right: 1vh;
+                padding: 1vmin;
                 a{
                     text-decoration: none;
+                    font-size: clamp( 1vmin, 2.5vmin, 6vmin);
+                    font-family: @fontB;
                     color: black;
                     :visited{
                         color: black;
                     }
                 }
-                
             }
-        } 
+            .active a{
+                color: @Couleur2;
+            }
+            :hover:not(.active){
+                background-color: @Couleur2;
+            }
+        }
     }
+}
+
+.bande-verte-4{
+    width: 10vw;
+    height: 4vh;
+    background-color: @Couleur1;
+    margin-left: 80vw;
+    margin-top: -17vh;
+    z-index: 1;
 }
 
 #section-contact{
@@ -398,6 +418,21 @@ header{
 }
 
 
+#section-fiche-artisan{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./../images/unique/bandeau-desktop.jpg);
+    background-repeat: no-repeat;
+    .container{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 22vh;
+    }
+}
 
 
 footer{

@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'montserrat-regular';
-  src: url('../fonts/Montserrat-Regular.otf') format('otf');
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'montserrat-medium';
-  src: url('../fonts/Montserrat-Medium.otf') format('otf');
+  src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'montserrat-bold';
-  src: url('../fonts/Montserrat-Bold.otf') format('otf');
+  src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'montserrat-black';
-  src: url('../fonts/Montserrat-Black.otf') format('otf');
+  src: url('../fonts/Montserrat-Black.ttf') format('truetype');
 }
 * {
   margin: 0;
@@ -62,7 +62,7 @@
 .container-back header .container .barre-nav a {
   color: #4accb1;
   font-family: 'montserrat-regular';
-  font-size: clamp(1vmin, 2.25vmin, 6vmin);
+  font-size: clamp(1vmin, 2vmin, 6vmin);
   text-decoration: none;
 }
 .container-back header .container .barre-nav a :visited {
@@ -97,7 +97,7 @@
 }
 .container-back .container-body table th {
   text-align: left;
-  font-size: clamp(1vmin, 2.25vmin, 6vmin);
+  font-size: clamp(1vmin, 2vmin, 6vmin);
   color: #4accb1;
   font-family: 'montserrat-regular';
   background-color: #202327;
@@ -108,7 +108,7 @@
 .container-back .container-body table td {
   padding-left: 1vh;
   line-height: 6vh;
-  font-size: clamp(1vmin, 2vmin, 6vmin);
+  font-size: clamp(1vmin, 1.75vmin, 6vmin);
   font-family: 'montserrat-regular';
   display: flex;
   flex-direction: row;
@@ -125,11 +125,14 @@
   width: 20%;
   justify-content: space-around;
 }
+.container-back .container-body table td .actions form {
+  justify-content: space-evenly;
+}
 .container-back .container-body table td .actions :hover {
   cursor: pointer;
 }
 .container-back .container-body table td .actions .btn {
-  font-size: clamp(1vmin, 2vmin, 6vmin);
+  font-size: clamp(1vmin, 1.75vmin, 6vmin);
   font-family: 'montserrat-regular';
   padding: 0.75vh 1vw;
   border-radius: 10px;
@@ -165,7 +168,7 @@
 }
 .container-back .container-body ul li a {
   text-decoration: none;
-  font-size: clamp(1vmin, 2.25vmin, 6vmin);
+  font-size: clamp(1vmin, 2vmin, 6vmin);
   font-family: 'montserrat-regular';
   color: #4accb1;
 }
@@ -174,4 +177,9 @@
 }
 .container-back .container-body .retour {
   margin-top: 5vh;
+}
+.container-back .container-body form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }

@@ -27,9 +27,15 @@ class CategoriesController extends AbstractController
         }
 
         /* Extraction de toutes les catégories */
-        $paginator = $categoriesRepository->getAllCategories($page);
+
+        // Create our query
+        $query = $categoriesRepository->createQueryBuilder('c')
+            ->orderBy('c.id', 'ASC')
+            ->getQuery();
 
         $limit = 7;
+
+        $paginator = $categoriesRepository->getAllCategories($query, $page, $limit);
         $maxPages = ceil($paginator->count() / $limit);
         $thisPage = $page;
 

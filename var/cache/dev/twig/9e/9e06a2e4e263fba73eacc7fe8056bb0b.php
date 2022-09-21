@@ -75,7 +75,54 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
 
         <h1>Bienvenue dans l'administration du site BIO&VIE</h1>
 
-        
+        <div class=\"container-admin\">
+
+            <a href=\"";
+        // line 13
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_operateurs_index");
+        echo "\">
+                <div class=\"card\">
+                    <img class=\"img-back\" src=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/back/artisans.jpg"), "html", null, true);
+        echo "\" alt=\"Homme souriant avec chapeau de paille tenant un panier de légumes\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Artisans</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index");
+        echo "\">
+                <div class=\"card\">
+                    <img class=\"img-back\" src=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/back/categories.jpg"), "html", null, true);
+        echo "\" alt=\"image avec différentes catégories de produits bio\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Catégories</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_activites_index");
+        echo "\">
+                <div class=\"card\">
+                    <img class=\"img-back\" src=\"";
+        // line 33
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/back/activites.jpg"), "html", null, true);
+        echo "\" alt=\"image avec différentes activités et types de circuits de distributions de produits bio\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Activités</h5>
+                    </div>
+                </div>
+            </a>
+
+        </div>
 
     </div>
 
@@ -97,7 +144,7 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
 
     public function getDebugInfo()
     {
-        return array (  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  117 => 33,  112 => 31,  102 => 24,  97 => 22,  87 => 15,  82 => 13,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -112,7 +159,36 @@ class __TwigTemplate_c3aae708e82b595aa1b252965d1e911d extends Template
 
         <h1>Bienvenue dans l'administration du site BIO&VIE</h1>
 
-        
+        <div class=\"container-admin\">
+
+            <a href=\"{{ path(\"app_operateurs_index\") }}\">
+                <div class=\"card\">
+                    <img class=\"img-back\" src=\"{{ asset(\"images/back/artisans.jpg\") }}\" alt=\"Homme souriant avec chapeau de paille tenant un panier de légumes\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Artisans</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href=\"{{ path(\"app_categories_index\") }}\">
+                <div class=\"card\">
+                    <img class=\"img-back\" src=\"{{ asset(\"images/back/categories.jpg\") }}\" alt=\"image avec différentes catégories de produits bio\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Catégories</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href=\"{{ path(\"app_activites_index\") }}\">
+                <div class=\"card\">
+                    <img class=\"img-back\" src=\"{{ asset(\"images/back/activites.jpg\") }}\" alt=\"image avec différentes activités et types de circuits de distributions de produits bio\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Activités</h5>
+                    </div>
+                </div>
+            </a>
+
+        </div>
 
     </div>
 

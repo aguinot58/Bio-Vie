@@ -30,18 +30,6 @@ class CategoriesType extends AbstractType
                 ],
                 'label' => 'Nom : ',
             ])
-            ->add('operateur', EntityType::class, [
-                // looks for choices from this entity
-                'class' => Operateurs::class,
-                // uses the User.username property as the visible option string
-                'choice_label' => 'raison_sociale',
-                // used to render a select box, check boxes or radios
-                'multiple' => true,
-                'label' => 'Opérateurs : ',
-                'attr' => [
-                    'class' => 'input-form',
-                ],
-            ]);
         ;
     }
 

@@ -49,6 +49,7 @@ header .barre-nav .lien-nav {
   text-decoration: none;
   font-family: 'montserrat-regular';
   color: black;
+  font-size: 16px;
 }
 header .barre-nav .lien-nav :visited {
   color: black;
@@ -60,7 +61,7 @@ header .barre-nav .sep-nav {
 header .nom-site {
   text-decoration: none;
   font-family: 'montserrat-black';
-  font-size: 22px;
+  font-size: 24px;
   color: black;
 }
 header .nom-site :visited {
@@ -300,12 +301,14 @@ header .nom-site :visited {
   font-family: 'montserrat-bold';
   font-size: clamp(0.75vmin, 1.75vmin, 6vmin);
   font-weight: bold;
+  text-align: center;
 }
 #section-artisans .container .container-artisans .card a .card-body .card-infos {
   display: flex;
   flex-direction: column;
   padding: 2vh 0vw;
   align-items: center;
+  text-align: center;
   font-size: clamp(0.75vmin, 2vmin, 6vmin);
   color: black;
 }
@@ -355,33 +358,126 @@ header .nom-site :visited {
 }
 #section-contact {
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   background-image: url(../images/contact/bandeau-desktop.jpg);
   background-repeat: no-repeat;
-  background-position: left 0 top -80px;
+  background-position: left -10px top -90px;
+  padding-top: 13vh;
 }
-#section-contact .container {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+#section-contact .container-formulaire {
+  width: 40%;
+  margin-left: 19.5vw;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
 }
-#section-contact .container .formulaire {
-  width: 62%;
-  margin-top: 20vh;
-}
-#section-contact .container .disposition-droite {
+#section-contact .container-formulaire .formulaire {
+  width: 80%;
+  height: 58vh;
+  padding: 6vh 3.5vw;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 32%;
-  margin-top: 10vh;
-  box-sizing: content-box;
-  box-shadow: 0px 0px 3px 5px rgba(226, 226, 226, 0.5);
+  background-color: white;
 }
-#section-contact .container .disposition-droite .infos-droite {
+#section-contact .container-formulaire .formulaire h1 {
+  font-size: clamp(3vmin, 5.25vh, 8vmin);
+  font-family: 'montserrat-black';
+  margin-bottom: 4vh;
+  color: #2a2d34;
+}
+#section-contact .container-formulaire .formulaire form {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+#section-contact .container-formulaire .formulaire form .double-input-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+#section-contact .container-formulaire .formulaire form .double-input-row .input-form {
+  box-sizing: border-box;
+  color: black;
+  height: 2vh;
+  font-size: clamp(1vmin, 1.75vh, 4vmin);
+  font-family: 'montserrat-regular';
+  background-color: #dfe8e7;
+  border: none;
+  padding: 2vh 1vw;
+}
+#section-contact .container-formulaire .formulaire form .double-input-row #form_nom {
+  width: 15.6vw;
+}
+#section-contact .container-formulaire .formulaire form .double-input-row #form_prenom {
+  width: 15.6vw;
+}
+#section-contact .container-formulaire .formulaire form .double-input-row #form_email {
+  width: 19.2vw;
+}
+#section-contact .container-formulaire .formulaire form .double-input-row #form_telephone {
+  width: 12vw;
+}
+#section-contact .container-formulaire .formulaire form .single-input-row .input-form {
+  box-sizing: border-box;
+  width: 100%;
+  color: black;
+  height: 2vh;
+  font-size: clamp(1vmin, 1.75vh, 4vmin);
+  font-family: 'montserrat-regular';
+  background-color: #dfe8e7;
+  border: none;
+  padding: 2vh 1vw;
+}
+#section-contact .container-formulaire .formulaire form .single-input-row .textarea-form {
+  box-sizing: border-box;
+  width: 100%;
+  color: black;
+  line-height: 2vh;
+  font-size: clamp(1vmin, 1.75vh, 4vmin);
+  font-family: 'montserrat-regular';
+  background-color: #dfe8e7;
+  border: none;
+  padding: 1vh 1vw;
+}
+#section-contact .container-formulaire .formulaire form ::placeholder {
+  color: black;
+  background-color: #dfe8e7;
+  line-height: 3vh;
+}
+#section-contact .container-formulaire .formulaire form .envoyer {
+  bottom: 15px;
+  width: 55%;
+  height: 5vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: clamp(1.5vmin, 2vh, 6vmin);
+  font-family: 'montserrat-regular';
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+#section-contact .container-formulaire .formulaire form .envoyer i {
+  margin-right: 5px;
+}
+#section-contact .disposition-droite {
+  position: absolute;
+  top: 18vh;
+  right: 15vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 27%;
+  box-sizing: content-box;
+  box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
+}
+#section-contact .disposition-droite .infos-droite {
   min-height: 20vh;
   width: 100%;
   display: flex;
@@ -389,16 +485,16 @@ header .nom-site :visited {
   flex-wrap: nowrap;
   background-color: #202327;
   color: white;
-  padding: 7vh 0;
+  padding: 7vh 0vw;
 }
-#section-contact .container .disposition-droite .infos-droite h2 {
+#section-contact .disposition-droite .infos-droite h2 {
   color: #93ffe9;
   margin-bottom: 3vh;
-  font-size: clamp(2vmin, 3vmin, 8vmin);
+  font-size: clamp(1vmin, 2.5vmin, 8vmin);
   font-family: 'montserrat-black';
   margin-left: 3.5vw;
 }
-#section-contact .container .disposition-droite .infos-droite .infos {
+#section-contact .disposition-droite .infos-droite .infos {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -406,18 +502,22 @@ header .nom-site :visited {
   align-items: center;
   margin-left: 3.5vw;
 }
-#section-contact .container .disposition-droite .infos-droite .infos i {
+#section-contact .disposition-droite .infos-droite .infos i {
   width: 2vw;
 }
-#section-contact .container .disposition-droite .infos-droite .infos p {
+#section-contact .disposition-droite .infos-droite .infos p {
   font-size: clamp(1vmin, 2.25vmin, 4vmin);
   font-family: 'montserrat-regular';
   margin-left: 0.9vw;
 }
-#section-contact .container .disposition-droite .map-droite iframe {
+#section-contact .disposition-droite .map-droite {
   box-sizing: border-box;
+  height: 42vh;
+}
+#section-contact .disposition-droite .map-droite iframe {
   width: 100%;
-  height: 40vh;
+  height: 100%;
+  border: none;
 }
 #section-fiche-artisan {
   width: 100%;

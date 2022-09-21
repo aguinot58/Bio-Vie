@@ -1,3 +1,17 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <div class="double-input-row">
+        {{ form_row(form.nom) }}
+        {{ form_row(form.prenom) }}
+    </div>
+    <div class="double-input-row">
+        {{ form_row(form.email) }}
+        {{ form_row(form.telephone) }}
+    </div>
+    <div class="single-input-row">
+        {{ form_row(form.sujet) }}
+    </div>
+    <div class="single-input-row">
+        {{ form_row(form.message) }}
+    </div>
+    <button class="btn envoyer"><i class="fa-solid fa-paper-plane"></i>{{ button_label|default('Envoyer') }}</button>
 {{ form_end(form) }}

@@ -35,6 +35,7 @@ header{
             text-decoration: none;
             font-family: @fontR;
             color: black;
+            font-size: 16px;
             :visited{
                 color: black;
             }
@@ -47,7 +48,7 @@ header{
     .nom-site{
         text-decoration: none;
         font-family: @fontB;
-        font-size: 22px;
+        font-size: 24px;
         color: black;
         :visited{
             color: black;
@@ -288,12 +289,14 @@ header{
                             font-family: @fontG;
                             font-size: clamp( 0.75vmin, 1.75vmin, 6vmin);
                             font-weight: bold;
+                            text-align: center;
                         }
                         .card-infos{
                             display: flex;
                             flex-direction: column;
                             padding: 2vh 0vw;
                             align-items: center;
+                            text-align: center;
                             font-size: clamp( 0.75vmin, 2vmin, 6vmin);
                             color: black;
                             .gras{
@@ -352,66 +355,165 @@ header{
 
 #section-contact{
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     background-image: url(./../images/contact/bandeau-desktop.jpg);
     background-repeat: no-repeat;
-    background-position: left 0 top -80px;
-    .container{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+    background-position: left -10px top -90px;
+    padding-top: 13vh;
+    .container-formulaire{
+        width: 40%;
+        margin-left: 19.5vw;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
         .formulaire{
-            width: 62%;
-            margin-top: 20vh;
-        }
-        .disposition-droite{
+            width: 80%;
+            height: 58vh;
+            padding: 6vh 3.5vw;
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
-            width: 32%;
-            margin-top: 10vh;
-            box-sizing: content-box;
-            box-shadow: 0px 0px 3px 5px rgba(226, 226, 226, 0.5);
-            .infos-droite{
-                min-height: 20vh;
+            background-color: white;
+            h1{
+                font-size: clamp( 3vmin, 5.25vh, 8vmin);
+                font-family: @fontB;
+                margin-bottom: 4vh;
+                color: #2a2d34;
+            }
+            form{
                 width: 100%;
+                height: 50vh;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
-                background-color: @Couleur4;
-                color: white;
-                padding: 7vh 0;
-                h2{
-                    color: @Couleur1;
-                    margin-bottom: 3vh;
-                    font-size: clamp( 2vmin, 3vmin, 8vmin);
-                    font-family: @fontB;
-                    margin-left: 3.5vw;
-                }
-                .infos{
+                justify-content: space-between;
+                .double-input-row{
                     display: flex;
                     flex-direction: row;
                     flex-wrap: nowrap;
-                    margin-bottom: 1vh;
-                    align-items: center;
-                    margin-left: 3.5vw;
-                    i{
-                        width: 2vw;
-                    }
-                    p{
-                        font-size: clamp( 1vmin, 2.25vmin, 4vmin);
+                    justify-content: space-between;
+                    .input-form{
+                        box-sizing: border-box;
+                        color: black;
+                        height: 2vh;
+                        font-size: clamp( 1vmin, 1.75vh, 4vmin);
                         font-family: @fontR;
-                        margin-left: 0.9vw;
+                        background-color: #dfe8e7;
+                        border: none;
+                        padding: 2vh 1vw;
+                    }
+                    #form_nom{
+                        width: 15.6vw;
+                    }
+                    #form_prenom{
+                        width: 15.6vw;
+                    }
+                    #form_email{
+                        width: 19.2vw;
+                    }
+                    #form_telephone{
+                        width: 12vw;
+                    }
+                }
+                .single-input-row{
+                    .input-form{
+                        box-sizing: border-box;
+                        width: 100%;
+                        color: black;
+                        height: 2vh;
+                        font-size: clamp( 1vmin, 1.75vh, 4vmin);
+                        font-family: @fontR;
+                        background-color: #dfe8e7;
+                        border: none;
+                        padding: 2vh 1vw;
+                    }
+                    .textarea-form{
+                        box-sizing: border-box;
+                        width: 100%;
+                        color: black;
+                        line-height: 2vh;
+                        font-size: clamp( 1vmin, 1.75vh, 4vmin);
+                        font-family: @fontR;
+                        background-color: #dfe8e7;
+                        border: none;
+                        padding: 1vh 1vw;
+                    }
+                }
+                ::placeholder{
+                    color: black;
+                    background-color: #dfe8e7;
+                    line-height: 3vh;
+                }
+                .envoyer{
+                    bottom: 15px;
+                    width: 55%;
+                    height: 5vh;
+                    background-color: black;
+                    color: white;
+                    text-align: center;
+                    font-size: clamp( 1.5vmin, 2vh, 6vmin);
+                    font-family: @fontR;
+                    margin-top: 3vh;
+                    margin-left: auto;
+                    margin-right: auto;
+                    i{
+                        margin-right: 5px;
                     }
                 }
             }
-            .map-droite iframe{
-                box-sizing: border-box;
+        }
+    }
+    .disposition-droite{
+        position: absolute;
+        top: 18vh;
+        right: 15vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 27%;
+        box-sizing: content-box;
+        box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
+        .infos-droite{
+            min-height: 20vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            background-color: @Couleur4;
+            color: white;
+            padding: 7vh 0vw;
+            h2{
+                color: @Couleur1;
+                margin-bottom: 3vh;
+                font-size: clamp( 1vmin, 2.5vmin, 8vmin);
+                font-family: @fontB;
+                margin-left: 3.5vw;
+            }
+            .infos{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                margin-bottom: 1vh;
+                align-items: center;
+                margin-left: 3.5vw;
+                i{
+                    width: 2vw;
+                }
+                p{
+                    font-size: clamp( 1vmin, 2.25vmin, 4vmin);
+                    font-family: @fontR;
+                    margin-left: 0.9vw;
+                }
+            }
+        }
+        .map-droite{ 
+            box-sizing: border-box;
+            height: 42vh;
+            iframe{
                 width: 100%;
-                height: 40vh;
+                height: 100%;
+                border: none;
             }
         }
     }

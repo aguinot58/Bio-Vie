@@ -13,7 +13,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     header{
-        width: 20%;
+        min-width: 20%;
         height: 100%;
         background-color: @Couleur3;
         .container{
@@ -70,6 +70,11 @@
         h1{
             font-family: @fontM;
             margin-bottom: 10vh;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: clamp( 0.5vw, 2vw, 4vw);
+            text-align: center;
         }
         a{
             font-family: @fontR;
@@ -108,8 +113,9 @@
                     display: flex;
                     flex-direction: row;
                     flex-wrap: nowrap;
-                    width: 20%;
+                    width: 30%;
                     justify-content: space-around;
+                    padding: 0 2vw;
                     form{
                         justify-content: space-evenly;
                     }
@@ -170,7 +176,87 @@
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
+            width: 80%;
+            align-items: center;
+            padding: 1vh 1.5vw;
+            #operateurs{
+                height: 55vh;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                div{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+            }
+            .sauvegarde{
+                margin-top: 5vh;
+                width: 25%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: clamp( 1vmin, 2vmin, 6vmin);
+                background-color: @Couleur2;
+                font-family: @fontR;
+                padding: 0.75vh 1vw;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
 
+            }
+            .input-form{
+                font-size: clamp( 1.25vh, 1vw, 3vw);
+                width: 20vw;
+                line-height: 3vh;
+            }
+            label{
+                font-size: clamp( 1vmin, 2vmin, 6vmin);
+                margin-right: 1vh;
+                width: 13vw;
+                line-height: 3vh;
+            }
+        }
+        .container-admin{
+            height: 75%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            a{
+                text-decoration: none;
+            }
+            .card{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.75);
+                justify-content: space-between;
+                .img-back{
+                    width: 300px;
+                    height: auto;
+                    border-radius: 10px 0 0 10px;
+                }
+                .card-body{
+                    width: 8vw;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    padding: 2vh 2vw;
+                    justify-content: center;
+                    align-items: center;
+                    border-left: 1px solid black;
+                    .card-title{
+                        font-size: clamp( 1vmin, 2vmin, 6vmin);
+                        font-family: @fontR;
+                    }
+                }
+            }
         }
     }
 }

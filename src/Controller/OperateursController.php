@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
+
 #[Route('/operateurs')]
 class OperateursController extends AbstractController
 {
@@ -50,6 +51,7 @@ class OperateursController extends AbstractController
     public function new(Request $request, OperateursRepository $operateursRepository): Response
     {
         $operateur = new Operateurs();
+        $operateur->setDateMAJ(new \DateTime('now'));
         $form = $this->createForm(OperateursType::class, $operateur);
         $form->handleRequest($request);
 

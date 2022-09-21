@@ -8,7 +8,36 @@
 
         <h1>Bienvenue dans l'administration du site BIO&VIE</h1>
 
-        
+        <div class="container-admin">
+
+            <a href="{{ path("app_operateurs_index") }}">
+                <div class="card">
+                    <img class="img-back" src="{{ asset("images/back/artisans.jpg") }}" alt="Homme souriant avec chapeau de paille tenant un panier de légumes">
+                    <div class="card-body">
+                        <h5 class="card-title">Artisans</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ path("app_categories_index") }}">
+                <div class="card">
+                    <img class="img-back" src="{{ asset("images/back/categories.jpg") }}" alt="image avec différentes catégories de produits bio">
+                    <div class="card-body">
+                        <h5 class="card-title">Catégories</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ path("app_activites_index") }}">
+                <div class="card">
+                    <img class="img-back" src="{{ asset("images/back/activites.jpg") }}" alt="image avec différentes activités et types de circuits de distributions de produits bio">
+                    <div class="card-body">
+                        <h5 class="card-title">Activités</h5>
+                    </div>
+                </div>
+            </a>
+
+        </div>
 
     </div>
 

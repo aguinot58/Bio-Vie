@@ -28,6 +28,7 @@ class ContactController extends AbstractController
                 ],
                 'attr' => [
                     'placeholder' => 'Nom',
+                    'class' => 'input-form',
                 ],
                 'label' => ' ',
             ])
@@ -38,7 +39,8 @@ class ContactController extends AbstractController
                     new NotBlank(),
                 ],
                 'attr' => [
-                    'placeholder' => 'Prénom'
+                    'placeholder' => 'Prénom',
+                    'class' => 'input-form',
                 ],
                 'label' => ' ',
             ])
@@ -49,7 +51,8 @@ class ContactController extends AbstractController
                     new NotBlank(),
                 ],
                 'attr' => [
-                    'placeholder' => 'Email'
+                    'placeholder' => 'Email',
+                    'class' => 'input-form',
                 ],
                 'label' => ' ',
             ])
@@ -60,7 +63,8 @@ class ContactController extends AbstractController
                     new NotBlank(),
                 ],
                 'attr' => [
-                    'placeholder' => 'Téléphone'
+                    'placeholder' => 'Téléphone',
+                    'class' => 'input-form',
                 ],
                 'label' => ' ',
             ])
@@ -71,7 +75,8 @@ class ContactController extends AbstractController
                     new NotBlank(),
                 ],
                 'attr' => [
-                    'placeholder' => 'Sujet de votre message'
+                    'placeholder' => 'Sujet de votre message',
+                    'class' => 'input-form',
                 ],
                 'label' => ' ',
             ])
@@ -84,10 +89,10 @@ class ContactController extends AbstractController
                 'attr' => [
                     'placeholder' => 'Message',
                     'rows' => '5',
+                    'class' => 'textarea-form',
                 ],
                 'label' => ' ',
             ])
-            ->add('Envoyer', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);

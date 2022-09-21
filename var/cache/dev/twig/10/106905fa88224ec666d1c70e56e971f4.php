@@ -59,7 +59,7 @@ class __TwigTemplate_9d9746c3705c162e445fd1dffc304242 extends Template
         echo "
     <section id=\"section-contact\">
 
-        <div class=\"container\">
+        <div class=\"container-formulaire\">
 
             <div class=\"formulaire\">
                 <h1>CONTACTEZ-NOUS</h1>
@@ -69,28 +69,30 @@ class __TwigTemplate_9d9746c3705c162e445fd1dffc304242 extends Template
         echo "
             </div>
 
-            <div class=\"disposition-droite\">
+        </div>
 
-                <div class=\"infos-droite\">
-                    <h2>NOS INFORMATIONS</h2>
-                    <div class=\"mail infos\">
-                        <i class=\"fa-sharp fa-solid fa-envelope-open-text\"></i>
-                        <p>contact@bio-et-vie.fr</p>
-                    </div>
-                    <div class=\"fixe infos\">
-                        <i class=\"fa-solid fa-phone-flip\"></i>
-                        <p>04 75 25 53 00</p>
-                    </div>
-                    <div class=\"mobile infos\">
-                        <i class=\"fa-solid fa-mobile-screen-button\"></i>
-                        <p>06 68 54 78 00</p>
-                    </div>
+        <div class=\"disposition-droite\">
+
+            <div class=\"infos-droite\">
+
+                <h2>NOS INFORMATIONS</h2>
+
+                <div class=\"mail infos\">
+                    <i class=\"fa-sharp fa-solid fa-envelope-open-text\"></i>
+                    <p>contact@bio-et-vie.fr</p>
                 </div>
+                <div class=\"fixe infos\">
+                    <i class=\"fa-solid fa-phone-flip\"></i>
+                    <p>04 75 25 53 00</p>
+                </div>
+                <div class=\"mobile infos\">
+                    <i class=\"fa-solid fa-mobile-screen-button\"></i>
+                    <p>06 68 54 78 00</p>
+                </div>
+            </div>
             
-                <div class=\"map-droite\">
-                    <iframe src=\"https://www.google.com/maps/d/embed?mid=1939EUGCct0qvSjHoL6gfEzOAl8ZeNXM&ehbc=2E312F\"></iframe>
-                </div>
-
+            <div class=\"map-droite\">
+                <iframe src=\"https://www.google.com/maps/d/embed?mid=1939EUGCct0qvSjHoL6gfEzOAl8ZeNXM&ehbc=2E312F\"></iframe>
             </div>
 
         </div>
@@ -126,35 +128,37 @@ class __TwigTemplate_9d9746c3705c162e445fd1dffc304242 extends Template
 
     <section id=\"section-contact\">
 
-        <div class=\"container\">
+        <div class=\"container-formulaire\">
 
             <div class=\"formulaire\">
                 <h1>CONTACTEZ-NOUS</h1>
                 {{ include('contact/_form.html.twig') }}
             </div>
 
-            <div class=\"disposition-droite\">
+        </div>
 
-                <div class=\"infos-droite\">
-                    <h2>NOS INFORMATIONS</h2>
-                    <div class=\"mail infos\">
-                        <i class=\"fa-sharp fa-solid fa-envelope-open-text\"></i>
-                        <p>contact@bio-et-vie.fr</p>
-                    </div>
-                    <div class=\"fixe infos\">
-                        <i class=\"fa-solid fa-phone-flip\"></i>
-                        <p>04 75 25 53 00</p>
-                    </div>
-                    <div class=\"mobile infos\">
-                        <i class=\"fa-solid fa-mobile-screen-button\"></i>
-                        <p>06 68 54 78 00</p>
-                    </div>
+        <div class=\"disposition-droite\">
+
+            <div class=\"infos-droite\">
+
+                <h2>NOS INFORMATIONS</h2>
+
+                <div class=\"mail infos\">
+                    <i class=\"fa-sharp fa-solid fa-envelope-open-text\"></i>
+                    <p>contact@bio-et-vie.fr</p>
                 </div>
+                <div class=\"fixe infos\">
+                    <i class=\"fa-solid fa-phone-flip\"></i>
+                    <p>04 75 25 53 00</p>
+                </div>
+                <div class=\"mobile infos\">
+                    <i class=\"fa-solid fa-mobile-screen-button\"></i>
+                    <p>06 68 54 78 00</p>
+                </div>
+            </div>
             
-                <div class=\"map-droite\">
-                    <iframe src=\"https://www.google.com/maps/d/embed?mid=1939EUGCct0qvSjHoL6gfEzOAl8ZeNXM&ehbc=2E312F\"></iframe>
-                </div>
-
+            <div class=\"map-droite\">
+                <iframe src=\"https://www.google.com/maps/d/embed?mid=1939EUGCct0qvSjHoL6gfEzOAl8ZeNXM&ehbc=2E312F\"></iframe>
             </div>
 
         </div>

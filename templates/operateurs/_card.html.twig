@@ -1,6 +1,7 @@
 <div class="card">
     <a href="{{ path("artisan") }}/{{ operateur.id }}/{{ operateur.categories|first }}">
         <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ operateur.categories|first }}{{ ("_gris.png") }}" alt="icône de la catégorie {{ operateur.categories|first }}">
+        
         <div class="card-body">
             <h5 class="card-title">{{ operateur.raisonSociale }}</h5>
             <div class="card-infos">

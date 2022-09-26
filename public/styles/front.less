@@ -1,7 +1,7 @@
 @import "variables";
 @import "fonts";
 
-*{
+*, body{
     margin: 0;
     padding: 0;
 }
@@ -26,34 +26,40 @@ header{
         margin-right: auto;
         justify-content: space-between;
         align-items: center;
-    }
-    .barre-nav{
-        display: flex;
-        flex-direction: row;
-        align-content: space-around;
-        .lien-nav {
+        nav{
+            .barre-nav{
+                display: flex;
+                flex-direction: row;
+                align-content: space-around;
+                .lien-nav {
+                    text-decoration: none;
+                    font-family: @fontR;
+                    color: black;
+                    font-size: 1.5vmin;
+                    :visited{
+                        color: black;
+                    }
+                }
+                .sep-nav{
+                    margin-left: 2vw;
+                    margin-right: 2vw;
+                }
+            }
+        }
+        .nom-site{
             text-decoration: none;
-            font-family: @fontR;
+            font-family: @fontB;
+            font-size: 2.75vmin;
             color: black;
-            font-size: 16px;
             :visited{
                 color: black;
             }
         }
-        .sep-nav{
-            margin-left: 2vw;
-            margin-right: 2vw;
-        }
     }
-    .nom-site{
-        text-decoration: none;
-        font-family: @fontB;
-        font-size: 24px;
-        color: black;
-        :visited{
-            color: black;
-        }
-    }
+}
+
+#menuToggle {
+    display: none;
 }
 
 #section-titre{
@@ -95,6 +101,14 @@ header{
     justify-content: center;
     flex-wrap: nowrap;
     box-sizing: border-box;
+    .image{
+        .img-desktop{
+            display: block;
+        }
+        .img-mobile{
+            display: none;
+        }
+    }
     .infos{
         width: 25vw;
         height: 368px;
@@ -142,6 +156,15 @@ header{
             img{
                 z-index: 1;
             }
+            .bande-verte-2{
+                position: absolute;
+                width: 13vw;
+                min-height: 4vh;
+                background-color: @Couleur1;
+                margin-left: -125px;
+                margin-top: -20px;
+                z-index: 25;
+            }
         }
         .infos{
             display: flex;
@@ -174,15 +197,6 @@ header{
         }
     }
 }
-.bande-verte-2{
-    position: absolute;
-    width: 13vw;
-    min-height: 4vh;
-    background-color: @Couleur1;
-    margin-left: 175px;
-    margin-top: -20px;
-    z-index: 25;
-}
 
 
 #section-categories{
@@ -204,24 +218,28 @@ header{
                 border: none;
                 article{
                     background-color: @Couleur4;
-                    padding-left: 4vw;
-                    padding-right: 4vw;
+                    padding-left: 2vw;
+                    padding-right: 2vw;
                     padding-bottom: 4vh;
-                    width: 14.5vw;
+                    width: 19vw;
                     height: 30vh;
                     display: flex;
                     flex-direction: column;
                     flex-wrap: nowrap;
                     align-items: center;
                     justify-content: flex-end;
+                    .img-cat{
+                        margin-bottom: -4vh;
+                    }
                     p{
                         color: @Couleur1;
-                        font-family: @fontG;
+                        font-family: @fontB;
                         background-color: @Couleur4;
                         font-size: clamp( 1vmin, 3vmin, 6vmin);
                         text-align: center;
-                        padding-top: 1.5vh;
+                        padding-top: 2.75vh;
                     }
+                    
                 }
                 article:hover{
                     background-color: @Couleur3;
@@ -231,6 +249,15 @@ header{
                         color: white;
                     }
                 }
+                .cercle {
+                    position: relative;
+                    border-radius: 50%;
+                    width: 55px;
+                    height: 55px;
+                    background-color: rgba(152, 214, 214, 0.25);
+                    top: 0%;
+                    left: -13.5%;
+                }
             }
         }
     }
@@ -238,8 +265,9 @@ header{
 
 #section-artisans{
     width: 100%;
-    height: 160vh;
+    height: auto;
     margin-top: -2vh;
+    padding-bottom: 25vh;
     .container{
         width: 70%;
         margin-left: auto;
@@ -291,6 +319,7 @@ header{
                         flex-direction: column;
                         flex-wrap: nowrap;
                         align-items: center;
+                        justify-content: flex-end;
                         height: 12vh;
                         margin-top: 2vh;
                         h5{
@@ -385,7 +414,7 @@ header{
             flex-wrap: nowrap;
             background-color: white;
             h1{
-                font-size: clamp( 3vmin, 5.25vh, 8vmin);
+                font-size: clamp( 3vmin, 4.5vmin, 6.5vmin);
                 font-family: @fontB;
                 margin-bottom: 4vh;
                 color: #2a2d34;
@@ -531,33 +560,32 @@ header{
 
 #section-fiche-artisan{
     width: 100%;
-    height: 76vh;
+    height: auto;
     background-image: url(./../images/unique/bandeau-desktop.jpg);
     background-repeat: no-repeat;
-    padding-top: 21vh;
+    padding: 23vmin 0 15vmin 0;
     .container{
-        width: 43%;
+        width: 45%;
         margin-left: auto;
         margin-right: auto;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        top: 22vh;
         box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
         .top-part{
             width: 100%;
-            height: 10vh;
+            height: 10vmin;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
             background-color: @Couleur4;
             color: @Couleur1;
-            padding: 2vh 3vw;
+            padding: 0vmin 2vmin 0vmin 4vmin;
             align-items: center;
             box-sizing: border-box;
             img{
-                margin-right: 1vw;
-                width: 3vw;
+                margin-right: 2.5vmin;
+                width: 8vmin;
             }
             h1{
                 font-family: @fontB;
@@ -567,16 +595,16 @@ header{
         }
         .bottom-part{
             width: 100%;
-            height: 56vh;
+            height: 56vmin;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
             box-sizing: border-box;
             .left-part{
                 background-color: white;
-                width: 60%;
+                width: 55vmin;
                 height: 100%;
-                padding: 3vh 1.5vw 3vh 3vw;
+                padding: 3vh 1.5vw 3vh 2vw;
                 box-sizing: border-box;
                 h3{
                     color: @Couleur2;
@@ -594,11 +622,11 @@ header{
                 }
             }
             .right-part{
-                width: 40%;
+                width: 40vmin;
                 height: 100%;
                 background-color: @Couleur3;
                 color: white;
-                padding: 3vh 1.5vw 3vh 3vw;
+                padding: 3vh 1.5vw 3vh 2vw;
                 box-sizing: border-box;
                 h3{
                     color: @Couleur2;
@@ -622,7 +650,7 @@ header{
 
 footer{
     width: 100%;
-    height: 50vh;
+    height: auto;
     background-image: url(./../images/bandeau-footer.jpg);
     background-repeat: no-repeat;
     .container{
@@ -630,6 +658,7 @@ footer{
         margin-left: auto;
         margin-right: auto;
         padding-top: 15vh;
+        padding-bottom: 15vh;
         .pied{
             width: 25%;
             a{
@@ -651,3 +680,5 @@ footer{
         }
     }
 }
+
+@import "responsiveFront";

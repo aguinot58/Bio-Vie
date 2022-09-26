@@ -1,0 +1,453 @@
+@media all and (max-width:1110px){
+
+    #section-fiche-artisan{
+        height: auto;
+        background-image: url(./../images/unique/bandeau-desktop.jpg);
+        background-position: left 50% top 75%;
+        background-size: cover;
+        padding: 28vh 0 20vh 0;
+        .container{
+            width: 70%;
+            top: 25vh;
+            box-shadow: none;
+            .top-part{
+                width: 100%;
+                height: 16vh;
+                padding: 1vmin 2vmin 0vmin 8vmin;
+                align-items: center;
+                img{
+                    margin-right: 3.75vw;
+                    width: 10vmin;
+                }
+                h1{
+                    font-size: 5vmin;
+                    margin-top: 0vmin;
+                }
+            }
+            .bottom-part{
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                .left-part{
+                    width: 100%;
+                    padding: 7vmin 8vmin 8vmin 6vmin;
+                    h3{
+                        margin-top: 2vh;
+                        font-size: 4.5vmin;
+                    }
+                    p{
+                        font-size: 3vmin;
+                    }
+                    hr{
+                        margin-top: 3.5vh;
+                        margin-bottom: 3.5vh;
+                    }
+                }
+                .right-part{
+                    width: 100%;
+                    padding: 7vmin 8vmin 8vmin 6vmin;
+                    h3{
+                        margin-top: 2vh;
+                        font-size: 4.5vmin;
+                    }
+                    ul{
+                        padding-left: 2vmin;
+                        list-style-type: '- ';
+                    }
+                    p{
+                        font-size: 3vmin;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+@media all and (max-width:656px){
+
+    header{
+        display: none;
+    }
+
+    #menuToggle {
+        display: block;
+        position: sticky;
+        float: right;
+        top: 25px;
+        right: 25px;
+        box-sizing: content-box;
+        z-index: 50;
+        .icon-menu-close{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px @Couleur1 solid;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            i{
+                color: @Couleur1;
+                font-size: 4vw;
+            }
+            input{
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                cursor: pointer;
+                opacity: 0; /* hide this */
+                z-index: 150; /* and place it over the hamburger */
+                :checked ~ #menu{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    z-index: 50;
+                }
+            }
+            #menu{
+                position: absolute;
+                width: 50px;
+                height: 100vh;
+                padding-left: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                list-style-type: none;
+                z-index: 50;
+                right: 100px;
+            }
+        }
+        
+    }
+
+    #section-titre{
+        width: 100%;
+        height: auto;
+        background-image: url(./../images/index/bandeau-mobile.jpg);
+        background-size:auto;
+        padding: 40vh 0 35vh 0;
+        .container{
+            h1{
+                font-size: clamp( 6vmin, 14.5vmin, 16vmin);
+            }
+            h3{
+                font-size: clamp( 2vmin, 6vmin, 10vmin);
+            }
+            .sous-titre{
+                margin-top: 0vh;
+                margin-bottom: 0vh;
+            }
+        }
+    }
+
+    #section-nombre{
+        width: 100%;   
+        position:relative;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        .image{
+            .img-desktop{
+                display: none;
+            }
+            .img-mobile{
+                display: block;
+                width: 100%;
+            }
+        }
+        .infos{
+            width: 100%;
+            height: 50vh;
+            padding: 10vh 0 5vh 0;
+            img{
+                width: 75px;
+            }
+            p{
+                font-size: 2.5vh;
+            }
+            .nombre{
+                font-size: 8vh;
+                margin-top: -10px;
+            }
+            #img-France{
+                margin-top: 8vh;
+            }
+        }
+    }
+
+    #section-presentation{
+        height: auto;
+        margin-top: 0vh;
+        padding-top: 12.5vh;
+        padding-bottom: 12.5vh;
+        .container{
+            width: 80%;
+            flex-direction: column;
+            .image{
+                padding-bottom: 60vmin;
+                img{
+                    width: 100%;
+                }
+                .bande-verte-2{
+                    position: relative;
+                    width: 24vw;
+                    height: 4vmin;
+                    margin-top: -61vmin;
+                    margin-left: 66vmin;
+                    z-index: 15;
+                }
+            }
+            .infos{
+                h2{
+                    font-size: 7vmin;
+                    margin-top: 3vh;
+                }
+                .bande-verte-1{
+                    width: 70vw;
+                    margin-left: -20px;
+                }
+                p{
+                    font-size: 3.5vmin;
+                    margin-top: 2vh;
+                }
+            }
+        }
+        
+    }
+    
+    #section-categories{
+        width: 100%;
+        height: auto;
+        margin-top: 0vh;
+        padding-bottom: 10vh;
+        .container{
+            width: 100%;
+            form{
+                justify-content: center;
+                button{
+                    article{
+                        width: 293px;       
+                    }
+                }
+            }
+        }
+    }
+
+    #section-artisans{
+        width: 100%;
+        height: auto;
+        margin-top: 0vh;
+        padding-bottom: 10vh;
+        .container{
+            width: 90%;
+            h2{
+                font-size: clamp( 2vmin, 7vmin, 10vmin);
+                margin-left: 4vh;
+            }
+            .bande-verte-3{
+                width: 70vw;
+                margin-left: 0px;
+                margin-top: -20px;
+            }
+            .container-artisans{
+                grid-template-columns: repeat(2, 1fr);
+                .card{
+                    padding: 10vh 0 2vh 0;
+                    a{
+                        img{
+                            width: 18vw;
+                        }
+                        .card-body{
+                            margin-top: 4vh;
+                            h5{
+                                font-size: 2.5vmin;
+                            }
+                            .card-infos{
+                                font-size: 2.5vmin;
+                                .gras{
+                                    font-size: 2.25vmin;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            ul{
+                li{
+                    a{
+                        font-size:3.5vmin;
+                    }
+                }
+                .active a{
+                    color: @Couleur2;
+                }
+                :hover:not(.active){
+                    background-color: @Couleur2;
+                }
+            }
+        }
+    }
+    .bande-verte-4{
+        display: none;
+    }
+
+    #section-fiche-artisan{
+        height: auto;
+        background-image: url(./../images/unique/bandeau-mobile.jpg);
+        background-position: left 50% top 75%;
+        background-size: cover;
+        padding: 28vh 0 20vh 0;
+        .container{
+            width: 90%;
+            top: 25vh;
+            box-shadow: none;
+            .top-part{
+                width: 100%;
+                height: 16vh;
+                padding: 1vmin 2vmin 0vmin 8vmin;
+                align-items: center;
+                img{
+                    margin-right: 3.75vw;
+                    width: 10vmin;
+                }
+                h1{
+                    font-size: 5vmin;
+                    margin-top: 0vmin;
+                }
+            }
+            .bottom-part{
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                .left-part{
+                    width: 100%;
+                    padding: 7vmin 8vmin 8vmin 6vmin;
+                    h3{
+                        margin-top: 2vh;
+                        font-size: 4.5vmin;
+                    }
+                    p{
+                        font-size: 3vmin;
+                    }
+                    hr{
+                        margin-top: 3.5vh;
+                        margin-bottom: 3.5vh;
+                    }
+                }
+                .right-part{
+                    width: 100%;
+                    padding: 7vmin 8vmin 8vmin 6vmin;
+                    h3{
+                        margin-top: 2vh;
+                        font-size: 4.5vmin;
+                    }
+                    ul{
+                        padding-left: 2vmin;
+                        list-style-type: '- ';
+                    }
+                    p{
+                        font-size: 3vmin;
+                    }
+                }
+            }
+        }
+    }
+
+    #section-contact{
+        height: auto;
+        padding-top: 18vh;
+        padding-bottom: 76vh;
+        background-image: url(./../images/contact/bandeau-desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: left 0px top -90px;
+        background-size: cover;
+        .container-formulaire{
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            .formulaire{
+                width: 100%;
+                form{
+                    .double-input-row{
+                        #form_nom{
+                            width: 45.6vmin;
+                        }
+                        #form_prenom{
+                            width: 45.6vmin;
+                        }
+                        #form_email{
+                            width: 54.2vw;
+                        }
+                        #form_telephone{
+                            width: 37vw;
+                        }
+                    }
+                }
+            }
+        }
+        .disposition-droite{
+            position: absolute;
+            top: 88vh;
+            right: 0vw;
+            width: 100%;
+            box-sizing: content-box;
+            box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
+            .infos-droite{
+                min-height: 20vh;
+                width: 80%;
+                padding: 7vh 10vw;
+                h2{
+                    margin-bottom: 3vh;
+                    font-size: 5vmin;
+                }
+                .infos{
+                    p{
+                        font-size: 3.25vmin;
+                        margin-left: 20px;
+                    }
+                }
+            }
+            .map-droite{ 
+                box-sizing: border-box;
+                height: 42vh;
+                iframe{
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            }
+        }
+    }
+
+
+
+
+    footer{
+        height: auto;
+        background-image: url(./../images/footer-mobile.jpg);
+        background-size: cover;
+        background-position: left 70% top -15%;
+        .container{
+            padding-top: 20vh;
+            padding-bottom: 20vh;
+            .pied{
+                width: 50%;
+                h2{
+                    font-size: 12vmin;
+                    margin-bottom: 2vh;
+                }
+                p{
+                    font-size: 4vmin;
+                    margin-bottom: 2vh;
+                }
+            }
+        }
+    }
+
+}

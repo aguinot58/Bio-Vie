@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        
-
         <script src="{{ asset('javascript/front.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('styles/front.css') }}">
 
@@ -30,15 +28,31 @@
                 <div class="site">
                     <a class="nom-site" href="/"><p>BIO&VIE</p></a>
                 </div>
-                <div class="barre-nav">
-                    <a class="lien-nav" href="/"><p>ACCUEIL</p></a>
-                    <p class="sep-nav">|</p>
-                    <a class="lien-nav" href="/#section-categories"><p>NOS PROFESSIONNELS</p></a>
-                    <p class="sep-nav">|</p>
-                    <a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a>
-                </div>
+                <nav>
+                    <div class="barre-nav">
+                        <a class="lien-nav" href="/"><p>ACCUEIL</p></a>
+                        <p class="sep-nav">|</p>
+                        <a class="lien-nav" href="/#section-categories"><p>NOS PROFESSIONNELS</p></a>
+                        <p class="sep-nav">|</p>
+                        <a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a>
+                    </div>
+                </nav>
             </div>
         </header>
+
+        <div id="menuToggle">
+            <div class="icon-menu-close">
+                <input type="checkbox"/>
+                <i class="fa-solid fa-bars"></i>
+                <ul id="menu">
+                    <i class="fa-solid fa-chevron-left icon-menu-open"></i>
+                    <li><h2>BIO&VIE</h2></li>
+                    <li><a class="lien-nav" href="/"><p>ACCUEIL</p></a></li>
+                    <li><a class="lien-nav" href="/#section-categories"><p>NOS PROFESSIONNELS</p></a></li>
+                    <li><a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a></li>
+                </ul>
+            </div>
+        </div>
 
         {% block body %}
         

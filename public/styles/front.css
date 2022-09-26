@@ -14,7 +14,8 @@
   font-family: 'montserrat-black';
   src: url('../fonts/Montserrat-Black.ttf') format('truetype');
 }
-* {
+*,
+body {
   margin: 0;
   padding: 0;
 }
@@ -40,32 +41,35 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
-header .barre-nav {
+header .container nav .barre-nav {
   display: flex;
   flex-direction: row;
   align-content: space-around;
 }
-header .barre-nav .lien-nav {
+header .container nav .barre-nav .lien-nav {
   text-decoration: none;
   font-family: 'montserrat-regular';
   color: black;
-  font-size: 16px;
+  font-size: 1.5vmin;
 }
-header .barre-nav .lien-nav :visited {
+header .container nav .barre-nav .lien-nav :visited {
   color: black;
 }
-header .barre-nav .sep-nav {
+header .container nav .barre-nav .sep-nav {
   margin-left: 2vw;
   margin-right: 2vw;
 }
-header .nom-site {
+header .container .nom-site {
   text-decoration: none;
   font-family: 'montserrat-black';
-  font-size: 24px;
+  font-size: 2.75vmin;
   color: black;
 }
-header .nom-site :visited {
+header .container .nom-site :visited {
   color: black;
+}
+#menuToggle {
+  display: none;
 }
 #section-titre {
   width: 100%;
@@ -105,6 +109,12 @@ header .nom-site :visited {
   justify-content: center;
   flex-wrap: nowrap;
   box-sizing: border-box;
+}
+#section-nombre .image .img-desktop {
+  display: block;
+}
+#section-nombre .image .img-mobile {
+  display: none;
 }
 #section-nombre .infos {
   width: 25vw;
@@ -154,6 +164,15 @@ header .nom-site :visited {
 #section-presentation .container .image img {
   z-index: 1;
 }
+#section-presentation .container .image .bande-verte-2 {
+  position: absolute;
+  width: 13vw;
+  min-height: 4vh;
+  background-color: #93ffe9;
+  margin-left: -125px;
+  margin-top: -20px;
+  z-index: 25;
+}
 #section-presentation .container .infos {
   display: flex;
   flex-direction: column;
@@ -183,15 +202,6 @@ header .nom-site :visited {
   font-family: 'montserrat-regular';
   color: black;
 }
-.bande-verte-2 {
-  position: absolute;
-  width: 13vw;
-  min-height: 4vh;
-  background-color: #93ffe9;
-  margin-left: 175px;
-  margin-top: -20px;
-  z-index: 25;
-}
 #section-categories {
   width: 100%;
   height: 80vh;
@@ -215,10 +225,10 @@ header .nom-site :visited {
 }
 #section-categories .container form button article {
   background-color: #202327;
-  padding-left: 4vw;
-  padding-right: 4vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
   padding-bottom: 4vh;
-  width: 14.5vw;
+  width: 19vw;
   height: 30vh;
   display: flex;
   flex-direction: column;
@@ -226,13 +236,16 @@ header .nom-site :visited {
   align-items: center;
   justify-content: flex-end;
 }
+#section-categories .container form button article .img-cat {
+  margin-bottom: -4vh;
+}
 #section-categories .container form button article p {
   color: #93ffe9;
-  font-family: 'montserrat-bold';
+  font-family: 'montserrat-black';
   background-color: #202327;
   font-size: clamp(1vmin, 3vmin, 6vmin);
   text-align: center;
-  padding-top: 1.5vh;
+  padding-top: 2.75vh;
 }
 #section-categories .container form button article:hover {
   background-color: #2a2e34;
@@ -242,10 +255,20 @@ header .nom-site :visited {
   background-color: #2a2e34;
   color: white;
 }
+#section-categories .container form button .cercle {
+  position: relative;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background-color: rgba(152, 214, 214, 0.25);
+  top: 0%;
+  left: -13.5%;
+}
 #section-artisans {
   width: 100%;
-  height: 160vh;
+  height: auto;
   margin-top: -2vh;
+  padding-bottom: 25vh;
 }
 #section-artisans .container {
   width: 70%;
@@ -302,6 +325,7 @@ header .nom-site :visited {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: flex-end;
   height: 12vh;
   margin-top: 2vh;
 }
@@ -391,7 +415,7 @@ header .nom-site :visited {
   background-color: white;
 }
 #section-contact .container-formulaire .formulaire h1 {
-  font-size: clamp(3vmin, 5.25vh, 8vmin);
+  font-size: clamp(3vmin, 4.5vmin, 6.5vmin);
   font-family: 'montserrat-black';
   margin-bottom: 4vh;
   color: #2a2d34;
@@ -530,36 +554,35 @@ header .nom-site :visited {
 }
 #section-fiche-artisan {
   width: 100%;
-  height: 76vh;
+  height: auto;
   background-image: url(../images/unique/bandeau-desktop.jpg);
   background-repeat: no-repeat;
-  padding-top: 21vh;
+  padding: 23vmin 0 15vmin 0;
 }
 #section-fiche-artisan .container {
-  width: 43%;
+  width: 45%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  top: 22vh;
   box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
 }
 #section-fiche-artisan .container .top-part {
   width: 100%;
-  height: 10vh;
+  height: 10vmin;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   background-color: #202327;
   color: #93ffe9;
-  padding: 2vh 3vw;
+  padding: 0vmin 2vmin 0vmin 4vmin;
   align-items: center;
   box-sizing: border-box;
 }
 #section-fiche-artisan .container .top-part img {
-  margin-right: 1vw;
-  width: 3vw;
+  margin-right: 2.5vmin;
+  width: 8vmin;
 }
 #section-fiche-artisan .container .top-part h1 {
   font-family: 'montserrat-black';
@@ -568,7 +591,7 @@ header .nom-site :visited {
 }
 #section-fiche-artisan .container .bottom-part {
   width: 100%;
-  height: 56vh;
+  height: 56vmin;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -576,9 +599,9 @@ header .nom-site :visited {
 }
 #section-fiche-artisan .container .bottom-part .left-part {
   background-color: white;
-  width: 60%;
+  width: 55vmin;
   height: 100%;
-  padding: 3vh 1.5vw 3vh 3vw;
+  padding: 3vh 1.5vw 3vh 2vw;
   box-sizing: border-box;
 }
 #section-fiche-artisan .container .bottom-part .left-part h3 {
@@ -596,11 +619,11 @@ header .nom-site :visited {
   margin-bottom: 3.5vh;
 }
 #section-fiche-artisan .container .bottom-part .right-part {
-  width: 40%;
+  width: 40vmin;
   height: 100%;
   background-color: #2a2e34;
   color: white;
-  padding: 3vh 1.5vw 3vh 3vw;
+  padding: 3vh 1.5vw 3vh 2vw;
   box-sizing: border-box;
 }
 #section-fiche-artisan .container .bottom-part .right-part h3 {
@@ -619,7 +642,7 @@ header .nom-site :visited {
 }
 footer {
   width: 100%;
-  height: 50vh;
+  height: auto;
   background-image: url(../images/bandeau-footer.jpg);
   background-repeat: no-repeat;
 }
@@ -628,6 +651,7 @@ footer .container {
   margin-left: auto;
   margin-right: auto;
   padding-top: 15vh;
+  padding-bottom: 15vh;
 }
 footer .container .pied {
   width: 25%;
@@ -647,4 +671,416 @@ footer .container .pied p {
   color: #93ffe9;
   font-family: 'montserrat-regular';
   margin-bottom: 1vh;
+}
+@media all and (max-width: 1110px) {
+  #section-fiche-artisan {
+    height: auto;
+    background-image: url(../images/unique/bandeau-desktop.jpg);
+    background-position: left 50% top 75%;
+    background-size: cover;
+    padding: 28vh 0 20vh 0;
+  }
+  #section-fiche-artisan .container {
+    width: 70%;
+    top: 25vh;
+    box-shadow: none;
+  }
+  #section-fiche-artisan .container .top-part {
+    width: 100%;
+    height: 16vh;
+    padding: 1vmin 2vmin 0vmin 8vmin;
+    align-items: center;
+  }
+  #section-fiche-artisan .container .top-part img {
+    margin-right: 3.75vw;
+    width: 10vmin;
+  }
+  #section-fiche-artisan .container .top-part h1 {
+    font-size: 5vmin;
+    margin-top: 0vmin;
+  }
+  #section-fiche-artisan .container .bottom-part {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part {
+    width: 100%;
+    padding: 7vmin 8vmin 8vmin 6vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part h3 {
+    margin-top: 2vh;
+    font-size: 4.5vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part p {
+    font-size: 3vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part hr {
+    margin-top: 3.5vh;
+    margin-bottom: 3.5vh;
+  }
+  #section-fiche-artisan .container .bottom-part .right-part {
+    width: 100%;
+    padding: 7vmin 8vmin 8vmin 6vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .right-part h3 {
+    margin-top: 2vh;
+    font-size: 4.5vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .right-part ul {
+    padding-left: 2vmin;
+    list-style-type: '- ';
+  }
+  #section-fiche-artisan .container .bottom-part .right-part p {
+    font-size: 3vmin;
+  }
+}
+@media all and (max-width: 656px) {
+  header {
+    display: none;
+  }
+  #menuToggle {
+    display: block;
+    position: sticky;
+    float: right;
+    top: 25px;
+    right: 25px;
+    box-sizing: content-box;
+    z-index: 50;
+  }
+  #menuToggle .icon-menu-close {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px #93ffe9 solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #menuToggle .icon-menu-close i {
+    color: #93ffe9;
+    font-size: 4vw;
+  }
+  #menuToggle .icon-menu-close input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 150;
+    /* and place it over the hamburger */
+  }
+  #menuToggle .icon-menu-close input :checked ~ #menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 50;
+  }
+  #menuToggle .icon-menu-close #menu {
+    position: absolute;
+    width: 50px;
+    height: 100vh;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    list-style-type: none;
+    z-index: 50;
+    right: 100px;
+  }
+  #section-titre {
+    width: 100%;
+    height: auto;
+    background-image: url(../images/index/bandeau-mobile.jpg);
+    background-size: auto;
+    padding: 40vh 0 35vh 0;
+  }
+  #section-titre .container h1 {
+    font-size: clamp(6vmin, 14.5vmin, 16vmin);
+  }
+  #section-titre .container h3 {
+    font-size: clamp(2vmin, 6vmin, 10vmin);
+  }
+  #section-titre .container .sous-titre {
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+  }
+  #section-nombre {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+  }
+  #section-nombre .image .img-desktop {
+    display: none;
+  }
+  #section-nombre .image .img-mobile {
+    display: block;
+    width: 100%;
+  }
+  #section-nombre .infos {
+    width: 100%;
+    height: 50vh;
+    padding: 10vh 0 5vh 0;
+  }
+  #section-nombre .infos img {
+    width: 75px;
+  }
+  #section-nombre .infos p {
+    font-size: 2.5vh;
+  }
+  #section-nombre .infos .nombre {
+    font-size: 8vh;
+    margin-top: -10px;
+  }
+  #section-nombre .infos #img-France {
+    margin-top: 8vh;
+  }
+  #section-presentation {
+    height: auto;
+    margin-top: 0vh;
+    padding-top: 12.5vh;
+    padding-bottom: 12.5vh;
+  }
+  #section-presentation .container {
+    width: 80%;
+    flex-direction: column;
+  }
+  #section-presentation .container .image {
+    padding-bottom: 60vmin;
+  }
+  #section-presentation .container .image img {
+    width: 100%;
+  }
+  #section-presentation .container .image .bande-verte-2 {
+    position: relative;
+    width: 24vw;
+    height: 4vmin;
+    margin-top: -61vmin;
+    margin-left: 66vmin;
+    z-index: 15;
+  }
+  #section-presentation .container .infos h2 {
+    font-size: 7vmin;
+    margin-top: 3vh;
+  }
+  #section-presentation .container .infos .bande-verte-1 {
+    width: 70vw;
+    margin-left: -20px;
+  }
+  #section-presentation .container .infos p {
+    font-size: 3.5vmin;
+    margin-top: 2vh;
+  }
+  #section-categories {
+    width: 100%;
+    height: auto;
+    margin-top: 0vh;
+    padding-bottom: 10vh;
+  }
+  #section-categories .container {
+    width: 100%;
+  }
+  #section-categories .container form {
+    justify-content: center;
+  }
+  #section-categories .container form button article {
+    width: 293px;
+  }
+  #section-artisans {
+    width: 100%;
+    height: auto;
+    margin-top: 0vh;
+    padding-bottom: 10vh;
+  }
+  #section-artisans .container {
+    width: 90%;
+  }
+  #section-artisans .container h2 {
+    font-size: clamp(2vmin, 7vmin, 10vmin);
+    margin-left: 4vh;
+  }
+  #section-artisans .container .bande-verte-3 {
+    width: 70vw;
+    margin-left: 0px;
+    margin-top: -20px;
+  }
+  #section-artisans .container .container-artisans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #section-artisans .container .container-artisans .card {
+    padding: 10vh 0 2vh 0;
+  }
+  #section-artisans .container .container-artisans .card a img {
+    width: 18vw;
+  }
+  #section-artisans .container .container-artisans .card a .card-body {
+    margin-top: 4vh;
+  }
+  #section-artisans .container .container-artisans .card a .card-body h5 {
+    font-size: 2.5vmin;
+  }
+  #section-artisans .container .container-artisans .card a .card-body .card-infos {
+    font-size: 2.5vmin;
+  }
+  #section-artisans .container .container-artisans .card a .card-body .card-infos .gras {
+    font-size: 2.25vmin;
+  }
+  #section-artisans .container ul li a {
+    font-size: 3.5vmin;
+  }
+  #section-artisans .container ul .active a {
+    color: #4accb1;
+  }
+  #section-artisans .container ul :hover:not(.active) {
+    background-color: #4accb1;
+  }
+  .bande-verte-4 {
+    display: none;
+  }
+  #section-fiche-artisan {
+    height: auto;
+    background-image: url(../images/unique/bandeau-mobile.jpg);
+    background-position: left 50% top 75%;
+    background-size: cover;
+    padding: 28vh 0 20vh 0;
+  }
+  #section-fiche-artisan .container {
+    width: 90%;
+    top: 25vh;
+    box-shadow: none;
+  }
+  #section-fiche-artisan .container .top-part {
+    width: 100%;
+    height: 16vh;
+    padding: 1vmin 2vmin 0vmin 8vmin;
+    align-items: center;
+  }
+  #section-fiche-artisan .container .top-part img {
+    margin-right: 3.75vw;
+    width: 10vmin;
+  }
+  #section-fiche-artisan .container .top-part h1 {
+    font-size: 5vmin;
+    margin-top: 0vmin;
+  }
+  #section-fiche-artisan .container .bottom-part {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part {
+    width: 100%;
+    padding: 7vmin 8vmin 8vmin 6vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part h3 {
+    margin-top: 2vh;
+    font-size: 4.5vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part p {
+    font-size: 3vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .left-part hr {
+    margin-top: 3.5vh;
+    margin-bottom: 3.5vh;
+  }
+  #section-fiche-artisan .container .bottom-part .right-part {
+    width: 100%;
+    padding: 7vmin 8vmin 8vmin 6vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .right-part h3 {
+    margin-top: 2vh;
+    font-size: 4.5vmin;
+  }
+  #section-fiche-artisan .container .bottom-part .right-part ul {
+    padding-left: 2vmin;
+    list-style-type: '- ';
+  }
+  #section-fiche-artisan .container .bottom-part .right-part p {
+    font-size: 3vmin;
+  }
+  #section-contact {
+    height: auto;
+    padding-top: 18vh;
+    padding-bottom: 76vh;
+    background-image: url(../images/contact/bandeau-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: left 0px top -90px;
+    background-size: cover;
+  }
+  #section-contact .container-formulaire {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #section-contact .container-formulaire .formulaire {
+    width: 100%;
+  }
+  #section-contact .container-formulaire .formulaire form .double-input-row #form_nom {
+    width: 45.6vmin;
+  }
+  #section-contact .container-formulaire .formulaire form .double-input-row #form_prenom {
+    width: 45.6vmin;
+  }
+  #section-contact .container-formulaire .formulaire form .double-input-row #form_email {
+    width: 54.2vw;
+  }
+  #section-contact .container-formulaire .formulaire form .double-input-row #form_telephone {
+    width: 37vw;
+  }
+  #section-contact .disposition-droite {
+    position: absolute;
+    top: 88vh;
+    right: 0vw;
+    width: 100%;
+    box-sizing: content-box;
+    box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
+  }
+  #section-contact .disposition-droite .infos-droite {
+    min-height: 20vh;
+    width: 80%;
+    padding: 7vh 10vw;
+  }
+  #section-contact .disposition-droite .infos-droite h2 {
+    margin-bottom: 3vh;
+    font-size: 5vmin;
+  }
+  #section-contact .disposition-droite .infos-droite .infos p {
+    font-size: 3.25vmin;
+    margin-left: 20px;
+  }
+  #section-contact .disposition-droite .map-droite {
+    box-sizing: border-box;
+    height: 42vh;
+  }
+  #section-contact .disposition-droite .map-droite iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  footer {
+    height: auto;
+    background-image: url(../images/footer-mobile.jpg);
+    background-size: cover;
+    background-position: left 70% top -15%;
+  }
+  footer .container {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
+  footer .container .pied {
+    width: 50%;
+  }
+  footer .container .pied h2 {
+    font-size: 12vmin;
+    margin-bottom: 2vh;
+  }
+  footer .container .pied p {
+    font-size: 4vmin;
+    margin-bottom: 2vh;
+  }
 }

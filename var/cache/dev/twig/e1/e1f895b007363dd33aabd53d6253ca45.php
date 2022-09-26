@@ -54,27 +54,28 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
         echo "\" alt=\"icône de la catégorie ";
         echo twig_escape_filter($this->env, twig_first($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 3, $this->source); })()), "categories", [], "any", false, false, false, 3)), "html", null, true);
         echo "\">
+        
         <div class=\"card-body\">
             <h5 class=\"card-title\">";
-        // line 5
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 5, $this->source); })()), "raisonSociale", [], "any", false, false, false, 5), "html", null, true);
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 6, $this->source); })()), "raisonSociale", [], "any", false, false, false, 6), "html", null, true);
         echo "</h5>
             <div class=\"card-infos\">
                 <p class=\"gras\">";
-        // line 7
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 7, $this->source); })()), "gerant", [], "any", false, false, false, 7)), "html", null, true);
+        // line 8
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "gerant", [], "any", false, false, false, 8)), "html", null, true);
         echo "</p>
                 <p>";
-        // line 8
-        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 0, 2), "html", null, true);
+        // line 9
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 9, $this->source); })()), "telephone", [], "any", false, false, false, 9), 0, 2), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 2, 2), "html", null, true);
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 9, $this->source); })()), "telephone", [], "any", false, false, false, 9), 2, 2), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 4, 2), "html", null, true);
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 9, $this->source); })()), "telephone", [], "any", false, false, false, 9), 4, 2), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 6, 2), "html", null, true);
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 9, $this->source); })()), "telephone", [], "any", false, false, false, 9), 6, 2), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 8, 2), "html", null, true);
+        echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 9, $this->source); })()), "telephone", [], "any", false, false, false, 9), 8, 2), "html", null, true);
         echo "</p>
             </div>
         </div>
@@ -97,7 +98,7 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  69 => 8,  65 => 7,  60 => 5,  51 => 3,  43 => 2,  40 => 1,);
+        return array (  70 => 9,  66 => 8,  61 => 6,  51 => 3,  43 => 2,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -105,6 +106,7 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
         return new Source("<div class=\"card\">
     <a href=\"{{ path(\"artisan\") }}/{{ operateur.id }}/{{ operateur.categories|first }}\">
         <img class=\"img-cat\" src=\"{{ asset(\"images/icons/icon-\")}}{{ operateur.categories|first }}{{ (\"_gris.png\") }}\" alt=\"icône de la catégorie {{ operateur.categories|first }}\">
+        
         <div class=\"card-body\">
             <h5 class=\"card-title\">{{ operateur.raisonSociale }}</h5>
             <div class=\"card-infos\">

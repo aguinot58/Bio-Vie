@@ -269,3 +269,6 @@
   font-size: clamp(1vmin, 2vmin, 6vmin);
   font-family: 'montserrat-regular';
 }
+.container-back header {
+  min-width: 30%;
+}

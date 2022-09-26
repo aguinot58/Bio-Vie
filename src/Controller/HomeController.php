@@ -19,7 +19,7 @@ class HomeController extends AbstractController
      * @Route("/", name="home")
      * 
      */
-    public function home(Request $request, CategoriesRepository $repoCategories, OperateursRepository $repoOperateurs, $page = 1): Response
+    public function home(Request $request, CategoriesRepository $repoCategories, OperateursRepository $repoOperateurs, $page = 1, $cat = null): Response
     {
         $request->getUri();
 
@@ -39,7 +39,7 @@ class HomeController extends AbstractController
 
         /* Liste des catégories */
         $categories = $repoCategories->createQueryBuilder('a')
-            ->select('a.nom')
+            ->select('a.nom, a.id')
             ->getQuery()
             ->getScalarResult();
 
@@ -47,17 +47,25 @@ class HomeController extends AbstractController
         $form = $this->createFormBuilder()
                 ->getForm();
 
-        $cat = '';
         $cat = $request->query->get('categorie');
+
 
         /* Extraction de toutes les artisans */
         // Create our query
-        $query = $repoOperateurs->createQueryBuilder('o')
+        /*$query = $repoOperateurs->createQueryBuilder('o')
             ->orderBy('o.id', 'ASC')
-            ->getQuery();
+            ->getQuery();*/
 
-        $limit = 12;
+        $query = $repoOperateurs->createQueryBuilder('o');
+        if ($cat != '') {
+            $query->where(':category MEMBER OF o.categories');  
+            $query->setParameter("category", $cat);
+        }
+        $query->orderBy('o.id', 'ASC');
+        $query->getQuery();
 
+        $limit = 6;
+        
         $paginator = $repoOperateurs->getAllOperateurs($query, $page, $limit);
         $maxPages = ceil($paginator->count() / $limit);
         $thisPage = $page;
@@ -68,7 +76,7 @@ class HomeController extends AbstractController
             'thisPage' => $thisPage,
             'donnees' => $totalOperateurs,
             'categories' => $categories,
-            'operateurs' => $paginator,
+            'operateursFiltered' => $paginator,
             'form' => $form->createView(),
             'cat' => $cat,
         ]);

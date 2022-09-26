@@ -5,17 +5,18 @@
 
         {% if categorie.nom != "En conversion" %}
 
-            <button type="submit" value="{{ categorie.nom }}" name="categorie">
-                <article value="{{ categorie.nom }}" name="categorie">
-                    <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}" value="{{ categorie.nom }}" name="categorie">
-                    <p class="nom-cat" value="{{ categorie.nom }}" name="categorie">{{ categorie.nom }}</p>
+            <button type="submit" value="{{ categorie.id }}" name="categorie">
+                <article value="{{ categorie.id }}" name="categorie">
+                    <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}" value="{{ categorie.id }}" name="categorie">
+                    <div class="cercle"> </div>
+                    <p class="nom-cat" value="{{ categorie.id }}" name="categorie">{{ categorie.nom|upper }}</p>
                 </article>
+                
             </button>
 
         {% endif %}
 
     {% endfor %}
-    <input type="hidden" name="token" value="{{ csrf_token('form') }}" />
 {{ form_end(form) }}
 
 </form>

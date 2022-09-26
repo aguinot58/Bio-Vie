@@ -40,17 +40,6 @@ class OperateursRepository extends ServiceEntityRepository
         }
     }
 
-
-    /**
-    * @return Operateur[] retourne un tableau d'artisans (opérateurs) filtré
-    */
-    public function rechercheFiltre(): array
-    {
-        return $this->findAll();
-
-    }
-
-
     /**
      *
      * 1. Create & pass query to paginate method
@@ -65,13 +54,6 @@ class OperateursRepository extends ServiceEntityRepository
      */
     public function getAllOperateurs($query, $currentPage, $limit)
     {
-        // Create our query
-        $query = $this->createQueryBuilder('o')
-            ->orderBy('o.id', 'ASC')
-            ->getQuery();
-
-        // No need to manually get get the result ($query->getResult())
-
         $paginator = $this->paginate($query, $currentPage, $limit);
 
         return $paginator;

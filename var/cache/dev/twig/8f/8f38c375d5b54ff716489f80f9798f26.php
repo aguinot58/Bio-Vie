@@ -59,11 +59,11 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
                 echo "
             <button type=\"submit\" value=\"";
                 // line 8
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 8), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 8), "html", null, true);
                 echo "\" name=\"categorie\">
                 <article value=\"";
                 // line 9
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 9), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 9), "html", null, true);
                 echo "\" name=\"categorie\">
                     <img class=\"img-cat\" src=\"";
                 // line 10
@@ -73,33 +73,30 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
                 echo "\" alt=\"icône de la catégorie ";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 10), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 10), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 10), "html", null, true);
                 echo "\" name=\"categorie\">
+                    <div class=\"cercle\"> </div>
                     <p class=\"nom-cat\" value=\"";
-                // line 11
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 11), "html", null, true);
+                // line 12
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 12), "html", null, true);
                 echo "\" name=\"categorie\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 11), "html", null, true);
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 12)), "html", null, true);
                 echo "</p>
                 </article>
+                
             </button>
 
         ";
             }
-            // line 16
+            // line 18
             echo "
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 18
-        echo "    <input type=\"hidden\" name=\"token\" value=\"";
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("form"), "html", null, true);
-        echo "\" />
-";
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
         echo "
 
 </form>";
@@ -120,7 +117,7 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
 
     public function getDebugInfo()
     {
-        return array (  102 => 19,  97 => 18,  90 => 16,  80 => 11,  70 => 10,  66 => 9,  62 => 8,  59 => 7,  57 => 6,  54 => 5,  50 => 4,  46 => 3,  40 => 1,);
+        return array (  99 => 20,  92 => 18,  81 => 12,  70 => 10,  66 => 9,  62 => 8,  59 => 7,  57 => 6,  54 => 5,  50 => 4,  46 => 3,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -132,17 +129,18 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
 
         {% if categorie.nom != \"En conversion\" %}
 
-            <button type=\"submit\" value=\"{{ categorie.nom }}\" name=\"categorie\">
-                <article value=\"{{ categorie.nom }}\" name=\"categorie\">
-                    <img class=\"img-cat\" src=\"{{ asset(\"images/icons/icon-\")}}{{ categorie.nom }}{{(\".png\") }}\" alt=\"icône de la catégorie {{ categorie.nom }}\" value=\"{{ categorie.nom }}\" name=\"categorie\">
-                    <p class=\"nom-cat\" value=\"{{ categorie.nom }}\" name=\"categorie\">{{ categorie.nom }}</p>
+            <button type=\"submit\" value=\"{{ categorie.id }}\" name=\"categorie\">
+                <article value=\"{{ categorie.id }}\" name=\"categorie\">
+                    <img class=\"img-cat\" src=\"{{ asset(\"images/icons/icon-\")}}{{ categorie.nom }}{{(\".png\") }}\" alt=\"icône de la catégorie {{ categorie.nom }}\" value=\"{{ categorie.id }}\" name=\"categorie\">
+                    <div class=\"cercle\"> </div>
+                    <p class=\"nom-cat\" value=\"{{ categorie.id }}\" name=\"categorie\">{{ categorie.nom|upper }}</p>
                 </article>
+                
             </button>
 
         {% endif %}
 
     {% endfor %}
-    <input type=\"hidden\" name=\"token\" value=\"{{ csrf_token('form') }}\" />
 {{ form_end(form) }}
 
 </form>", "home/_form.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\home\\_form.html.twig");

@@ -46,7 +46,9 @@ class ActivitesRepository extends ServiceEntityRepository
      * 2. Paginate will return a `\Doctrine\ORM\Tools\Pagination\Paginator` object
      * 3. Return that object to the controller
      *
-     * @param integer $currentPage The current page (passed from controller)
+     * @param Doctrine\ORM\Query $query   DQL Query Object
+     * @param integer            $currentPage  Current page (defaults to 1)
+     * @param integer            $limit The total number per page (defaults to 5)
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */

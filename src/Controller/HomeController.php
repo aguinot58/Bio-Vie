@@ -17,6 +17,7 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * 
      */
     public function home(Request $request, CategoriesRepository $repoCategories, OperateursRepository $repoOperateurs, $page = 1): Response
     {
@@ -34,10 +35,22 @@ class HomeController extends AbstractController
             ->select('count(a.id)')
             ->getQuery()
             ->getSingleScalarResult();
-        
+
+
+        /* Liste des catégories */
+        $categories = $repoCategories->createQueryBuilder('a')
+            ->select('a.nom')
+            ->getQuery()
+            ->getScalarResult();
+
+
+        $form = $this->createFormBuilder()
+                ->getForm();
+
+        $cat = '';
+        $cat = $request->query->get('categorie');
 
         /* Extraction de toutes les artisans */
-
         // Create our query
         $query = $repoOperateurs->createQueryBuilder('o')
             ->orderBy('o.id', 'ASC')
@@ -49,12 +62,6 @@ class HomeController extends AbstractController
         $maxPages = ceil($paginator->count() / $limit);
         $thisPage = $page;
 
-        /* Liste des catégories */
-        $categories = $repoCategories->createQueryBuilder('a')
-            ->select('a.nom')
-            ->getQuery()
-            ->getScalarResult();
-
         return $this->render('home/home.html.twig', [
             'controller_name' => 'Home_Ctrl',
             'maxPages' => $maxPages, 
@@ -62,6 +69,8 @@ class HomeController extends AbstractController
             'donnees' => $totalOperateurs,
             'categories' => $categories,
             'operateurs' => $paginator,
+            'form' => $form->createView(),
+            'cat' => $cat,
         ]);
     }
 }

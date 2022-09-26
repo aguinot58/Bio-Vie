@@ -196,32 +196,41 @@ header{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        article{
-            background-color: @Couleur4;
-            padding-left: 4vw;
-            padding-right: 4vw;
-            padding-bottom: 4vh;
-            width: 15vw;
-            height: 30vh;
+        form{
             display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: flex-end;
-            p{
-                color: @Couleur1;
-                font-family: @fontG;
-                background-color: @Couleur4;
-                font-size: clamp( 1vmin, 3vmin, 6vmin);
-                text-align: center;
-                padding-top: 1.5vh;
-            }
-        }
-        article:hover{
-            background-color: @Couleur3;
-            p{
-                background-color: @Couleur3;
-                color: white;
+            flex-direction: row;
+            flex-wrap: wrap;
+            button{
+                border: none;
+                article{
+                    background-color: @Couleur4;
+                    padding-left: 4vw;
+                    padding-right: 4vw;
+                    padding-bottom: 4vh;
+                    width: 14.5vw;
+                    height: 30vh;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    justify-content: flex-end;
+                    p{
+                        color: @Couleur1;
+                        font-family: @fontG;
+                        background-color: @Couleur4;
+                        font-size: clamp( 1vmin, 3vmin, 6vmin);
+                        text-align: center;
+                        padding-top: 1.5vh;
+                    }
+                }
+                article:hover{
+                    background-color: @Couleur3;
+                    cursor: pointer;
+                    p{
+                        background-color: @Couleur3;
+                        color: white;
+                    }
+                }
             }
         }
     }
@@ -522,17 +531,91 @@ header{
 
 #section-fiche-artisan{
     width: 100%;
-    height: 100vh;
+    height: 76vh;
     background-image: url(./../images/unique/bandeau-desktop.jpg);
     background-repeat: no-repeat;
+    padding-top: 21vh;
     .container{
-        width: 40%;
+        width: 43%;
         margin-left: auto;
         margin-right: auto;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding-top: 22vh;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        top: 22vh;
+        box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
+        .top-part{
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            background-color: @Couleur4;
+            color: @Couleur1;
+            padding: 2vh 3vw;
+            align-items: center;
+            box-sizing: border-box;
+            img{
+                margin-right: 1vw;
+                width: 3vw;
+            }
+            h1{
+                font-family: @fontB;
+                font-size: clamp( 1vmin, 3.5vmin, 4vmin);
+                margin-top: 1vh;
+            }
+        }
+        .bottom-part{
+            width: 100%;
+            height: 56vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            box-sizing: border-box;
+            .left-part{
+                background-color: white;
+                width: 60%;
+                height: 100%;
+                padding: 3vh 1.5vw 3vh 3vw;
+                box-sizing: border-box;
+                h3{
+                    color: @Couleur2;
+                    margin-top: 2vh;
+                    font-family: @fontB;
+                    font-size: clamp( 1vmin, 2.5vmin, 4vmin);
+                }
+                p{
+                    font-family: @fontR;
+                    font-size: clamp( 1vmin, 1.75vmin, 4vmin);
+                }
+                hr{
+                    margin-top: 3.5vh;
+                    margin-bottom: 3.5vh;
+                }
+            }
+            .right-part{
+                width: 40%;
+                height: 100%;
+                background-color: @Couleur3;
+                color: white;
+                padding: 3vh 1.5vw 3vh 3vw;
+                box-sizing: border-box;
+                h3{
+                    color: @Couleur2;
+                    margin-top: 2vh;
+                    font-family: @fontB;
+                    font-size: clamp( 1vmin, 2.5vmin, 4vmin);
+                }
+                ul{
+                    padding-left: 0.5vw;
+                    list-style-type: '- ';
+                }
+                p{
+                    font-family: @fontR;
+                    font-size: clamp( 1vmin, 1.75vmin, 4vmin);
+                }
+            }
+        }
     }
 }
 

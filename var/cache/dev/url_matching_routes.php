@@ -26,33 +26,33 @@ return [
                         .'|/edit(*:44)'
                         .'|(*:51)'
                     .')'
-                    .'|rtisan/id(?:/([^/]++))?(*:82)'
+                    .'|rtisan(?:/([^/]++)(?:/([^/]++))?)?(*:93)'
                 .')'
                 .'|/categories/([^/]++)(?'
-                    .'|(*:113)'
-                    .'|/edit(*:126)'
-                    .'|(*:134)'
+                    .'|(*:124)'
+                    .'|/edit(*:137)'
+                    .'|(*:145)'
                 .')'
                 .'|/operateurs/([^/]++)(?'
-                    .'|(*:166)'
-                    .'|/edit(*:179)'
-                    .'|(*:187)'
+                    .'|(*:177)'
+                    .'|/edit(*:190)'
+                    .'|(*:198)'
                 .')'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:224)'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:235)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
         32 => [[['_route' => 'app_activites_show', '_controller' => 'App\\Controller\\ActivitesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         44 => [[['_route' => 'app_activites_edit', '_controller' => 'App\\Controller\\ActivitesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         51 => [[['_route' => 'app_activites_delete', '_controller' => 'App\\Controller\\ActivitesController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        82 => [[['_route' => 'artisan', 'id' => 3, '_controller' => 'App\\Controller\\ArtisanController::artisan'], ['id'], null, null, false, true, null]],
-        113 => [[['_route' => 'app_categories_show', '_controller' => 'App\\Controller\\CategoriesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        126 => [[['_route' => 'app_categories_edit', '_controller' => 'App\\Controller\\CategoriesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        134 => [[['_route' => 'app_categories_delete', '_controller' => 'App\\Controller\\CategoriesController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        166 => [[['_route' => 'app_operateurs_show', '_controller' => 'App\\Controller\\OperateursController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        179 => [[['_route' => 'app_operateurs_edit', '_controller' => 'App\\Controller\\OperateursController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        187 => [[['_route' => 'app_operateurs_delete', '_controller' => 'App\\Controller\\OperateursController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        224 => [
+        93 => [[['_route' => 'artisan', 'id' => 3, 'cat' => 1, '_controller' => 'App\\Controller\\ArtisanController::artisan'], ['id', 'cat'], null, null, false, true, null]],
+        124 => [[['_route' => 'app_categories_show', '_controller' => 'App\\Controller\\CategoriesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        137 => [[['_route' => 'app_categories_edit', '_controller' => 'App\\Controller\\CategoriesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        145 => [[['_route' => 'app_categories_delete', '_controller' => 'App\\Controller\\CategoriesController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        177 => [[['_route' => 'app_operateurs_show', '_controller' => 'App\\Controller\\OperateursController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        190 => [[['_route' => 'app_operateurs_edit', '_controller' => 'App\\Controller\\OperateursController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        198 => [[['_route' => 'app_operateurs_delete', '_controller' => 'App\\Controller\\OperateursController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        235 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

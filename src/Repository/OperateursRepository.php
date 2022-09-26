@@ -57,7 +57,9 @@ class OperateursRepository extends ServiceEntityRepository
      * 2. Paginate will return a `\Doctrine\ORM\Tools\Pagination\Paginator` object
      * 3. Return that object to the controller
      *
-     * @param integer $currentPage The current page (passed from controller)
+     * @param Doctrine\ORM\Query $query   DQL Query Object
+     * @param integer            $currentPage  Current page (defaults to 1)
+     * @param integer            $limit The total number per page (defaults to 5)
      *
      * @return \Doctrine\ORM\Tools\Pagination\Paginator
      */
@@ -103,7 +105,15 @@ class OperateursRepository extends ServiceEntityRepository
         return $paginator;
     }
 
-
+    public function findOneBySomeField($value): ?Operateurs
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
     
 
 
@@ -126,13 +136,5 @@ class OperateursRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Operateurs
-//    {
-//        return $this->createQueryBuilder('o')
-//            ->andWhere('o.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    
 }

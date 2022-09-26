@@ -8,7 +8,7 @@ return [
     'app_activites_show' => [['id'], ['_controller' => 'App\\Controller\\ActivitesController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/activites']], [], [], []],
     'app_activites_edit' => [['id'], ['_controller' => 'App\\Controller\\ActivitesController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/activites']], [], [], []],
     'app_activites_delete' => [['id'], ['_controller' => 'App\\Controller\\ActivitesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/activites']], [], [], []],
-    'artisan' => [['id'], ['id' => 3, '_controller' => 'App\\Controller\\ArtisanController::artisan'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/artisan/id']], [], [], []],
+    'artisan' => [['id', 'cat'], ['id' => 3, 'cat' => 1, '_controller' => 'App\\Controller\\ArtisanController::artisan'], [], [['variable', '/', '[^/]++', 'cat', true], ['variable', '/', '[^/]++', 'id', true], ['text', '/artisan']], [], [], []],
     'back' => [[], ['_controller' => 'App\\Controller\\BackOfficeController::back'], [], [['text', '/back']], [], [], []],
     'app_categories_index' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories/']], [], [], []],
     'app_categories_new' => [[], ['_controller' => 'App\\Controller\\CategoriesController::new'], [], [['text', '/categories/new']], [], [], []],

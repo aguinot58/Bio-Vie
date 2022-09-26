@@ -6,7 +6,52 @@
 
         <div class="container">
 
-            test
+            <div class="top-part">
+                <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie }}{{ (".png") }}" alt="icône de la catégorie {{ categorie }}">
+                <h1 class="raisonSociale">{{ operateur.raisonSociale }}</h1>
+            </div>
+
+            <div class="bottom-part">
+
+                <div class="left-part">
+                    <h3>NUMÉRO BIO</h3>
+                    <p>{{ operateur.numeroBio }}</p>
+
+                    <h3>SIRET</h3>
+                    <p>{{ operateur.siret }}</p>
+
+                    <h3>SITE INTERNET</h3>
+                    <p>{{ operateur.siteWeb }}</p>
+
+                    <hr width="250vw" size="2" align="left" color="black">
+
+                    <h3>GÉRANT</h3>
+                    <p>{{ operateur.gerant }}</p>
+
+                    <h3>TÉLÉPHONE</h3>
+                    <p>{{ operateur.telephone|slice(0, 2) }} {{ operateur.telephone|slice(2, 2) }} {{ operateur.telephone|slice(4, 2) }} {{ operateur.telephone|slice(6, 2) }} {{ operateur.telephone|slice(8, 2) }}</p>
+
+                    <h3>EMAIL</h3>
+                    <p>{{ operateur.email }}</p>
+                </div>
+
+                <div class="right-part">
+                    <h3>CATÉGORIES</h3>
+                    <ul>
+                    {% for categorie in operateur.categories %}
+                        <li><p>{{ categorie }}</p></li>
+                    {% endfor %}
+                    </ul>
+
+                    <h3>ACTIVITÉS</h3>
+                    <ul>
+                    {% for activite in operateur.activites %}
+                        <li><p>{{ activite }}</p></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
 
         </div>
 

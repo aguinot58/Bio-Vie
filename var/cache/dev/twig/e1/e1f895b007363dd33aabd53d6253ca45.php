@@ -43,6 +43,8 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("artisan");
         echo "/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2), "html", null, true);
+        echo "/";
+        echo twig_escape_filter($this->env, twig_first($this->env, twig_get_attribute($this->env, $this->source, (isset($context["operateur"]) || array_key_exists("operateur", $context) ? $context["operateur"] : (function () { throw new RuntimeError('Variable "operateur" does not exist.', 2, $this->source); })()), "categories", [], "any", false, false, false, 2)), "html", null, true);
         echo "\">
         <img class=\"img-cat\" src=\"";
         // line 3
@@ -95,13 +97,13 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  67 => 8,  63 => 7,  58 => 5,  49 => 3,  43 => 2,  40 => 1,);
+        return array (  69 => 8,  65 => 7,  60 => 5,  51 => 3,  43 => 2,  40 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div class=\"card\">
-    <a href=\"{{ path(\"artisan\") }}/{{ operateur.id }}\">
+    <a href=\"{{ path(\"artisan\") }}/{{ operateur.id }}/{{ operateur.categories|first }}\">
         <img class=\"img-cat\" src=\"{{ asset(\"images/icons/icon-\")}}{{ operateur.categories|first }}{{ (\"_gris.png\") }}\" alt=\"icône de la catégorie {{ operateur.categories|first }}\">
         <div class=\"card-body\">
             <h5 class=\"card-title\">{{ operateur.raisonSociale }}</h5>

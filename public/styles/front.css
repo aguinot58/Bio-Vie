@@ -205,12 +205,20 @@ header .nom-site :visited {
   flex-direction: row;
   flex-wrap: wrap;
 }
-#section-categories .container article {
+#section-categories .container form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#section-categories .container form button {
+  border: none;
+}
+#section-categories .container form button article {
   background-color: #202327;
   padding-left: 4vw;
   padding-right: 4vw;
   padding-bottom: 4vh;
-  width: 15vw;
+  width: 14.5vw;
   height: 30vh;
   display: flex;
   flex-direction: column;
@@ -218,7 +226,7 @@ header .nom-site :visited {
   align-items: center;
   justify-content: flex-end;
 }
-#section-categories .container article p {
+#section-categories .container form button article p {
   color: #93ffe9;
   font-family: 'montserrat-bold';
   background-color: #202327;
@@ -226,10 +234,11 @@ header .nom-site :visited {
   text-align: center;
   padding-top: 1.5vh;
 }
-#section-categories .container article:hover {
+#section-categories .container form button article:hover {
   background-color: #2a2e34;
+  cursor: pointer;
 }
-#section-categories .container article:hover p {
+#section-categories .container form button article:hover p {
   background-color: #2a2e34;
   color: white;
 }
@@ -521,18 +530,92 @@ header .nom-site :visited {
 }
 #section-fiche-artisan {
   width: 100%;
-  height: 100vh;
+  height: 76vh;
   background-image: url(../images/unique/bandeau-desktop.jpg);
   background-repeat: no-repeat;
+  padding-top: 21vh;
 }
 #section-fiche-artisan .container {
-  width: 40%;
+  width: 43%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  top: 22vh;
+  box-shadow: 1px 1px 3px 5px rgba(206, 206, 206, 0.5);
+}
+#section-fiche-artisan .container .top-part {
+  width: 100%;
+  height: 10vh;
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  padding-top: 22vh;
+  flex-wrap: nowrap;
+  background-color: #202327;
+  color: #93ffe9;
+  padding: 2vh 3vw;
+  align-items: center;
+  box-sizing: border-box;
+}
+#section-fiche-artisan .container .top-part img {
+  margin-right: 1vw;
+  width: 3vw;
+}
+#section-fiche-artisan .container .top-part h1 {
+  font-family: 'montserrat-black';
+  font-size: clamp(1vmin, 3.5vmin, 4vmin);
+  margin-top: 1vh;
+}
+#section-fiche-artisan .container .bottom-part {
+  width: 100%;
+  height: 56vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+#section-fiche-artisan .container .bottom-part .left-part {
+  background-color: white;
+  width: 60%;
+  height: 100%;
+  padding: 3vh 1.5vw 3vh 3vw;
+  box-sizing: border-box;
+}
+#section-fiche-artisan .container .bottom-part .left-part h3 {
+  color: #4accb1;
+  margin-top: 2vh;
+  font-family: 'montserrat-black';
+  font-size: clamp(1vmin, 2.5vmin, 4vmin);
+}
+#section-fiche-artisan .container .bottom-part .left-part p {
+  font-family: 'montserrat-regular';
+  font-size: clamp(1vmin, 1.75vmin, 4vmin);
+}
+#section-fiche-artisan .container .bottom-part .left-part hr {
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
+}
+#section-fiche-artisan .container .bottom-part .right-part {
+  width: 40%;
+  height: 100%;
+  background-color: #2a2e34;
+  color: white;
+  padding: 3vh 1.5vw 3vh 3vw;
+  box-sizing: border-box;
+}
+#section-fiche-artisan .container .bottom-part .right-part h3 {
+  color: #4accb1;
+  margin-top: 2vh;
+  font-family: 'montserrat-black';
+  font-size: clamp(1vmin, 2.5vmin, 4vmin);
+}
+#section-fiche-artisan .container .bottom-part .right-part ul {
+  padding-left: 0.5vw;
+  list-style-type: '- ';
+}
+#section-fiche-artisan .container .bottom-part .right-part p {
+  font-family: 'montserrat-regular';
+  font-size: clamp(1vmin, 1.75vmin, 4vmin);
 }
 footer {
   width: 100%;

@@ -1,0 +1,21 @@
+<form action="{{ path('home') }}#section-artisans" method="GET">
+
+{{ form_start(form) }}
+    {% for categorie in categories %}
+
+        {% if categorie.nom != "En conversion" %}
+
+            <button type="submit" value="{{ categorie.nom }}" name="categorie">
+                <article value="{{ categorie.nom }}" name="categorie">
+                    <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}" value="{{ categorie.nom }}" name="categorie">
+                    <p class="nom-cat" value="{{ categorie.nom }}" name="categorie">{{ categorie.nom }}</p>
+                </article>
+            </button>
+
+        {% endif %}
+
+    {% endfor %}
+    <input type="hidden" name="token" value="{{ csrf_token('form') }}" />
+{{ form_end(form) }}
+
+</form>

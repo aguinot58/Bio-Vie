@@ -10,16 +10,22 @@ use Symfony\Component\Form\Extension\Core\Type\{TextType,ButtonType,EmailType,Hi
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
+use App\Repository\OperateursRepository;
+
 class ArtisanController extends AbstractController
 {
     /**
-     * @Route("/artisan/id/{id}", name="artisan")
+     * @Route("/artisan/{id}/{cat}", name="artisan")
      */
-    public function artisan(Request $request, $id = 3): Response
+    public function artisan(Request $request, OperateursRepository $operateursRepository, $id = 3, $cat = 1): Response
     {
+
+        $operateur = $operateursRepository->findOneBySomeField($id);
 
         return $this->render('artisan/artisan.html.twig', [
             'controller_name' => 'Artisan_Ctrl',
+            'categorie' => $cat,
+            'operateur' => $operateur,
         ]);
         
     }

@@ -24,34 +24,31 @@
 
     <body>
         <header>
-            <div class="container">
+            <div id="root" class="container">
                 <div class="site">
                     <a class="nom-site" href="/"><p>BIO&VIE</p></a>
                 </div>
-                <nav>
-                    <div class="barre-nav">
-                        <a class="lien-nav" href="/"><p>ACCUEIL</p></a>
-                        <p class="sep-nav">|</p>
-                        <a class="lien-nav" href="/#section-categories"><p>NOS PROFESSIONNELS</p></a>
-                        <p class="sep-nav">|</p>
-                        <a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a>
-                    </div>
+                <nav class="barre-nav">
+                    <a class="lien-nav" href="/"><p>ACCUEIL</p></a>
+                    <p class="sep-nav">|</p>
+                    <a class="lien-nav" href="/#section-artisans"><p>NOS PROFESSIONNELS</p></a>
+                    <p class="sep-nav">|</p>
+                    <a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a>
+                </nav>
+                <div id="topnav_hamburger_icon" onclick="showResponsiveMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <nav id="topnav_responsive_menu">
+                    <div class="icon-menu-open" onclick="showResponsiveMenu()"><i class="fa-solid fa-chevron-left"></i></div>
+                    <ul>
+                        <li><div class="titre-burger"><h2>BIO&VIE</h2><div class="bande-verte-burger"></div></div></li>
+                        <li><a class="lien-nav" href="/"><p>ACCUEIL</p></a></li>
+                        <li><a class="lien-nav" href="/#section-artisans"><p>NOS PROFESSIONNELS</p></a></li>
+                        <li><a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a></li>
+                    </ul>
                 </nav>
             </div>
         </header>
-
-        <div id="menuToggle">
-            <div class="icon-menu-close">
-                <i class="fa-solid fa-bars"></i>
-                <ul id="menu">
-                    <i class="fa-solid fa-chevron-left icon-menu-open"></i>
-                    <li><h2>BIO&VIE</h2></li>
-                    <li><a class="lien-nav" href="/"><p>ACCUEIL</p></a></li>
-                    <li><a class="lien-nav" href="/#section-categories"><p>NOS PROFESSIONNELS</p></a></li>
-                    <li><a class="lien-nav" href="/contact"><p>CONTACTEZ-NOUS</p></a></li>
-                </ul>
-            </div>
-        </div>
 
         {% block body %}
         

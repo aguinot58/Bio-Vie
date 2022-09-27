@@ -71,28 +71,11 @@
 .container-back header .container .barre-nav a p {
   margin-bottom: 1vh;
 }
-.container-back header .container #menuToggle {
+.container-back header .container #topnav_hamburger_icon {
   display: none;
-  z-index: 50;
 }
-.container-back header .container #menuToggle .icon-menu-close {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px #93ffe9 solid;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.container-back header .container #menuToggle .icon-menu-close i {
-  color: #93ffe9;
-  font-size: 4vw;
-}
-.container-back header .container #menuToggle .icon-menu-close #menu {
+.container-back header .container #topnav_responsive_menu {
   display: none;
-  list-style: none;
 }
 .container-back .container-body {
   width: 80%;
@@ -142,6 +125,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
@@ -313,6 +297,8 @@
     flex-direction: row;
     box-sizing: border-box;
     padding: 2vh 3vw;
+    /* position responsive menu at the right of the screen */
+    /* and let's slide it in from the right */
   }
   .container-back header .container .site {
     flex-direction: row;
@@ -330,12 +316,82 @@
   .container-back header .container .barre-nav {
     display: none;
   }
-  .container-back header .container #menuToggle {
-    display: block;
+  .container-back header .container #topnav_hamburger_icon {
+    z-index: 50;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px #93ffe9 solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
   }
-  .container-back header .container #menuToggle .icon-menu-close i {
+  .container-back header .container #topnav_hamburger_icon i {
     color: #93ffe9;
-    font-size: 5vw;
+    font-size: 6vw;
+    top: 25%;
+    left: 25%;
+  }
+  .container-back header .container #root {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .container-back header .container #topnav_responsive_menu {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    transform-origin: 0% 0%;
+    transform: translate(200%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    background-image: url(../images/burger/fond.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container-back header .container #topnav_responsive_menu ul {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding-top: 10vh;
+  }
+  .container-back header .container #topnav_responsive_menu ul li {
+    color: #93ffe9;
+  }
+  .container-back header .container #topnav_responsive_menu ul li .icon-menu-open {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px #93ffe9 solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-back header .container #topnav_responsive_menu ul li .icon-menu-open i {
+    color: #93ffe9;
+    font-size: 6vw;
+    top: 25%;
+    left: 25%;
+  }
+  .container-back header .container #topnav_responsive_menu ul li a {
+    color: #93ffe9;
+    font-size: 6vmin;
+    text-decoration: none;
+  }
+  .container-back header .container #topnav_responsive_menu.open {
+    transform: none;
+    position: fixed;
   }
   .container-back .container-body {
     width: 100%;

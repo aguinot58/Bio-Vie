@@ -22,7 +22,6 @@ body {
 header {
   width: 100%;
   height: 8vh;
-  background-color: white;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -31,8 +30,10 @@ header {
   top: 0px;
   transition: all 0.2s ease-in-out;
   z-index: 50;
+  background-color: white;
 }
 header .container {
+  background-color: white;
   display: flex;
   flex-direction: row;
   width: 70%;
@@ -41,21 +42,21 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
-header .container nav .barre-nav {
+header .container .barre-nav {
   display: flex;
   flex-direction: row;
   align-content: space-around;
 }
-header .container nav .barre-nav .lien-nav {
+header .container .barre-nav .lien-nav {
   text-decoration: none;
   font-family: 'montserrat-regular';
   color: black;
   font-size: 1.5vmin;
 }
-header .container nav .barre-nav .lien-nav :visited {
+header .container .barre-nav .lien-nav :visited {
   color: black;
 }
-header .container nav .barre-nav .sep-nav {
+header .container .barre-nav .sep-nav {
   margin-left: 2vw;
   margin-right: 2vw;
 }
@@ -68,48 +69,11 @@ header .container .nom-site {
 header .container .nom-site :visited {
   color: black;
 }
-#menuToggle {
+header .container #topnav_hamburger_icon {
   display: none;
-  position: sticky;
-  float: right;
-  top: 25px;
-  right: 25px;
-  z-index: 50;
 }
-#menuToggle .icon-menu-close {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px #93ffe9 solid;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-#menuToggle .icon-menu-close i {
-  color: #93ffe9;
-  font-size: 4vw;
-}
-#menuToggle .icon-menu-close #menu {
+header .container #topnav_responsive_menu {
   display: none;
-  /*position: absolute;
-            width: 99vw;
-            height: 190vh;
-            list-style-type: none;
-            z-index: 50;
-            background-image: url(./../images/burger/fond.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            opacity: 1;
-            margin-left: -85vw;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            i{
-                color: @Couleur1;
-                font-size: 4vw;
-            }*/
 }
 #section-titre {
   width: 100%;
@@ -267,13 +231,14 @@ header .container .nom-site :visited {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
 }
 #section-categories .container form {
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 #section-categories .container form button {
   border: none;
@@ -298,6 +263,7 @@ header .container .nom-site :visited {
   align-items: center;
 }
 #section-categories .container form button article .conteneur-image .img-cat {
+  min-width: 10vmin;
   width: 14vmin;
 }
 #section-categories .container form button article .conteneur-image .cercle {
@@ -806,10 +772,117 @@ footer .container .pied p {
 }
 @media all and (max-width: 656px) {
   header {
+    background-color: rgba(0, 0, 0, 0);
+    height: 0;
+  }
+  header .container {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: rgba(0, 0, 0, 0);
+    top: 50px;
+    justify-content: flex-end;
+    width: 90%;
+    /* position responsive menu at the right of the screen */
+    /* and let's slide it in from the right */
+  }
+  header .container .site {
     display: none;
   }
-  #menuToggle {
+  header .container .barre-nav {
+    display: none;
+  }
+  header .container #topnav_hamburger_icon {
+    right: 50px;
+    z-index: 50;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px #93ffe9 solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .container #topnav_hamburger_icon i {
+    color: #93ffe9;
+    font-size: 6vw;
+    top: 25%;
+    left: 25%;
+  }
+  header .container #topnav_responsive_menu {
     display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    transform-origin: 0% 0%;
+    transform: translate(200%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    background-image: url(../images/burger/fond.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  header .container #topnav_responsive_menu .icon-menu-open {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px white solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .container #topnav_responsive_menu .icon-menu-open i {
+    color: #93ffe9;
+    font-size: 4vw;
+    top: 25%;
+    left: 25%;
+  }
+  header .container #topnav_responsive_menu ul {
+    width: 60%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding-top: 15vh;
+    margin-left: 20vw;
+  }
+  header .container #topnav_responsive_menu ul .titre-burger {
+    position: relative;
+  }
+  header .container #topnav_responsive_menu ul .titre-burger .bande-verte-burger {
+    position: absolute;
+    width: 25vw;
+    min-height: 1vh;
+    background-color: #0b5e45;
+    left: 8vw;
+  }
+  header .container #topnav_responsive_menu ul li h2 {
+    color: #93ffe9;
+    font-size: 9vmin;
+    text-decoration: none;
+    font-family: 'montserrat-black';
+  }
+  header .container #topnav_responsive_menu ul li a {
+    color: white;
+    font-size: 3.25vmin;
+    text-decoration: none;
+    font-family: 'montserrat-black';
+  }
+  header .container #topnav_responsive_menu.open {
+    transform: none;
+    position: fixed;
   }
   #section-titre {
     width: 100%;
@@ -909,15 +982,14 @@ footer .container .pied p {
   #section-categories .container {
     width: 100%;
   }
-  #section-categories .container form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
   #section-categories .container form button article {
     width: 293px;
   }
+  #section-categories .container form button article .conteneur-image .img-cat {
+    min-width: 20vmin;
+  }
   #section-categories .container form button article .conteneur-titre p {
-    font-size: 3vw;
+    font-size: 18px;
   }
   #section-artisans {
     width: 100%;

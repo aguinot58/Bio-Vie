@@ -78,39 +78,36 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     <body>
         <header>
-            <div class=\"container\">
+            <div id=\"root\" class=\"container\">
                 <div class=\"site\">
                     <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
                 </div>
-                <nav>
-                    <div class=\"barre-nav\">
-                        <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>
-                        <p class=\"sep-nav\">|</p>
-                        <a class=\"lien-nav\" href=\"/#section-categories\"><p>NOS PROFESSIONNELS</p></a>
-                        <p class=\"sep-nav\">|</p>
-                        <a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a>
-                    </div>
+                <nav class=\"barre-nav\">
+                    <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>
+                    <p class=\"sep-nav\">|</p>
+                    <a class=\"lien-nav\" href=\"/#section-artisans\"><p>NOS PROFESSIONNELS</p></a>
+                    <p class=\"sep-nav\">|</p>
+                    <a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a>
+                </nav>
+                <div id=\"topnav_hamburger_icon\" onclick=\"showResponsiveMenu()\">
+                    <i class=\"fa-solid fa-bars\"></i>
+                </div>
+                <nav id=\"topnav_responsive_menu\">
+                    <div class=\"icon-menu-open\" onclick=\"showResponsiveMenu()\"><i class=\"fa-solid fa-chevron-left\"></i></div>
+                    <ul>
+                        <li><div class=\"titre-burger\"><h2>BIO&VIE</h2><div class=\"bande-verte-burger\"></div></div></li>
+                        <li><a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a></li>
+                        <li><a class=\"lien-nav\" href=\"/#section-artisans\"><p>NOS PROFESSIONNELS</p></a></li>
+                        <li><a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a></li>
+                    </ul>
                 </nav>
             </div>
         </header>
 
-        <div id=\"menuToggle\">
-            <div class=\"icon-menu-close\">
-                <i class=\"fa-solid fa-bars\"></i>
-                <ul id=\"menu\">
-                    <i class=\"fa-solid fa-chevron-left icon-menu-open\"></i>
-                    <li><h2>BIO&VIE</h2></li>
-                    <li><a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a></li>
-                    <li><a class=\"lien-nav\" href=\"/#section-categories\"><p>NOS PROFESSIONNELS</p></a></li>
-                    <li><a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a></li>
-                </ul>
-            </div>
-        </div>
-
         ";
-        // line 56
+        // line 53
         $this->displayBlock('body', $context, $blocks);
-        // line 59
+        // line 56
         echo "
         <footer>
             <div class=\"container\">
@@ -178,14 +175,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 56
+    // line 53
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 57
+        // line 54
         echo "        
         ";
         
@@ -205,7 +202,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  189 => 57,  182 => 56,  172 => 21,  165 => 20,  155 => 17,  148 => 16,  135 => 5,  114 => 59,  112 => 56,  77 => 23,  75 => 20,  72 => 19,  69 => 16,  64 => 13,  60 => 12,  50 => 5,  44 => 1,);
+        return array (  186 => 54,  179 => 53,  169 => 21,  162 => 20,  152 => 17,  145 => 16,  132 => 5,  111 => 56,  109 => 53,  77 => 23,  75 => 20,  72 => 19,  69 => 16,  64 => 13,  60 => 12,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -236,34 +233,31 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     <body>
         <header>
-            <div class=\"container\">
+            <div id=\"root\" class=\"container\">
                 <div class=\"site\">
                     <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
                 </div>
-                <nav>
-                    <div class=\"barre-nav\">
-                        <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>
-                        <p class=\"sep-nav\">|</p>
-                        <a class=\"lien-nav\" href=\"/#section-categories\"><p>NOS PROFESSIONNELS</p></a>
-                        <p class=\"sep-nav\">|</p>
-                        <a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a>
-                    </div>
+                <nav class=\"barre-nav\">
+                    <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>
+                    <p class=\"sep-nav\">|</p>
+                    <a class=\"lien-nav\" href=\"/#section-artisans\"><p>NOS PROFESSIONNELS</p></a>
+                    <p class=\"sep-nav\">|</p>
+                    <a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a>
+                </nav>
+                <div id=\"topnav_hamburger_icon\" onclick=\"showResponsiveMenu()\">
+                    <i class=\"fa-solid fa-bars\"></i>
+                </div>
+                <nav id=\"topnav_responsive_menu\">
+                    <div class=\"icon-menu-open\" onclick=\"showResponsiveMenu()\"><i class=\"fa-solid fa-chevron-left\"></i></div>
+                    <ul>
+                        <li><div class=\"titre-burger\"><h2>BIO&VIE</h2><div class=\"bande-verte-burger\"></div></div></li>
+                        <li><a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a></li>
+                        <li><a class=\"lien-nav\" href=\"/#section-artisans\"><p>NOS PROFESSIONNELS</p></a></li>
+                        <li><a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a></li>
+                    </ul>
                 </nav>
             </div>
         </header>
-
-        <div id=\"menuToggle\">
-            <div class=\"icon-menu-close\">
-                <i class=\"fa-solid fa-bars\"></i>
-                <ul id=\"menu\">
-                    <i class=\"fa-solid fa-chevron-left icon-menu-open\"></i>
-                    <li><h2>BIO&VIE</h2></li>
-                    <li><a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a></li>
-                    <li><a class=\"lien-nav\" href=\"/#section-categories\"><p>NOS PROFESSIONNELS</p></a></li>
-                    <li><a class=\"lien-nav\" href=\"/contact\"><p>CONTACTEZ-NOUS</p></a></li>
-                </ul>
-            </div>
-        </div>
 
         {% block body %}
         

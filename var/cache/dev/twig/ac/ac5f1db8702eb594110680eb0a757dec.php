@@ -81,7 +81,7 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
         <div class=\"container-back\">
 
             <header>
-                <div class=\"container\">
+                <div id=\"root\" class=\"container\">
                     <div class=\"site\">
                         <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
                         <img class=\"image-site\" title=\"icon-blé\" src=\"";
@@ -95,18 +95,18 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
                         <a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a>
                         <a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a>
                     </div>
-                    <div id=\"menuToggle\">
-                        <div class=\"icon-menu-close\">
-                            <i class=\"fa-solid fa-bars\"></i>
-                            <ul id=\"menu\">
-                                <i class=\"fa-solid fa-chevron-left icon-menu-open\"></i>
-                                <li><a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a></li>
-                                <li><a class=\"lien-nav\" href=\"/operateurs/?page=1\"><p>Gérer les artisans</p></a></li>
-                                <li><a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a></li>
-                                <li><a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a></li>
-                            </ul>
-                        </div>
+                    <div id=\"topnav_hamburger_icon\" onclick=\"showResponsiveMenu()\">
+                        <i class=\"fa-solid fa-bars\"></i>
                     </div>
+                    <nav id=\"topnav_responsive_menu\">
+                        <ul>
+                            <li><div class=\"icon-menu-open\" onclick=\"showResponsiveMenu()\"><i class=\"fa-solid fa-chevron-left\"></i></div></li>
+                            <li><a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a></li>
+                            <li><a class=\"lien-nav\" href=\"/operateurs/?page=1\"><p>Gérer les artisans</p></a></li>
+                            <li><a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a></li>
+                            <li><a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a></li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
 
@@ -233,7 +233,7 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
         <div class=\"container-back\">
 
             <header>
-                <div class=\"container\">
+                <div id=\"root\" class=\"container\">
                     <div class=\"site\">
                         <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
                         <img class=\"image-site\" title=\"icon-blé\" src=\"{{ asset('images/icons/icon-ble.png') }}\" alt=\"logo représentant des épis de blés\">
@@ -244,18 +244,18 @@ class __TwigTemplate_6af58990779f0617d0620ed75fdc3efa extends Template
                         <a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a>
                         <a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a>
                     </div>
-                    <div id=\"menuToggle\">
-                        <div class=\"icon-menu-close\">
-                            <i class=\"fa-solid fa-bars\"></i>
-                            <ul id=\"menu\">
-                                <i class=\"fa-solid fa-chevron-left icon-menu-open\"></i>
-                                <li><a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a></li>
-                                <li><a class=\"lien-nav\" href=\"/operateurs/?page=1\"><p>Gérer les artisans</p></a></li>
-                                <li><a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a></li>
-                                <li><a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a></li>
-                            </ul>
-                        </div>
+                    <div id=\"topnav_hamburger_icon\" onclick=\"showResponsiveMenu()\">
+                        <i class=\"fa-solid fa-bars\"></i>
                     </div>
+                    <nav id=\"topnav_responsive_menu\">
+                        <ul>
+                            <li><div class=\"icon-menu-open\" onclick=\"showResponsiveMenu()\"><i class=\"fa-solid fa-chevron-left\"></i></div></li>
+                            <li><a class=\"lien-nav\" href=\"/back\"><p>Accueil administration</p></a></li>
+                            <li><a class=\"lien-nav\" href=\"/operateurs/?page=1\"><p>Gérer les artisans</p></a></li>
+                            <li><a class=\"lien-nav\" href=\"/categories/?page=1\"><p>Gérer les catégories</p></a></li>
+                            <li><a class=\"lien-nav\" href=\"/activites/?page=1\"><p>Gérer les activités</p></a></li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
 

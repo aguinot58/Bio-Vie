@@ -70,11 +70,134 @@
 @media all and (max-width:656px){
 
     header{
-        display: none;
-    }
 
-    #menuToggle {
-        display: block;
+        background-color: rgba(0,0,0,0);
+        height: 0;
+
+        .container{
+
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            background-color: rgba(0,0,0,0);
+            top: 50px;
+            justify-content: flex-end;
+            width: 90%;
+
+            .site{
+                display: none;
+            }
+
+            .barre-nav{
+                display: none;
+            }
+
+            #topnav_hamburger_icon {
+                right: 50px;
+                z-index: 50;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px @Couleur1 solid;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                i{
+                    color: @Couleur1;
+                    font-size: 6vw;
+                    top: 25%;
+                    left: 25%;
+                }
+            }
+
+            /* position responsive menu at the right of the screen */
+            #topnav_responsive_menu {
+                display : block;
+                position: absolute;
+                right   : 0;
+                top     : 0;
+                margin  : 0;
+                width   : 100vw;
+                height  : 100vh;
+        
+                z-index: 99;
+        
+                transform-origin: 0% 0%;
+                transform       : translate(200%, 0);
+        
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+                background-image: url(./../images/burger/fond.jpg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+
+                .icon-menu-open{
+                    float: right;
+                    margin-top: 20px;
+                    margin-right: 20px;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 1px white solid;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    i{
+                        color: @Couleur1;
+                        font-size: 4vw;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+
+                ul{
+                    width: 60%;
+                    height: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    list-style: none;
+                    padding-top: 15vh;
+                    margin-left: 20vw;
+                    .titre-burger{
+                        position: relative;
+                        .bande-verte-burger{
+                            position: absolute;
+                            width: 25vw;
+                            min-height: 1vh;
+                            background-color: rgb(11, 94, 69);
+                            left: 8vw;
+                        }
+                    }
+                    li{
+                        h2{
+                            color: @Couleur1;
+                            font-size: 9vmin;
+                            text-decoration: none;
+                            font-family: @fontB;
+                        }
+                        a{
+                            color: white;
+                            font-size: 3.25vmin;
+                            text-decoration: none;
+                            font-family: @fontB;
+                        }
+                    }
+                }
+            }
+        
+            /* and let's slide it in from the right */
+            #topnav_responsive_menu.open {
+                transform: none;
+                position : fixed;
+            }
+
+        }
     }
 
     #section-titre{
@@ -182,14 +305,17 @@
         .container{
             width: 100%;
             form{
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
                 button{
                     article{
                         width: 293px;
+                        .conteneur-image{
+                            .img-cat{
+                                min-width: 20vmin;
+                            }
+                        }
                         .conteneur-titre{
                             p{
-                                font-size: 3vw;
+                                font-size: 18px;
                             }  
                         }     
                     }

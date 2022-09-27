@@ -96,7 +96,6 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
         <div id=\"menuToggle\">
             <div class=\"icon-menu-close\">
-                <input type=\"checkbox\"/>
                 <i class=\"fa-solid fa-bars\"></i>
                 <ul id=\"menu\">
                     <i class=\"fa-solid fa-chevron-left icon-menu-open\"></i>
@@ -109,9 +108,9 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         </div>
 
         ";
-        // line 57
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 60
+        // line 59
         echo "
         <footer>
             <div class=\"container\">
@@ -179,14 +178,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 57
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 58
+        // line 57
         echo "        
         ";
         
@@ -206,7 +205,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  190 => 58,  183 => 57,  173 => 21,  166 => 20,  156 => 17,  149 => 16,  136 => 5,  115 => 60,  113 => 57,  77 => 23,  75 => 20,  72 => 19,  69 => 16,  64 => 13,  60 => 12,  50 => 5,  44 => 1,);
+        return array (  189 => 57,  182 => 56,  172 => 21,  165 => 20,  155 => 17,  148 => 16,  135 => 5,  114 => 59,  112 => 56,  77 => 23,  75 => 20,  72 => 19,  69 => 16,  64 => 13,  60 => 12,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -255,7 +254,6 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
         <div id=\"menuToggle\">
             <div class=\"icon-menu-close\">
-                <input type=\"checkbox\"/>
                 <i class=\"fa-solid fa-bars\"></i>
                 <ul id=\"menu\">
                     <i class=\"fa-solid fa-chevron-left icon-menu-open\"></i>

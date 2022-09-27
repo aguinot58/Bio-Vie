@@ -7,9 +7,13 @@
 
             <button type="submit" value="{{ categorie.id }}" name="categorie">
                 <article value="{{ categorie.id }}" name="categorie">
-                    <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}" value="{{ categorie.id }}" name="categorie">
-                    <div class="cercle"> </div>
-                    <p class="nom-cat" value="{{ categorie.id }}" name="categorie">{{ categorie.nom|upper }}</p>
+                    <div class="conteneur-image">
+                        <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}" value="{{ categorie.id }}" name="categorie">
+                        <div class="cercle"> </div>
+                    </div>
+                    <div class="conteneur-titre">
+                        <p class="nom-cat" value="{{ categorie.id }}" name="categorie">{{ categorie.nom|upper }}</p>
+                    </div>
                 </article>
                 
             </button>

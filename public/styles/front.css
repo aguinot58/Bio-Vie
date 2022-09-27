@@ -91,15 +91,6 @@ header .container .nom-site :visited {
   color: #93ffe9;
   font-size: 4vw;
 }
-#menuToggle .icon-menu-close input {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 150;
-}
 #menuToggle .icon-menu-close #menu {
   display: none;
   /*position: absolute;
@@ -216,6 +207,7 @@ header .container .nom-site :visited {
 }
 #section-presentation .container .image {
   z-index: 1;
+  position: relative;
 }
 #section-presentation .container .image img {
   z-index: 1;
@@ -226,8 +218,8 @@ header .container .nom-site :visited {
   width: 13vw;
   min-height: 4vh;
   background-color: #93ffe9;
-  margin-left: -125px;
-  margin-top: -20px;
+  left: -12vmin;
+  bottom: -2vmin;
   z-index: 25;
 }
 #section-presentation .container .infos {
@@ -264,8 +256,9 @@ header .container .nom-site :visited {
 }
 #section-categories {
   width: 100%;
-  height: 80vh;
+  height: auto;
   margin-top: -2vh;
+  padding-bottom: 15vh;
 }
 #section-categories .container {
   width: 70%;
@@ -276,30 +269,54 @@ header .container .nom-site :visited {
   flex-wrap: wrap;
 }
 #section-categories .container form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
 }
 #section-categories .container form button {
   border: none;
 }
 #section-categories .container form button article {
   background-color: #202327;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  padding-bottom: 4vh;
+  padding: 8vh 2vw 4vh 2vw;
   width: 19vw;
-  height: 30vh;
+  height: 22vh;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
+}
+#section-categories .container form button article .conteneur-image {
+  position: relative;
+  height: 12vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+#section-categories .container form button article .conteneur-image .img-cat {
+  width: 14vmin;
+}
+#section-categories .container form button article .conteneur-image .cercle {
+  position: absolute;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background-color: rgba(152, 214, 214, 0.25);
+  top: 60%;
+  left: -13.5%;
+}
+#section-categories .container form button article .conteneur-titre {
+  display: flex;
+  flex-direction: column;
+  height: 8vh;
+  align-items: center;
   justify-content: flex-end;
 }
-#section-categories .container form button article .img-cat {
-  margin-bottom: -4vh;
-}
-#section-categories .container form button article p {
+#section-categories .container form button article .conteneur-titre p {
   color: #93ffe9;
   font-family: 'montserrat-black';
   background-color: #202327;
@@ -314,15 +331,6 @@ header .container .nom-site :visited {
 #section-categories .container form button article:hover p {
   background-color: #2a2e34;
   color: white;
-}
-#section-categories .container form button .cercle {
-  position: relative;
-  border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  background-color: rgba(152, 214, 214, 0.25);
-  top: 0%;
-  left: -13.5%;
 }
 #section-artisans {
   width: 100%;
@@ -355,7 +363,7 @@ header .container .nom-site :visited {
 }
 #section-artisans .container .container-artisans {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
   margin-top: 10vh;
@@ -863,17 +871,18 @@ footer .container .pied p {
     flex-direction: column;
   }
   #section-presentation .container .image {
-    padding-bottom: 60vmin;
+    padding-bottom: 5vmin;
+    position: relative;
   }
   #section-presentation .container .image img {
     width: 100%;
   }
   #section-presentation .container .image .bande-verte-2 {
-    position: relative;
+    position: absolute;
     width: 24vw;
     height: 4vmin;
-    margin-top: -61vmin;
-    margin-left: 66vmin;
+    left: 63vmin;
+    top: -2vmin;
     z-index: 15;
   }
   #section-presentation .container .infos {
@@ -901,10 +910,14 @@ footer .container .pied p {
     width: 100%;
   }
   #section-categories .container form {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
   #section-categories .container form button article {
     width: 293px;
+  }
+  #section-categories .container form button article .conteneur-titre p {
+    font-size: 3vw;
   }
   #section-artisans {
     width: 100%;
@@ -1084,14 +1097,14 @@ footer .container .pied p {
     background-position: left 70% top -15%;
   }
   footer .container {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: 5vh;
+    padding-bottom: 15vh;
   }
   footer .container .pied {
     width: 50%;
   }
   footer .container .pied h2 {
-    font-size: 12vmin;
+    font-size: 10vmin;
     margin-bottom: 2vh;
   }
   footer .container .pied p {

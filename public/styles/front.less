@@ -79,15 +79,6 @@ header{
             color: @Couleur1;
             font-size: 4vw;
         }
-        input{
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            cursor: pointer;
-            opacity: 0;
-            z-index: 150;
-        }
         #menu{
             display: none;
             /*position: absolute;
@@ -211,6 +202,7 @@ header{
         z-index: 1;
         .image{
             z-index: 1;
+            position: relative;
             img{
                 z-index: 1;
                 width: 100%;
@@ -220,8 +212,8 @@ header{
                 width: 13vw;
                 min-height: 4vh;
                 background-color: @Couleur1;
-                margin-left: -125px;
-                margin-top: -20px;
+                left: -12vmin;
+                bottom: -2vmin;
                 z-index: 25;
             }
         }
@@ -263,8 +255,9 @@ header{
 
 #section-categories{
     width: 100%;
-    height: 80vh;
+    height: auto;
     margin-top: -2vh;
+    padding-bottom: 15vh;
     .container{
         width: 70%;
         margin-left: auto;
@@ -273,33 +266,57 @@ header{
         flex-direction: row;
         flex-wrap: wrap;
         form{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0px;
             button{
                 border: none;
                 article{
                     background-color: @Couleur4;
-                    padding-left: 2vw;
-                    padding-right: 2vw;
-                    padding-bottom: 4vh;
+                    padding: 8vh 2vw 4vh 2vw;
                     width: 19vw;
-                    height: 30vh;
+                    height: 22vh;
                     display: flex;
                     flex-direction: column;
                     flex-wrap: nowrap;
                     align-items: center;
-                    justify-content: flex-end;
-                    .img-cat{
-                        margin-bottom: -4vh;
+                    justify-content: space-between;
+                    .conteneur-image{
+                        position: relative;
+                        height: 12vmin;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        align-items: center;
+                        .img-cat{
+                            width: 14vmin;
+                        }
+                        .cercle {
+                            position: absolute;
+                            border-radius: 50%;
+                            width: 55px;
+                            height: 55px;
+                            background-color: rgba(152, 214, 214, 0.25);
+                            top: 60%;
+                            left: -13.5%;
+                        }
                     }
-                    p{
-                        color: @Couleur1;
-                        font-family: @fontB;
-                        background-color: @Couleur4;
-                        font-size: 1.5vw;
-                        text-align: center;
-                        padding-top: 2.75vh;
+                    .conteneur-titre{
+                        display: flex;
+                        flex-direction: column;
+                        height: 8vh;
+                        align-items: center;
+                        justify-content: flex-end;
+                        p{
+                            color: @Couleur1;
+                            font-family: @fontB;
+                            background-color: @Couleur4;
+                            font-size: 1.5vw;
+                            text-align: center;
+                            padding-top: 2.75vh;
+                        }
                     }
                     
                 }
@@ -310,15 +327,6 @@ header{
                         background-color: @Couleur3;
                         color: white;
                     }
-                }
-                .cercle {
-                    position: relative;
-                    border-radius: 50%;
-                    width: 55px;
-                    height: 55px;
-                    background-color: rgba(152, 214, 214, 0.25);
-                    top: 0%;
-                    left: -13.5%;
                 }
             }
         }
@@ -354,7 +362,7 @@ header{
         }
         .container-artisans{
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-gap: 20px;
             grid-auto-rows: minmax(100px, auto);
             margin-top: 10vh;

@@ -75,54 +75,6 @@
 
     #menuToggle {
         display: block;
-        position: sticky;
-        float: right;
-        top: 25px;
-        right: 25px;
-        box-sizing: content-box;
-        z-index: 50;
-        .icon-menu-close{
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px @Couleur1 solid;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            i{
-                color: @Couleur1;
-                font-size: 4vw;
-            }
-            input{
-                display: block;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                cursor: pointer;
-                opacity: 0; /* hide this */
-                z-index: 150; /* and place it over the hamburger */
-                :checked ~ #menu{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    z-index: 50;
-                }
-            }
-            #menu{
-                position: absolute;
-                width: 50px;
-                height: 100vh;
-                padding-left: 0px;
-                padding-top: 0px;
-                padding-bottom: 0px;
-                list-style-type: none;
-                z-index: 50;
-                right: 100px;
-            }
-        }
-        
     }
 
     #section-titre{
@@ -162,8 +114,8 @@
         }
         .infos{
             width: 100%;
-            height: 50vh;
-            padding: 10vh 0 5vh 0;
+            height: auto;
+            padding: 8vh 0 8vh 0;
             img{
                 width: 75px;
             }
@@ -203,6 +155,7 @@
                 }
             }
             .infos{
+                width: 100%;
                 h2{
                     font-size: 7vmin;
                     margin-top: 3vh;

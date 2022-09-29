@@ -240,10 +240,10 @@ header .container #topnav_responsive_menu {
   align-items: center;
   justify-content: center;
 }
-#section-categories .container form button {
+#section-categories .container form div {
   border: none;
 }
-#section-categories .container form button article {
+#section-categories .container form div article {
   background-color: #202327;
   padding: 8vh 2vw 4vh 2vw;
   width: 19vw;
@@ -254,7 +254,7 @@ header .container #topnav_responsive_menu {
   align-items: center;
   justify-content: space-between;
 }
-#section-categories .container form button article .conteneur-image {
+#section-categories .container form div article .conteneur-image {
   position: relative;
   height: 12vmin;
   display: flex;
@@ -262,11 +262,11 @@ header .container #topnav_responsive_menu {
   justify-content: flex-end;
   align-items: center;
 }
-#section-categories .container form button article .conteneur-image .img-cat {
+#section-categories .container form div article .conteneur-image .img-cat {
   min-width: 10vmin;
   width: 14vmin;
 }
-#section-categories .container form button article .conteneur-image .cercle {
+#section-categories .container form div article .conteneur-image .cercle {
   position: absolute;
   border-radius: 50%;
   width: 55px;
@@ -275,14 +275,14 @@ header .container #topnav_responsive_menu {
   top: 60%;
   left: -13.5%;
 }
-#section-categories .container form button article .conteneur-titre {
+#section-categories .container form div article .conteneur-titre {
   display: flex;
   flex-direction: column;
   height: 8vh;
   align-items: center;
   justify-content: flex-end;
 }
-#section-categories .container form button article .conteneur-titre p {
+#section-categories .container form div article .conteneur-titre p {
   color: #93ffe9;
   font-family: 'montserrat-black';
   background-color: #202327;
@@ -290,11 +290,20 @@ header .container #topnav_responsive_menu {
   text-align: center;
   padding-top: 2.75vh;
 }
-#section-categories .container form button article:hover {
+#section-categories .container form div .selection-categorie {
+  background-color: #1c383c;
+}
+#section-categories .container form div .selection-categorie .conteneur-titre p {
+  background-color: #1c383c;
+}
+#section-categories .container form div article:hover {
   background-color: #2a2e34;
   cursor: pointer;
 }
-#section-categories .container form button article:hover p {
+#section-categories .container form div article:hover .conteneur-titre {
+  background-color: #2a2e34;
+}
+#section-categories .container form div article:hover .conteneur-titre p {
   background-color: #2a2e34;
   color: white;
 }

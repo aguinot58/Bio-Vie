@@ -17,6 +17,7 @@ return [
     'app_categories_delete' => [['id'], ['_controller' => 'App\\Controller\\CategoriesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/categories']], [], [], []],
     'contact' => [[], ['_controller' => 'App\\Controller\\ContactController::contact'], [], [['text', '/contact']], [], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::home'], [], [['text', '/']], [], [], []],
+    'fetch' => [[], ['_controller' => 'App\\Controller\\HomeController::FIltreArtisans'], [], [['text', '/fetchData']], [], [], []],
     'app_operateurs_index' => [[], ['_controller' => 'App\\Controller\\OperateursController::index'], [], [['text', '/operateurs/']], [], [], []],
     'app_operateurs_new' => [[], ['_controller' => 'App\\Controller\\OperateursController::new'], [], [['text', '/operateurs/new']], [], [], []],
     'app_operateurs_show' => [['id'], ['_controller' => 'App\\Controller\\OperateursController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/operateurs']], [], [], []],

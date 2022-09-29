@@ -55,25 +55,21 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css\" integrity=\"sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css\" integrity=\"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
 
-        <script src=\"";
-        // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("javascript/front.js"), "html", null, true);
-        echo "\"></script>
         <link rel=\"stylesheet\" href=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/front.css"), "html", null, true);
         echo "\">
 
         ";
-        // line 16
+        // line 15
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 19
+        // line 18
         echo "
         ";
-        // line 20
+        // line 19
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 23
+        // line 22
         echo "    </head>
 
     <body>
@@ -105,9 +101,9 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         </header>
 
         ";
-        // line 53
+        // line 52
         $this->displayBlock('body', $context, $blocks);
-        // line 56
+        // line 55
         echo "
         <footer>
             <div class=\"container\">
@@ -118,6 +114,11 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
                 </div>
             </div>
         </footer>
+
+        <script src=\"";
+        // line 66
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("javascript/front.js"), "html", null, true);
+        echo "\"></script>
 
     </body>
 
@@ -141,14 +142,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 16
+    // line 15
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 17
+        // line 16
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -158,14 +159,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 20
+    // line 19
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 21
+        // line 20
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -175,14 +176,14 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     }
 
-    // line 53
+    // line 52
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 54
+        // line 53
         echo "        
         ";
         
@@ -202,7 +203,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  186 => 54,  179 => 53,  169 => 21,  162 => 20,  152 => 17,  145 => 16,  132 => 5,  111 => 56,  109 => 53,  77 => 23,  75 => 20,  72 => 19,  69 => 16,  64 => 13,  60 => 12,  50 => 5,  44 => 1,);
+        return array (  187 => 53,  180 => 52,  170 => 20,  163 => 19,  153 => 16,  146 => 15,  133 => 5,  120 => 66,  107 => 55,  105 => 52,  73 => 22,  71 => 19,  68 => 18,  65 => 15,  60 => 12,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -218,7 +219,6 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css\" integrity=\"sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css\" integrity=\"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
 
-        <script src=\"{{ asset('javascript/front.js') }}\"></script>
         <link rel=\"stylesheet\" href=\"{{ asset('styles/front.css') }}\">
 
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -272,6 +272,8 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
                 </div>
             </div>
         </footer>
+
+        <script src=\"{{ asset('javascript/front.js') }}\"></script>
 
     </body>
 

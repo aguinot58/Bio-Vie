@@ -5,8 +5,8 @@
 
         {% if categorie.nom != "En conversion" %}
 
-            <button type="submit" value="{{ categorie.id }}" name="categorie">
-                <article value="{{ categorie.id }}" name="categorie">
+            <button type="submit" value="{{ categorie.id }}" name="categorie" onclick="recup_Data({{ categorie.id }})">
+                <article value="{{ categorie.id }}" name="categorie" id="{{ categorie.id }}" class="card-cat">
                     <div class="conteneur-image">
                         <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}" value="{{ categorie.id }}" name="categorie">
                         <div class="cercle"> </div>
@@ -15,7 +15,7 @@
                         <p class="nom-cat" value="{{ categorie.id }}" name="categorie">{{ categorie.nom|upper }}</p>
                     </div>
                 </article>
-                
+                <input type="hidden" name="page" value="{{ thisPage }}" id="page">
             </button>
 
         {% endif %}

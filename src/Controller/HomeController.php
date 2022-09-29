@@ -11,6 +11,7 @@ use App\Entity\Operateurs;
 use App\Repository\CategoriesRepository;
 use App\Entity\Categories;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 
 class HomeController extends AbstractController
@@ -36,7 +37,6 @@ class HomeController extends AbstractController
             ->getQuery()
             ->getSingleScalarResult();
 
-
         /* Liste des catégories */
         $categories = $repoCategories->createQueryBuilder('a')
             ->select('a.nom, a.id')
@@ -48,13 +48,7 @@ class HomeController extends AbstractController
                 ->getForm();
 
         $cat = $request->query->get('categorie');
-
-
-        /* Extraction de toutes les artisans */
-        // Create our query
-        /*$query = $repoOperateurs->createQueryBuilder('o')
-            ->orderBy('o.id', 'ASC')
-            ->getQuery();*/
+        //$page = $request->query->get('page');
 
         $query = $repoOperateurs->createQueryBuilder('o');
         if ($cat != '') {
@@ -80,5 +74,52 @@ class HomeController extends AbstractController
             'form' => $form->createView(),
             'cat' => $cat,
         ]);
+    }
+
+    /**
+     * @Route("/fetchData", name="fetch")
+     * 
+     */
+    public function FIltreArtisans(Request $request, OperateursRepository $repoOperateurs, $page = 1, $cat = "all"): Response {
+
+        $request->getUri();
+
+        if (strpos($request, "?page=") !== FALSE) {
+            $Tblpage = explode("?page=", $request);
+            $page = (int)$Tblpage[1];
+        } else {
+            $page = 1;
+        }
+
+        if (strpos($request, "?categorie=") !== FALSE) {
+            $Tblcat = explode("?categorie=", $request);
+            $cat = (int)$Tblcat[1];
+        } else {
+            $cat = "all";
+        }
+
+        $query = $repoOperateurs->createQueryBuilder('o');
+        if ($cat != 'all') {
+            $query->where(':category MEMBER OF o.categories');  
+            $query->setParameter("category", $cat);
+        }
+        $query->orderBy('o.id', 'ASC');
+        $query->getQuery();
+
+        $limit = 6;
+        
+        $paginator = $repoOperateurs->getAllOperateurs($query, $page, $limit);
+        $maxPages = ceil($paginator->count() / $limit);
+        $thisPage = $page;
+
+        return new JSONResponse([
+            'content' => $this->renderView('operateurs/_card2.html.twig', [
+                'maxPages' => $maxPages, 
+                'thisPage' => $thisPage,
+                'operateursFiltered' => $paginator,
+                'cat' => $cat,
+            ])
+        ]);
+
     }
 }

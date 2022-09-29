@@ -231,7 +231,7 @@ header{
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            button{
+            div{
                 border: none;
                 article{
                     background-color: @Couleur4;
@@ -281,12 +281,23 @@ header{
                     }
                     
                 }
+                .selection-categorie{
+                    background-color: #1c383c;
+                    .conteneur-titre{
+                        p{
+                            background-color: #1c383c;
+                        }
+                    }
+                }
                 article:hover{
                     background-color: @Couleur3;
                     cursor: pointer;
-                    p{
+                    .conteneur-titre{
                         background-color: @Couleur3;
-                        color: white;
+                        p{
+                            background-color: @Couleur3;
+                            color: white;
+                        }
                     }
                 }
             }

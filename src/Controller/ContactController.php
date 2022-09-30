@@ -9,6 +9,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\{TextType,ButtonType,EmailType,HiddenType,PasswordType,TextareaType,SubmitType,NumberType,DateType,MoneyType,BirthdayType};
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
+
 
 
 class ContactController extends AbstractController
@@ -16,7 +19,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(Request $request): Response
+    public function contact(Request $request, MailerInterface $mailer): Response
     {
 
         $form = $this->createFormBuilder()
@@ -101,7 +104,18 @@ class ContactController extends AbstractController
             
             $data = $form->getData();
 
-            //var_dump($data);
+            $message = (new Email())
+                ->from('admin@bioetvie.com')
+                ->to($data['email'])
+                ->subject($data['sujet'])
+                ->text('Sender : '.$data['nom'].' '.$data['prenom'].' '.$data['telephone'].\PHP_EOL.
+                    $data['message'],
+                    'text/plain');
+            $mailer->send($message);
+
+            $this->addFlash('success', 'Vore message a été envoyé');
+
+            return $this->redirectToRoute('contact');
 
         }
 

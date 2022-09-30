@@ -33,7 +33,7 @@ class __TwigTemplate_ad912803e6a5d8e0a735170fb665bcad extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,7 +42,7 @@ class __TwigTemplate_ad912803e6a5d8e0a735170fb665bcad extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "categories/show.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "categories/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "categories/show.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -128,7 +128,7 @@ class __TwigTemplate_ad912803e6a5d8e0a735170fb665bcad extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
 {% block title %}Categories{% endblock %}
 

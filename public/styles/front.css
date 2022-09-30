@@ -991,13 +991,13 @@ footer .container .pied p {
   #section-categories .container {
     width: 100%;
   }
-  #section-categories .container form button article {
+  #section-categories .container form div article {
     width: 293px;
   }
-  #section-categories .container form button article .conteneur-image .img-cat {
+  #section-categories .container form div article .conteneur-image .img-cat {
     min-width: 20vmin;
   }
-  #section-categories .container form button article .conteneur-titre p {
+  #section-categories .container form div article .conteneur-titre p {
     font-size: 18px;
   }
   #section-artisans {

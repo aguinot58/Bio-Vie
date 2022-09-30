@@ -74,6 +74,14 @@ return [[
 '[C]App%5CController%5CActivitesController%23edit' => 1,
 'App%5CController%5CActivitesController%23delete' => 0,
 '[C]App%5CController%5CActivitesController%23delete' => 1,
+'App%5CController%5CArtisanController' => 0,
+'[C]App%5CController%5CArtisanController' => 1,
+'App%5CController%5CArtisanController%23artisan' => 2,
+'[C]App%5CController%5CArtisanController%23artisan' => 1,
+'App%5CController%5CBackOfficeController' => 0,
+'[C]App%5CController%5CBackOfficeController' => 1,
+'App%5CController%5CBackOfficeController%23back' => 3,
+'[C]App%5CController%5CBackOfficeController%23back' => 1,
 'App%5CController%5CCategoriesController' => 0,
 '[C]App%5CController%5CCategoriesController' => 1,
 'App%5CController%5CCategoriesController%23index' => 0,
@@ -86,10 +94,16 @@ return [[
 '[C]App%5CController%5CCategoriesController%23edit' => 1,
 'App%5CController%5CCategoriesController%23delete' => 0,
 '[C]App%5CController%5CCategoriesController%23delete' => 1,
+'App%5CController%5CContactController' => 0,
+'[C]App%5CController%5CContactController' => 1,
+'App%5CController%5CContactController%23contact' => 4,
+'[C]App%5CController%5CContactController%23contact' => 1,
 'App%5CController%5CHomeController' => 0,
 '[C]App%5CController%5CHomeController' => 1,
-'App%5CController%5CHomeController%23home' => 2,
+'App%5CController%5CHomeController%23home' => 5,
 '[C]App%5CController%5CHomeController%23home' => 1,
+'App%5CController%5CHomeController%23FIltreArtisans' => 6,
+'[C]App%5CController%5CHomeController%23FIltreArtisans' => 1,
 'App%5CController%5COperateursController' => 0,
 '[C]App%5CController%5COperateursController' => 1,
 'App%5CController%5COperateursController%23index' => 0,
@@ -112,6 +126,8 @@ return [[
 '[C]App%5CEntity%5CActivites%23getNomActivite' => 1,
 'App%5CEntity%5CActivites%23setNomActivite' => 0,
 '[C]App%5CEntity%5CActivites%23setNomActivite' => 1,
+'App%5CEntity%5CActivites%23__toString' => 0,
+'[C]App%5CEntity%5CActivites%23__toString' => 1,
 'App%5CEntity%5CActivites%23getOperateurs' => 0,
 '[C]App%5CEntity%5CActivites%23getOperateurs' => 1,
 'App%5CEntity%5CActivites%23addOperateur' => 0,
@@ -134,6 +150,8 @@ return [[
 '[C]App%5CEntity%5CCategories%23getNom' => 1,
 'App%5CEntity%5CCategories%23setNom' => 0,
 '[C]App%5CEntity%5CCategories%23setNom' => 1,
+'App%5CEntity%5CCategories%23__toString' => 0,
+'[C]App%5CEntity%5CCategories%23__toString' => 1,
 'App%5CEntity%5CCategories%23getOperateur' => 0,
 '[C]App%5CEntity%5CCategories%23getOperateur' => 1,
 'App%5CEntity%5CCategories%23addOperateur' => 0,
@@ -188,6 +206,8 @@ return [[
 '[C]App%5CEntity%5COperateurs%23getDateMAJ' => 1,
 'App%5CEntity%5COperateurs%23setDateMAJ' => 0,
 '[C]App%5CEntity%5COperateurs%23setDateMAJ' => 1,
+'App%5CEntity%5COperateurs%23__toString' => 0,
+'[C]App%5CEntity%5COperateurs%23__toString' => 1,
 'App%5CEntity%5COperateurs%23getCategories' => 0,
 '[C]App%5CEntity%5COperateurs%23getCategories' => 1,
 'App%5CEntity%5COperateurs%23addCategory' => 0,
@@ -692,8 +712,74 @@ return [[
 ], [
 
 0 => [],
-1 => 1662538459,
+1 => 1664550508,
 2 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/artisan/{id}/{cat}',
+                ],
+                'name' => [
+                    'artisan',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+3 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/back',
+                ],
+                'name' => [
+                    'back',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+4 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/contact',
+                ],
+                'name' => [
+                    'contact',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+5 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -706,6 +792,28 @@ return [[
                 ],
                 'name' => [
                     'home',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+6 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/fetchData',
+                ],
+                'name' => [
+                    'fetch',
                 ],
             ],
         ],

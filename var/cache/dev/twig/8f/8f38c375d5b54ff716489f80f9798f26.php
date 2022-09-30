@@ -57,42 +57,45 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
             if ((twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 6) != "En conversion")) {
                 // line 7
                 echo "
-            ";
-                // line 9
-                echo "            <div value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 9), "html", null, true);
+            <button type=\"submit\" value=\"";
+                // line 8
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 8), "html", null, true);
                 echo "\" name=\"categorie\" onclick=\"recup_Data(";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 9), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 8), "html", null, true);
                 echo ")\">
                 <article value=\"";
-                // line 10
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 10), "html", null, true);
+                // line 9
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 9), "html", null, true);
                 echo "\" name=\"categorie\" id=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 10), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 9), "html", null, true);
                 echo "\" class=\"card-cat\">
                     <div class=\"conteneur-image\">
                         <img class=\"img-cat\" src=\"";
-                // line 12
+                // line 11
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/icons/icon-"), "html", null, true);
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 12), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 11), "html", null, true);
                 echo ".png";
                 echo "\" alt=\"icône de la catégorie ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 12), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 11), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 12), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 11), "html", null, true);
                 echo "\" name=\"categorie\">
                         <div class=\"cercle\"> </div>
                     </div>
                     <div class=\"conteneur-titre\">
                         <p class=\"nom-cat\" value=\"";
-                // line 16
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 16), "html", null, true);
+                // line 15
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 15), "html", null, true);
                 echo "\" name=\"categorie\">";
-                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 16)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 15)), "html", null, true);
                 echo "</p>
                     </div>
                 </article>
-            </div>
+                <input type=\"hidden\" name=\"page\" value=\"";
+                // line 18
+                echo twig_escape_filter($this->env, (isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 18, $this->source); })()), "html", null, true);
+                echo "\" id=\"page\">
+            </button>
 
         ";
             }
@@ -125,7 +128,7 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 24,  100 => 22,  89 => 16,  76 => 12,  69 => 10,  62 => 9,  59 => 7,  57 => 6,  54 => 5,  50 => 4,  46 => 3,  40 => 1,);
+        return array (  110 => 24,  103 => 22,  96 => 18,  88 => 15,  75 => 11,  68 => 9,  62 => 8,  59 => 7,  57 => 6,  54 => 5,  50 => 4,  46 => 3,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -137,8 +140,7 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
 
         {% if categorie.nom != \"En conversion\" %}
 
-            {# pour refaire fonctionner le filtre => repasser les div en button + idem sur fichier front.less en attendant fonctionnement en ajax #}
-            <div value=\"{{ categorie.id }}\" name=\"categorie\" onclick=\"recup_Data({{ categorie.id }})\">
+            <button type=\"submit\" value=\"{{ categorie.id }}\" name=\"categorie\" onclick=\"recup_Data({{ categorie.id }})\">
                 <article value=\"{{ categorie.id }}\" name=\"categorie\" id=\"{{ categorie.id }}\" class=\"card-cat\">
                     <div class=\"conteneur-image\">
                         <img class=\"img-cat\" src=\"{{ asset(\"images/icons/icon-\")}}{{ categorie.nom }}{{(\".png\") }}\" alt=\"icône de la catégorie {{ categorie.nom }}\" value=\"{{ categorie.id }}\" name=\"categorie\">
@@ -148,7 +150,8 @@ class __TwigTemplate_1fbb328b596239484af160f29a98fb5b extends Template
                         <p class=\"nom-cat\" value=\"{{ categorie.id }}\" name=\"categorie\">{{ categorie.nom|upper }}</p>
                     </div>
                 </article>
-            </div>
+                <input type=\"hidden\" name=\"page\" value=\"{{ thisPage }}\" id=\"page\">
+            </button>
 
         {% endif %}
 

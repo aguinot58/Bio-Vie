@@ -225,79 +225,72 @@ header{
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        form{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            div{
-                border: none;
-                article{
-                    background-color: @Couleur4;
-                    padding: 8vh 2vw 4vh 2vw;
-                    width: 19vw;
-                    height: 22vh;
+        div{
+            border: none;
+            article{
+                background-color: @Couleur4;
+                padding: 8vh 2vw 4vh 2vw;
+                width: 19vw;
+                height: 22vh;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;
+                .conteneur-image{
+                    position: relative;
+                    height: 12vmin;
                     display: flex;
                     flex-direction: column;
-                    flex-wrap: nowrap;
+                    justify-content: flex-end;
                     align-items: center;
-                    justify-content: space-between;
-                    .conteneur-image{
-                        position: relative;
-                        height: 12vmin;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-end;
-                        align-items: center;
-                        .img-cat{
-                            min-width: 10vmin;
-                            width: 14vmin;
-                        }
-                        .cercle {
-                            position: absolute;
-                            border-radius: 50%;
-                            width: 55px;
-                            height: 55px;
-                            background-color: rgba(152, 214, 214, 0.25);
-                            top: 60%;
-                            left: -13.5%;
-                        }
+                    .img-cat{
+                        min-width: 10vmin;
+                        width: 14vmin;
                     }
-                    .conteneur-titre{
-                        display: flex;
-                        flex-direction: column;
-                        height: 8vh;
-                        align-items: center;
-                        justify-content: flex-end;
-                        p{
-                            color: @Couleur1;
-                            font-family: @fontB;
-                            background-color: @Couleur4;
-                            font-size: 1.5vw;
-                            text-align: center;
-                            padding-top: 2.75vh;
-                        }
-                    }
-                    
-                }
-                .selection-categorie{
-                    background-color: #1c383c;
-                    .conteneur-titre{
-                        p{
-                            background-color: #1c383c;
-                        }
+                    .cercle {
+                        position: absolute;
+                        border-radius: 50%;
+                        width: 55px;
+                        height: 55px;
+                        background-color: rgba(152, 214, 214, 0.25);
+                        top: 60%;
+                        left: -13.5%;
                     }
                 }
-                article:hover{
+                .conteneur-titre{
+                    display: flex;
+                    flex-direction: column;
+                    height: 8vh;
+                    align-items: center;
+                    justify-content: flex-end;
+                    p{
+                        color: @Couleur1;
+                        font-family: @fontB;
+                        background-color: @Couleur4;
+                        font-size: 1.5vw;
+                        text-align: center;
+                        padding-top: 2.75vh;
+                    }
+                }
+                
+            }
+            .selection-categorie{
+                background-color: #1c383c;
+                .conteneur-titre{
+                    p{
+                        background-color: #1c383c;
+                    }
+                }
+            }
+            article:hover{
+                background-color: @Couleur3;
+                cursor: pointer;
+                .conteneur-titre{
                     background-color: @Couleur3;
-                    cursor: pointer;
-                    .conteneur-titre{
+                    p{
                         background-color: @Couleur3;
-                        p{
-                            background-color: @Couleur3;
-                            color: white;
-                        }
+                        color: white;
                     }
                 }
             }
@@ -401,24 +394,33 @@ header{
             .hidden{
                 display: none;
             }
+            :hover:not(.active){
+                background-color: @Couleur2;
+            }
             li{
                 margin-right: 1vh;
                 padding: 1vmin;
-                a{
-                    text-decoration: none;
+                p{
                     font-size: clamp( 1vmin, 2.5vmin, 6vmin);
                     font-family: @fontB;
                     color: black;
-                    :visited{
-                        color: black;
-                    }
+                }
+                :hover{
+                    cursor: pointer;
                 }
             }
-            .active a{
-                color: @Couleur2;
+            .active{
+                margin-right: 1vh;
+                padding: 1vmin;
+                p{
+                    color: @Couleur2;
+                }
             }
-            :hover:not(.active){
-                background-color: @Couleur2;
+            .active:hover{
+                background-color: black;
+                p{
+                    background-color: black;
+                }
             }
         }
     }

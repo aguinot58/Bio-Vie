@@ -43,20 +43,11 @@ class HomeController extends AbstractController
             ->getQuery()
             ->getScalarResult();
 
-
-        $form = $this->createFormBuilder()
-                ->getForm();
-
-        $cat = $request->query->get('categorie');
-        //$page = $request->query->get('page');
-
         $query = $repoOperateurs->createQueryBuilder('o');
-        if ($cat != '') {
-            $query->where(':category MEMBER OF o.categories');  
-            $query->setParameter("category", $cat);
-        }
         $query->orderBy('o.id', 'ASC');
         $query->getQuery();
+
+        $cat = "all";
 
         $limit = 6;
         
@@ -71,7 +62,6 @@ class HomeController extends AbstractController
             'donnees' => $totalOperateurs,
             'categories' => $categories,
             'operateursFiltered' => $paginator,
-            'form' => $form->createView(),
             'cat' => $cat,
         ]);
     }
@@ -91,8 +81,8 @@ class HomeController extends AbstractController
             $page = 1;
         }
 
-        if (strpos($request, "?categorie=") !== FALSE) {
-            $Tblcat = explode("?categorie=", $request);
+        if (strpos($request, "categorie=") !== FALSE) {
+            $Tblcat = explode("categorie=", $request);
             $cat = (int)$Tblcat[1];
         } else {
             $cat = "all";
@@ -113,7 +103,7 @@ class HomeController extends AbstractController
         $thisPage = $page;
 
         return new JSONResponse([
-            'content' => $this->renderView('operateurs/_card2.html.twig', [
+            'content' => $this->renderView('operateurs/_card.html.twig', [
                 'maxPages' => $maxPages, 
                 'thisPage' => $thisPage,
                 'operateursFiltered' => $paginator,

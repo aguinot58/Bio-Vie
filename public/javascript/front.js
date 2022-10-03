@@ -15,45 +15,47 @@ function showResponsiveMenu() {
     }
 }
 
-function recup_Data(id) {
+function recup_Data(id, myPage=1, pagination='no') {
 
-    var myId = "";
     var carteCategorie = document.getElementById(String(id));
     var cartes = document.querySelectorAll(".card-cat");
-    //var Page = document.getElementById("page");
-    //var myPage = Page.value;
-    var myPage= 1;
     let Contenant = document.getElementById("content-ajax");
 
     // Si la catégorie n'était pas sélectionnée, on lui ajoute une class pour pouvoir modifier le css 
     // et on filtre sur les artisans de la catégorie choisie.
     // Si elle était déjà sélectionnée, on la désélectionne afin de pouvoir réafficher tous les artisans
-    if (carteCategorie.classList.contains("selection-categorie")) {
-        carteCategorie.classList.remove("selection-categorie");
-        myId = "all";
-    } else {
-        cartes.forEach(function (carte){
-            if (carte.classList.contains("selection-categorie")) {
-                carte.classList.remove("selection-categorie");
+    if (pagination != 'yes') {
+        if (carteCategorie != null) {
+            if (carteCategorie.classList.contains("selection-categorie")) {
+                carteCategorie.classList.remove("selection-categorie");
+                console.log("test");
+                myId = "all";
+            } else {
+                cartes.forEach(function (carte){
+                    if (carte.classList.contains("selection-categorie")) {
+                        carte.classList.remove("selection-categorie");
+                    }
+                });
+                carteCategorie.classList.add("selection-categorie");
+                myId = id;
             }
-        });
-        carteCategorie.classList.add("selection-categorie");
-        myId = id;
+        } else {
+            myId = id;
+        }
+    } else {
+        if (isNaN(id)){
+            myId = "all";
+        } else {
+            myId = id;
+        }
     }
-
-    /*if (myPage==null){
-        myPage="1";
-    }*/
 
     const Params = new URLSearchParams();
 
-    if (myId != "all") {
+    Params.append("page", myPage+"#section-artisans");
+    if (myId != 'all') {
         Params.append("categorie", myId);
     }
-    Params.append("page", myPage+"#section-artisans");
-
-    //console.log(myId);
-    //console.log(myPage);
 
     fetch("/fetchData" + "?" + Params.toString() + "&?ajax=1", {
         headers: {
@@ -62,7 +64,6 @@ function recup_Data(id) {
     }).then(response => 
         response.json()
     ).then(data => {
-        //console.log(data);
         Contenant.innerHTML = '';
         Contenant.innerHTML = data.content;
     }).catch(e => alert(e));

@@ -131,7 +131,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
             ";
         // line 59
-        $this->loadTemplate("home/_form2.html.twig", "home/home.html.twig", 59)->display($context);
+        $this->loadTemplate("home/_form.html.twig", "home/home.html.twig", 59)->display($context);
         // line 60
         echo "
         </div>
@@ -148,15 +148,10 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
             <div id=\"content-ajax\">
 
                 ";
-        // line 79
+        // line 74
+        $this->loadTemplate("operateurs/_card.html.twig", "home/home.html.twig", 74)->display($context);
+        // line 75
         echo "
-                ";
-        // line 80
-        $this->loadTemplate("operateurs/_card2.html.twig", "home/home.html.twig", 80)->display($context);
-        // line 81
-        echo "
-
-
             </div>
 
         </div>
@@ -182,7 +177,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
     public function getDebugInfo()
     {
-        return array (  157 => 81,  155 => 80,  152 => 79,  136 => 60,  134 => 59,  109 => 37,  95 => 26,  90 => 24,  86 => 23,  79 => 19,  75 => 18,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  154 => 75,  152 => 74,  136 => 60,  134 => 59,  109 => 37,  95 => 26,  90 => 24,  86 => 23,  79 => 19,  75 => 18,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -245,7 +240,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
         <div class=\"container\">
 
-            {% include 'home/_form2.html.twig' %}
+            {% include 'home/_form.html.twig' %}
 
         </div>
 
@@ -260,15 +255,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
             <div id=\"content-ajax\">
 
-                {#{% for operateur in operateursFiltered %}
-
-                        {% include 'operateurs/_card.html.twig' with {operateur: operateur} only %}
-
-                {% endfor %}#}
-
-                {% include 'operateurs/_card2.html.twig' %}
-
-
+                {% include 'operateurs/_card.html.twig' %}
 
             </div>
 

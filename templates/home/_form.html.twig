@@ -1,11 +1,9 @@
-<form action="{{ path('home') }}#section-artisans" method="GET">
 
-{{ form_start(form) }}
     {% for categorie in categories %}
 
         {% if categorie.nom != "En conversion" %}
 
-            <button type="submit" value="{{ categorie.id }}" name="categorie" onclick="recup_Data({{ categorie.id }})">
+            <div value="{{ categorie.id }}" name="categorie" onclick="recup_Data({{ categorie.id }})">
                 <article value="{{ categorie.id }}" name="categorie" id="{{ categorie.id }}" class="card-cat">
                     <div class="conteneur-image">
                         <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ categorie.nom }}{{(".png") }}" alt="icône de la catégorie {{ categorie.nom }}" value="{{ categorie.id }}" name="categorie">
@@ -16,11 +14,8 @@
                     </div>
                 </article>
                 <input type="hidden" name="page" value="{{ thisPage }}" id="page">
-            </button>
+            </div>
 
         {% endif %}
 
     {% endfor %}
-{{ form_end(form) }}
-
-</form>

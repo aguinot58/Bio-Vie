@@ -1,18 +1,98 @@
-{% block content %}
+<div class="container-artisans">
 
-    <div class="card">
-        <a href="{{ path("artisan") }}/{{ operateur.id }}/{{ operateur.categories|first }}">
-            <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ operateur.categories|first }}{{ ("_gris.png") }}" alt="icône de la catégorie {{ operateur.categories|first }}">
-                
-            <div class="card-body">
-                <h5 class="card-title">{{ operateur.raisonSociale }}</h5>
-                <div class="card-infos">
-                    <p class="gras">{{ operateur.gerant|upper }}</p>
-                    <p>{{ operateur.telephone|slice(0, 2) }} {{ operateur.telephone|slice(2, 2) }} {{ operateur.telephone|slice(4, 2) }} {{ operateur.telephone|slice(6, 2) }} {{ operateur.telephone|slice(8, 2) }}</p>
+    {% for operateur in operateursFiltered %}
+
+        <div class="card">
+            <a href="{{ path("artisan") }}/{{ operateur.id }}/{{ operateur.categories|first }}">
+                <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ operateur.categories|first }}{{ ("_gris.png") }}" alt="icône de la catégorie {{ operateur.categories|first }}">
+                    
+                <div class="card-body">
+                    <h5 class="card-title">{{ operateur.raisonSociale }}</h5>
+                    <div class="card-infos">
+                        <p class="gras">{{ operateur.gerant|upper }}</p>
+                        <p>{{ operateur.telephone|slice(0, 2) }} {{ operateur.telephone|slice(2, 2) }} {{ operateur.telephone|slice(4, 2) }} {{ operateur.telephone|slice(6, 2) }} {{ operateur.telephone|slice(8, 2) }}</p>
+                    </div>
                 </div>
-            </div>
-            <input type="hidden" name="page" value={{ thisPage }}
-        </a>
-    </div>
+            </a>
+        </div>
 
-{% endblock %}
+    {% endfor %}
+
+</div>
+
+{% apply spaceless %}
+
+    {% if maxPages > 1 %}
+
+        {# Page quantity to show around current page is 3 or a calculated minimum value #}
+        {% set defaultPageQuantityAround = 3 %}
+        {# Mininum value #}
+        {% set minimumPageQuantityAround = min(thisPage - 1, maxPages - thisPage) %}
+        {# Condition to show the right page numbers before current page: default or minimum value #}
+        {% set conditionBefore = thisPage != 1 and minimumPageQuantityAround <= thisPage - 1 %}
+        {# Condition to show the right page numbers after current page: default or minimum value #}
+        {% set conditionAfter = thisPage != maxPages and minimumPageQuantityAround <= maxPages - thisPage %}
+        {# Define page numbers before, other pages will be replaced by "..." #}
+        {% set PageQuantityAroundBefore = conditionBefore ? defaultPageQuantityAround : minimumPageQuantityAround %}
+        {# Define page numbers after, other pages will be replaced by "..." #}
+        {% set PageQuantityAroundAfter = conditionAfter ? defaultPageQuantityAround : minimumPageQuantityAround %}
+
+        <ul>
+            {# Previous link #}
+            {% if thisPage - 1 != 0 %}
+                <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                    <p onclick="recup_Data({{ cat }}, {{thisPage - 1}}, 'yes')" title="Previous"><</p>
+                </li>
+            {% endif %}
+
+            {% for i in 1..maxPages %}
+
+                {# Current page to show #}
+                {% if thisPage == i %}
+                    <li class="active">
+                        <p>{{ i }}</p>
+                    </li>
+                {# Show "..." before current page depending on page numbers to show before #}
+                {% elseif (i < thisPage and 1 != i) and (i == thisPage - PageQuantityAroundBefore - 1) %}
+                    <li>
+                        <p>...</p>
+                    </li>
+                {# Show "..." after current page depending on page numbers to show after #}
+                {% elseif (i > thisPage and maxPages != i) and (i == thisPage + PageQuantityAroundAfter + 1) %}
+                    <li>
+                        <p>...</p>
+                    </li>
+                {# Hide pages under current page and before "..." excepted page 1 #}
+                {% elseif (1 != i) and (i < thisPage - PageQuantityAroundBefore - 1) %}
+                    <li class="hidden">
+                        <p onclick="recup_Data({{ cat }}, {{ i }}, 'yes')" title="Page {{ i }}">{{ i }}</p>
+                    </li>
+                {# Hide pages over current page and after "..." excepted page with number "maxPages" (last) #}
+                {% elseif (maxPages != i) and (i > thisPage + PageQuantityAroundAfter + 1) %}
+                    <li class="hidden">
+                        <p onclick="recup_Data({{ cat }}, {{ i }}, 'yes')" title="Page {{ i }}">{{ i }}</p>
+                    </li>
+                {# Apply particular style for lowest link corresponding to first page 1, and Highest link corresponding to page total count #}
+                {% elseif i == 1 or i == maxPages %}
+                    <li>
+                        <p onclick="recup_Data({{ cat }}, {{ i }}, 'yes')" title="Page {{ i }}">{{ i }}</p>
+                    </li>
+                {# Normal links which are not concerned by conditions above #}
+                {% else %}
+                    <li>
+                        <p onclick="recup_Data({{ cat }}, {{ i }}, 'yes')" title="Page {{ i }}">{{ i }}</p>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {# Next link #}
+            {% if thisPage + 1 <= maxPages %}
+                <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                    <p onclick="recup_Data({{ cat }}, {{thisPage + 1}}, 'yes')" title="Next">></p>
+                </li>
+            {% endif %}
+        </ul>
+
+    {% endif %}
+
+{% endapply %}

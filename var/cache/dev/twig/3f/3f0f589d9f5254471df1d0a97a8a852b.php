@@ -37,16 +37,13 @@ class __TwigTemplate_35d2d9e5459b52d3844d8c774a079004 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/_form2.html.twig"));
 
         // line 1
-        echo "<form action=\"";
+        echo "<!--<form action=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "#section-artisans\" method=\"GET\">
+        echo "#section-artisans\" method=\"GET\">-->
 
 ";
-        // line 3
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()), 'form_start');
-        echo "
-    ";
         // line 4
+        echo "    ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 4, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["categorie"]) {
@@ -106,11 +103,9 @@ class __TwigTemplate_35d2d9e5459b52d3844d8c774a079004 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_end');
+        // line 25
         echo "
-
-</form>";
+<!--</form>-->";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -128,14 +123,14 @@ class __TwigTemplate_35d2d9e5459b52d3844d8c774a079004 extends Template
 
     public function getDebugInfo()
     {
-        return array (  110 => 24,  103 => 22,  96 => 18,  88 => 15,  75 => 11,  68 => 9,  62 => 8,  59 => 7,  57 => 6,  54 => 5,  50 => 4,  46 => 3,  40 => 1,);
+        return array (  107 => 25,  100 => 22,  93 => 18,  85 => 15,  72 => 11,  65 => 9,  59 => 8,  56 => 7,  54 => 6,  51 => 5,  46 => 4,  40 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<form action=\"{{ path('home') }}#section-artisans\" method=\"GET\">
+        return new Source("<!--<form action=\"{{ path('home') }}#section-artisans\" method=\"GET\">-->
 
-{{ form_start(form) }}
+{#{{ form_start(form) }}#}
     {% for categorie in categories %}
 
         {% if categorie.nom != \"En conversion\" %}
@@ -156,8 +151,8 @@ class __TwigTemplate_35d2d9e5459b52d3844d8c774a079004 extends Template
         {% endif %}
 
     {% endfor %}
-{{ form_end(form) }}
+{#{{ form_end(form) }}#}
 
-</form>", "home/_form2.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\home\\_form2.html.twig");
+<!--</form>-->", "home/_form2.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\home\\_form2.html.twig");
     }
 }

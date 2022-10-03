@@ -56,7 +56,7 @@
 
         <div class="container">
 
-            {% include 'home/_form2.html.twig' %}
+            {% include 'home/_form.html.twig' %}
 
         </div>
 
@@ -71,15 +71,7 @@
 
             <div id="content-ajax">
 
-                {#{% for operateur in operateursFiltered %}
-
-                        {% include 'operateurs/_card.html.twig' with {operateur: operateur} only %}
-
-                {% endfor %}#}
-
-                {% include 'operateurs/_card2.html.twig' %}
-
-
+                {% include 'operateurs/_card.html.twig' %}
 
             </div>
 

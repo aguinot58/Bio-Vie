@@ -106,14 +106,14 @@ class ContactController extends AbstractController
 
             $message = (new Email())
                 ->from('admin@bioetvie.com')
-                ->to($data['email'])
+                ->to('admin@bioetvie.com')
                 ->subject($data['sujet'])
-                ->text('Sender : '.$data['nom'].' '.$data['prenom'].' '.$data['telephone'].\PHP_EOL.
-                    $data['message'],
+                ->text('Sender : '.$data['nom'].' '.$data['prenom'].' '.$data['telephone'].' '.$data['email'].\PHP_EOL.
+                    $data['message'].\PHP_EOL,
                     'text/plain');
             $mailer->send($message);
 
-            $this->addFlash('success', 'Vore message a été envoyé');
+            $this->addFlash('success', 'Votre message a été envoyé!');
 
             return $this->redirectToRoute('contact');
 

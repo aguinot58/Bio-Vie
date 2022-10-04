@@ -76,7 +76,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         <header>
             <div id=\"root\" class=\"container\">
                 <div class=\"site\">
-                    <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
+                    <a class=\"nom-site\" href=\"/\"><p id=\"B\">B</p><p id=\"I\">I</p><p id=\"O\">O</p><p id=\"ET\">&</p><p id=\"V\">V</p><p id=\"I2\">I</p><p id=\"E\">E</p></a>
                 </div>
                 <nav class=\"barre-nav\">
                     <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>
@@ -235,7 +235,7 @@ class __TwigTemplate_31fbfa853f1c9dd6b6a42b56ecceb7f9 extends Template
         <header>
             <div id=\"root\" class=\"container\">
                 <div class=\"site\">
-                    <a class=\"nom-site\" href=\"/\"><p>BIO&VIE</p></a>
+                    <a class=\"nom-site\" href=\"/\"><p id=\"B\">B</p><p id=\"I\">I</p><p id=\"O\">O</p><p id=\"ET\">&</p><p id=\"V\">V</p><p id=\"I2\">I</p><p id=\"E\">E</p></a>
                 </div>
                 <nav class=\"barre-nav\">
                     <a class=\"lien-nav\" href=\"/\"><p>ACCUEIL</p></a>

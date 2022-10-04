@@ -46,15 +46,15 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["operateur"]) {
             // line 4
             echo "
-        <div class=\"card\">
-            <a href=\"";
-            // line 6
+        <a href=\"";
+            // line 5
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("artisan");
             echo "/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 6), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "id", [], "any", false, false, false, 5), "html", null, true);
             echo "/";
-            echo twig_escape_filter($this->env, twig_first($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "categories", [], "any", false, false, false, 6)), "html", null, true);
+            echo twig_escape_filter($this->env, twig_first($this->env, twig_get_attribute($this->env, $this->source, $context["operateur"], "categories", [], "any", false, false, false, 5)), "html", null, true);
             echo "\">
+            <div class=\"card\">
                 <img class=\"img-cat\" src=\"";
             // line 7
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/icons/icon-"), "html", null, true);
@@ -88,9 +88,9 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
             echo "</p>
                     </div>
                 </div>
-            </a>
-        </div>
-
+            </div>
+        </a>
+        
     ";
         }
         $_parent = $context['_parent'];
@@ -318,7 +318,7 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  303 => 23,  299 => 97,  294 => 94,  286 => 91,  281 => 90,  278 => 89,  275 => 87,  269 => 86,  257 => 83,  254 => 82,  251 => 81,  240 => 78,  237 => 77,  234 => 76,  223 => 73,  220 => 72,  217 => 71,  206 => 68,  203 => 67,  200 => 66,  195 => 62,  192 => 61,  187 => 57,  184 => 56,  179 => 53,  176 => 52,  173 => 51,  170 => 49,  166 => 48,  163 => 47,  155 => 44,  150 => 43,  147 => 42,  143 => 39,  140 => 38,  138 => 37,  135 => 36,  133 => 35,  130 => 34,  128 => 33,  125 => 32,  123 => 31,  120 => 30,  118 => 29,  115 => 28,  112 => 26,  110 => 25,  107 => 24,  105 => 23,  100 => 20,  79 => 13,  75 => 12,  70 => 10,  60 => 7,  52 => 6,  48 => 4,  44 => 3,  40 => 1,);
+        return array (  303 => 23,  299 => 97,  294 => 94,  286 => 91,  281 => 90,  278 => 89,  275 => 87,  269 => 86,  257 => 83,  254 => 82,  251 => 81,  240 => 78,  237 => 77,  234 => 76,  223 => 73,  220 => 72,  217 => 71,  206 => 68,  203 => 67,  200 => 66,  195 => 62,  192 => 61,  187 => 57,  184 => 56,  179 => 53,  176 => 52,  173 => 51,  170 => 49,  166 => 48,  163 => 47,  155 => 44,  150 => 43,  147 => 42,  143 => 39,  140 => 38,  138 => 37,  135 => 36,  133 => 35,  130 => 34,  128 => 33,  125 => 32,  123 => 31,  120 => 30,  118 => 29,  115 => 28,  112 => 26,  110 => 25,  107 => 24,  105 => 23,  100 => 20,  79 => 13,  75 => 12,  70 => 10,  60 => 7,  51 => 5,  48 => 4,  44 => 3,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -327,8 +327,8 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
 
     {% for operateur in operateursFiltered %}
 
-        <div class=\"card\">
-            <a href=\"{{ path(\"artisan\") }}/{{ operateur.id }}/{{ operateur.categories|first }}\">
+        <a href=\"{{ path(\"artisan\") }}/{{ operateur.id }}/{{ operateur.categories|first }}\">
+            <div class=\"card\">
                 <img class=\"img-cat\" src=\"{{ asset(\"images/icons/icon-\")}}{{ operateur.categories|first }}{{ (\"_gris.png\") }}\" alt=\"icône de la catégorie {{ operateur.categories|first }}\">
                     
                 <div class=\"card-body\">
@@ -338,9 +338,9 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
                         <p>{{ operateur.telephone|slice(0, 2) }} {{ operateur.telephone|slice(2, 2) }} {{ operateur.telephone|slice(4, 2) }} {{ operateur.telephone|slice(6, 2) }} {{ operateur.telephone|slice(8, 2) }}</p>
                     </div>
                 </div>
-            </a>
-        </div>
-
+            </div>
+        </a>
+        
     {% endfor %}
 
 </div>

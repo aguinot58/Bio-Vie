@@ -1,5 +1,6 @@
 @import "variables";
 @import "fonts";
+@import "animations";
 
 *, body{
     margin: 0;
@@ -39,6 +40,10 @@ header{
                 :visited{
                     color: black;
                 }
+                :hover{
+                    transform: scale(1.1);
+                    color: @Couleur2;
+                }
             }
             .sep-nav{
                 margin-left: 2vw;
@@ -50,9 +55,46 @@ header{
             font-family: @fontB;
             font-size: 2.75vmin;
             color: black;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
             :visited{
                 color: black;
             }
+        }
+        .nom-site:nth-child(1) p{
+            animation-name: wiggleWiggle;
+            animation-duration: 1.25s;
+            animation-direction: alternate;
+            animation-timing-function: steps(2, end);
+            animation-iteration-count: infinite;
+        }
+        #B {
+            animation-delay: 0s;
+        }
+          
+        #I {
+            animation-delay: 0.1s;
+        }
+          
+        #O {
+            animation-delay: 0.15s;
+        }
+          
+        #ET {
+            animation-delay: 0.2s;
+        }
+          
+        #V {
+            animation-delay: 0.25s;
+        }
+          
+        #I2 {
+            animation-delay: 0.3s;
+        }
+          
+        #E {
+            animation-delay: 0.35s;
         }
         #topnav_hamburger_icon {
             display: none;
@@ -318,7 +360,7 @@ header{
             z-index: 5;
         }
         .bande-verte-3{
-            width: 24.5vw;
+            width: 27.5vw;
             height: 2.5vh;
             background-color: @Couleur1;
             margin-left: -35px;
@@ -332,13 +374,13 @@ header{
             grid-auto-rows: minmax(100px, auto);
             margin-top: 10vh;
             z-index: 10;
-            .card{
-                box-shadow: 0px 0px 3px 5px rgba(218, 218, 218, 0.5);
-                z-index: 10;
-                background-color: white;
-                padding: 12vh 0 2vh 0;
-                a{
-                    text-decoration: none;
+            a{
+                text-decoration: none;
+                .card{
+                    box-shadow: 0px 0px 3px 5px rgba(218, 218, 218, 0.5);
+                    z-index: 10;
+                    background-color: white;
+                    padding: 12vh 0 2vh 0;
                     height: 22vh;
                     display: flex;
                     flex-direction: column;
@@ -381,8 +423,7 @@ header{
                         }
                     }
                 }
-                
-            }
+            } 
         }
         ul{
             margin-top: 10vh;
@@ -526,6 +567,9 @@ header{
                     color: black;
                     background-color: #dfe8e7;
                     line-height: 3vh;
+                }
+                .alert{
+                    text-align: center;
                 }
                 .envoyer{
                     bottom: 15px;

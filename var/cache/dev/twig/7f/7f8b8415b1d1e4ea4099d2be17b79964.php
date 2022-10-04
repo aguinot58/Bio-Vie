@@ -71,13 +71,30 @@ class __TwigTemplate_cf7af8ffeff729971e48ee90374cdcf8 extends Template
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), "message", [], "any", false, false, false, 14), 'row');
         echo "
     </div>
-    <button class=\"btn envoyer\"><i class=\"fa-solid fa-paper-plane\"></i>";
+    ";
         // line 16
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 16, $this->source); })()), "Envoyer")) : ("Envoyer")), "html", null, true);
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 16));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 17
+            echo "        <div class=\"alert alert-success\">
+            ";
+            // line 18
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 21
+        echo "    <button class=\"btn envoyer\"><i class=\"fa-solid fa-paper-plane\"></i>";
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 21, $this->source); })()), "Envoyer")) : ("Envoyer")), "html", null, true);
         echo "</button>
 ";
-        // line 17
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_end');
+        // line 22
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_end');
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -95,7 +112,7 @@ class __TwigTemplate_cf7af8ffeff729971e48ee90374cdcf8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  80 => 17,  76 => 16,  71 => 14,  65 => 11,  59 => 8,  55 => 7,  49 => 4,  45 => 3,  40 => 1,);
+        return array (  97 => 22,  92 => 21,  83 => 18,  80 => 17,  76 => 16,  71 => 14,  65 => 11,  59 => 8,  55 => 7,  49 => 4,  45 => 3,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -115,6 +132,11 @@ class __TwigTemplate_cf7af8ffeff729971e48ee90374cdcf8 extends Template
     <div class=\"single-input-row\">
         {{ form_row(form.message) }}
     </div>
+    {% for message in app.flashes('success') %}
+        <div class=\"alert alert-success\">
+            {{ message }}
+        </div>
+    {% endfor %}
     <button class=\"btn envoyer\"><i class=\"fa-solid fa-paper-plane\"></i>{{ button_label|default('Envoyer') }}</button>
 {{ form_end(form) }}", "contact/_form.html.twig", "C:\\laragon\\www\\Bio-Vie\\templates\\contact\\_form.html.twig");
     }

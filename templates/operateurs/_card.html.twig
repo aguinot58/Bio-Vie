@@ -2,8 +2,8 @@
 
     {% for operateur in operateursFiltered %}
 
-        <div class="card">
-            <a href="{{ path("artisan") }}/{{ operateur.id }}/{{ operateur.categories|first }}">
+        <a href="{{ path("artisan") }}/{{ operateur.id }}/{{ operateur.categories|first }}">
+            <div class="card">
                 <img class="img-cat" src="{{ asset("images/icons/icon-")}}{{ operateur.categories|first }}{{ ("_gris.png") }}" alt="icône de la catégorie {{ operateur.categories|first }}">
                     
                 <div class="card-body">
@@ -13,9 +13,9 @@
                         <p>{{ operateur.telephone|slice(0, 2) }} {{ operateur.telephone|slice(2, 2) }} {{ operateur.telephone|slice(4, 2) }} {{ operateur.telephone|slice(6, 2) }} {{ operateur.telephone|slice(8, 2) }}</p>
                     </div>
                 </div>
-            </a>
-        </div>
-
+            </div>
+        </a>
+        
     {% endfor %}
 
 </div>

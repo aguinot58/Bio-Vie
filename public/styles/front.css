@@ -487,11 +487,12 @@ header .container #topnav_responsive_menu {
   background-image: url(../images/contact/bandeau-desktop.jpg);
   background-repeat: no-repeat;
   background-position: left -10px top -90px;
+  background-size: 40%;
   padding-top: 13vh;
 }
 #section-contact .container-formulaire {
-  width: 40%;
-  margin-left: 19.5vw;
+  width: 38%;
+  margin-left: 22.5vw;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -537,13 +538,13 @@ header .container #topnav_responsive_menu {
   padding: 2vh 1vw;
 }
 #section-contact .container-formulaire .formulaire form .double-input-row #form_nom {
-  width: 15.6vw;
+  width: 14.6vw;
 }
 #section-contact .container-formulaire .formulaire form .double-input-row #form_prenom {
-  width: 15.6vw;
+  width: 14.6vw;
 }
 #section-contact .container-formulaire .formulaire form .double-input-row #form_email {
-  width: 19.2vw;
+  width: 17.2vw;
 }
 #section-contact .container-formulaire .formulaire form .double-input-row #form_telephone {
   width: 12vw;

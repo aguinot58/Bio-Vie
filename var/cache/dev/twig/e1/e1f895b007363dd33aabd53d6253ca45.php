@@ -160,50 +160,47 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
             ";
             }
             // line 47
-            echo "
-            ";
-            // line 48
+            echo "            ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 48, $this->source); })())));
+            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 47, $this->source); })())));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 49
-                echo "
-                ";
-                // line 51
+                // line 48
                 echo "                ";
-                if (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 51, $this->source); })()) == $context["i"])) {
-                    // line 52
+                // line 49
+                echo "                ";
+                if (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 49, $this->source); })()) == $context["i"])) {
+                    // line 50
                     echo "                    <li class=\"active\">
                         <p>";
-                    // line 53
+                    // line 51
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "</p>
                     </li>
                 ";
-                    // line 56
+                    // line 54
                     echo "                ";
-                } elseif (((($context["i"] < (isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 56, $this->source); })())) && (1 != $context["i"])) && ($context["i"] == (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 56, $this->source); })()) - (isset($context["PageQuantityAroundBefore"]) || array_key_exists("PageQuantityAroundBefore", $context) ? $context["PageQuantityAroundBefore"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundBefore" does not exist.', 56, $this->source); })())) - 1)))) {
-                    // line 57
+                } elseif (((($context["i"] < (isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 54, $this->source); })())) && (1 != $context["i"])) && ($context["i"] == (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 54, $this->source); })()) - (isset($context["PageQuantityAroundBefore"]) || array_key_exists("PageQuantityAroundBefore", $context) ? $context["PageQuantityAroundBefore"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundBefore" does not exist.', 54, $this->source); })())) - 1)))) {
+                    // line 55
                     echo "                    <li>
                         <p>...</p>
                     </li>
                 ";
-                    // line 61
+                    // line 59
                     echo "                ";
-                } elseif (((($context["i"] > (isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 61, $this->source); })())) && ((isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 61, $this->source); })()) != $context["i"])) && ($context["i"] == (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 61, $this->source); })()) + (isset($context["PageQuantityAroundAfter"]) || array_key_exists("PageQuantityAroundAfter", $context) ? $context["PageQuantityAroundAfter"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundAfter" does not exist.', 61, $this->source); })())) + 1)))) {
-                    // line 62
+                } elseif (((($context["i"] > (isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 59, $this->source); })())) && ((isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 59, $this->source); })()) != $context["i"])) && ($context["i"] == (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 59, $this->source); })()) + (isset($context["PageQuantityAroundAfter"]) || array_key_exists("PageQuantityAroundAfter", $context) ? $context["PageQuantityAroundAfter"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundAfter" does not exist.', 59, $this->source); })())) + 1)))) {
+                    // line 60
                     echo "                    <li>
                         <p>...</p>
                     </li>
                 ";
+                    // line 64
+                    echo "                ";
+                } elseif (((1 != $context["i"]) && ($context["i"] < (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 64, $this->source); })()) - (isset($context["PageQuantityAroundBefore"]) || array_key_exists("PageQuantityAroundBefore", $context) ? $context["PageQuantityAroundBefore"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundBefore" does not exist.', 64, $this->source); })())) - 1)))) {
+                    // line 65
+                    echo "                    <li class=\"hidden\">
+                        <p onclick=\"recup_Data(";
                     // line 66
-                    echo "                ";
-                } elseif (((1 != $context["i"]) && ($context["i"] < (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 66, $this->source); })()) - (isset($context["PageQuantityAroundBefore"]) || array_key_exists("PageQuantityAroundBefore", $context) ? $context["PageQuantityAroundBefore"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundBefore" does not exist.', 66, $this->source); })())) - 1)))) {
-                    // line 67
-                    echo "                    <li class=\"hidden\">
-                        <p onclick=\"recup_Data(";
-                    // line 68
-                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 68, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 66, $this->source); })()), "html", null, true);
                     echo ", ";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo ", 'yes')\" title=\"Page ";
@@ -213,14 +210,14 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
                     echo "</p>
                     </li>
                 ";
+                    // line 69
+                    echo "                ";
+                } elseif ((((isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 69, $this->source); })()) != $context["i"]) && ($context["i"] > (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 69, $this->source); })()) + (isset($context["PageQuantityAroundAfter"]) || array_key_exists("PageQuantityAroundAfter", $context) ? $context["PageQuantityAroundAfter"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundAfter" does not exist.', 69, $this->source); })())) + 1)))) {
+                    // line 70
+                    echo "                    <li class=\"hidden\">
+                        <p onclick=\"recup_Data(";
                     // line 71
-                    echo "                ";
-                } elseif ((((isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 71, $this->source); })()) != $context["i"]) && ($context["i"] > (((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 71, $this->source); })()) + (isset($context["PageQuantityAroundAfter"]) || array_key_exists("PageQuantityAroundAfter", $context) ? $context["PageQuantityAroundAfter"] : (function () { throw new RuntimeError('Variable "PageQuantityAroundAfter" does not exist.', 71, $this->source); })())) + 1)))) {
-                    // line 72
-                    echo "                    <li class=\"hidden\">
-                        <p onclick=\"recup_Data(";
-                    // line 73
-                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 73, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 71, $this->source); })()), "html", null, true);
                     echo ", ";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo ", 'yes')\" title=\"Page ";
@@ -230,14 +227,14 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
                     echo "</p>
                     </li>
                 ";
-                    // line 76
+                    // line 74
                     echo "                ";
-                } elseif ((($context["i"] == 1) || ($context["i"] == (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 76, $this->source); })())))) {
-                    // line 77
+                } elseif ((($context["i"] == 1) || ($context["i"] == (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 74, $this->source); })())))) {
+                    // line 75
                     echo "                    <li>
                         <p onclick=\"recup_Data(";
-                    // line 78
-                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 78, $this->source); })()), "html", null, true);
+                    // line 76
+                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 76, $this->source); })()), "html", null, true);
                     echo ", ";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo ", 'yes')\" title=\"Page ";
@@ -247,14 +244,14 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
                     echo "</p>
                     </li>
                 ";
-                    // line 81
+                    // line 79
                     echo "                ";
                 } else {
-                    // line 82
+                    // line 80
                     echo "                    <li>
                         <p onclick=\"recup_Data(";
-                    // line 83
-                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 83, $this->source); })()), "html", null, true);
+                    // line 81
+                    echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 81, $this->source); })()), "html", null, true);
                     echo ", ";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo ", 'yes')\" title=\"Page ";
@@ -265,37 +262,36 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
                     </li>
                 ";
                 }
-                // line 86
+                // line 84
                 echo "            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 87
-            echo "
-            ";
-            // line 89
+            // line 85
             echo "            ";
-            if ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 89, $this->source); })()) + 1) <= (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 89, $this->source); })()))) {
-                // line 90
+            // line 86
+            echo "            ";
+            if ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 86, $this->source); })()) + 1) <= (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 86, $this->source); })()))) {
+                // line 87
                 echo "                <li ";
-                echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 90, $this->source); })()) == (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 90, $this->source); })()))) ? ("class=\"disabled\"") : (""));
+                echo ((((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 87, $this->source); })()) == (isset($context["maxPages"]) || array_key_exists("maxPages", $context) ? $context["maxPages"] : (function () { throw new RuntimeError('Variable "maxPages" does not exist.', 87, $this->source); })()))) ? ("class=\"disabled\"") : (""));
                 echo ">
                     <p onclick=\"recup_Data(";
-                // line 91
-                echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 91, $this->source); })()), "html", null, true);
+                // line 88
+                echo twig_escape_filter($this->env, (isset($context["cat"]) || array_key_exists("cat", $context) ? $context["cat"] : (function () { throw new RuntimeError('Variable "cat" does not exist.', 88, $this->source); })()), "html", null, true);
                 echo ", ";
-                echo twig_escape_filter($this->env, ((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 91, $this->source); })()) + 1), "html", null, true);
+                echo twig_escape_filter($this->env, ((isset($context["thisPage"]) || array_key_exists("thisPage", $context) ? $context["thisPage"] : (function () { throw new RuntimeError('Variable "thisPage" does not exist.', 88, $this->source); })()) + 1), "html", null, true);
                 echo ", 'yes')\" title=\"Next\">></p>
                 </li>
             ";
             }
-            // line 94
+            // line 91
             echo "        </ul>
 
     ";
         }
-        // line 97
+        // line 94
         echo "
 ";
         $___internal_parse_0_ = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
@@ -318,7 +314,7 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  303 => 23,  299 => 97,  294 => 94,  286 => 91,  281 => 90,  278 => 89,  275 => 87,  269 => 86,  257 => 83,  254 => 82,  251 => 81,  240 => 78,  237 => 77,  234 => 76,  223 => 73,  220 => 72,  217 => 71,  206 => 68,  203 => 67,  200 => 66,  195 => 62,  192 => 61,  187 => 57,  184 => 56,  179 => 53,  176 => 52,  173 => 51,  170 => 49,  166 => 48,  163 => 47,  155 => 44,  150 => 43,  147 => 42,  143 => 39,  140 => 38,  138 => 37,  135 => 36,  133 => 35,  130 => 34,  128 => 33,  125 => 32,  123 => 31,  120 => 30,  118 => 29,  115 => 28,  112 => 26,  110 => 25,  107 => 24,  105 => 23,  100 => 20,  79 => 13,  75 => 12,  70 => 10,  60 => 7,  51 => 5,  48 => 4,  44 => 3,  40 => 1,);
+        return array (  299 => 23,  295 => 94,  290 => 91,  282 => 88,  277 => 87,  274 => 86,  272 => 85,  266 => 84,  254 => 81,  251 => 80,  248 => 79,  237 => 76,  234 => 75,  231 => 74,  220 => 71,  217 => 70,  214 => 69,  203 => 66,  200 => 65,  197 => 64,  192 => 60,  189 => 59,  184 => 55,  181 => 54,  176 => 51,  173 => 50,  170 => 49,  168 => 48,  163 => 47,  155 => 44,  150 => 43,  147 => 42,  143 => 39,  140 => 38,  138 => 37,  135 => 36,  133 => 35,  130 => 34,  128 => 33,  125 => 32,  123 => 31,  120 => 30,  118 => 29,  115 => 28,  112 => 26,  110 => 25,  107 => 24,  105 => 23,  100 => 20,  79 => 13,  75 => 12,  70 => 10,  60 => 7,  51 => 5,  48 => 4,  44 => 3,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -369,9 +365,7 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
                     <p onclick=\"recup_Data({{ cat }}, {{thisPage - 1}}, 'yes')\" title=\"Previous\"><</p>
                 </li>
             {% endif %}
-
             {% for i in 1..maxPages %}
-
                 {# Current page to show #}
                 {% if thisPage == i %}
                     <li class=\"active\">
@@ -409,7 +403,6 @@ class __TwigTemplate_9b03820ffd8d2483e0cb576aabbf60d2 extends Template
                     </li>
                 {% endif %}
             {% endfor %}
-
             {# Next link #}
             {% if thisPage + 1 <= maxPages %}
                 <li {{ thisPage == maxPages ? 'class=\"disabled\"' }}>

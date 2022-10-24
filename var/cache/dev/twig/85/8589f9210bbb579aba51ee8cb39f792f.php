@@ -75,7 +75,7 @@ class __TwigTemplate_0729d54b4034b4082e31e27ae0f2eaa8 extends Template
 
         ";
         // line 9
-        echo twig_include($this->env, $context, "operateurs/_form.html.twig", ["button_label" => "Update"]);
+        echo twig_include($this->env, $context, "operateurs/_form.html.twig", ["button_label" => "Mettre à jour"]);
         echo "
 
         <a class=\"retour\" href=\"";
@@ -114,7 +114,7 @@ class __TwigTemplate_0729d54b4034b4082e31e27ae0f2eaa8 extends Template
     <div class=\"container-body\">
         <h1>Modification Artisan</h1>
 
-        {{ include('operateurs/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('operateurs/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
         <a class=\"retour\" href=\"{{ path('app_operateurs_index') }}\">Retour à la liste des artisans</a>
     </div>

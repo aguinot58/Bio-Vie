@@ -12,8 +12,6 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 
-
-
 class ContactController extends AbstractController
 {
     /**

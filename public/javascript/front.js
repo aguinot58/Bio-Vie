@@ -52,7 +52,7 @@ function recup_Data(id, myPage=1, pagination='no') {
 
     const Params = new URLSearchParams();
 
-    Params.append("page", myPage+"#section-artisans");
+    Params.append("page", myPage);
     if (myId != 'all') {
         Params.append("categorie", myId);
     }

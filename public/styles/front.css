@@ -653,7 +653,8 @@ header .container #topnav_responsive_menu {
   height: auto;
   background-image: url(../images/unique/bandeau-desktop.jpg);
   background-repeat: no-repeat;
-  padding: 23vmin 0 15vmin 0;
+  background-size: 100%;
+  padding: 23vmin 0 10vmin 0;
 }
 #section-fiche-artisan .container {
   width: 45%;
@@ -687,7 +688,7 @@ header .container #topnav_responsive_menu {
 }
 #section-fiche-artisan .container .bottom-part {
   width: 100%;
-  height: 56vmin;
+  height: 58vmin;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -1075,22 +1076,22 @@ footer .container .pied p {
   #section-artisans .container .container-artisans {
     grid-template-columns: repeat(2, 1fr);
   }
-  #section-artisans .container .container-artisans .card {
+  #section-artisans .container .container-artisans a .card {
     padding: 10vh 0 2vh 0;
   }
-  #section-artisans .container .container-artisans .card a img {
-    width: 18vw;
+  #section-artisans .container .container-artisans a .card img {
+    width: 18vmin;
   }
-  #section-artisans .container .container-artisans .card a .card-body {
+  #section-artisans .container .container-artisans a .card .card-body {
     margin-top: 4vh;
   }
-  #section-artisans .container .container-artisans .card a .card-body h5 {
+  #section-artisans .container .container-artisans a .card .card-body h5 {
     font-size: 2.5vmin;
   }
-  #section-artisans .container .container-artisans .card a .card-body .card-infos {
+  #section-artisans .container .container-artisans a .card .card-body .card-infos {
     font-size: 2.5vmin;
   }
-  #section-artisans .container .container-artisans .card a .card-body .card-infos .gras {
+  #section-artisans .container .container-artisans a .card .card-body .card-infos .gras {
     font-size: 2.25vmin;
   }
   #section-artisans .container ul li p {

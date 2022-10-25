@@ -100,9 +100,7 @@
         }
 
         if($raison_sociale!=""){
-
             if(count($tblActivites)>0){
-
                 if(count($tblCategories)>0){
 
                     // On vérifie si la raison sociale n'est pas déjà présente sous un autre id

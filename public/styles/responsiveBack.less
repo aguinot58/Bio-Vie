@@ -62,7 +62,7 @@
             
                 /* position responsive menu at the right of the screen */
                 #topnav_responsive_menu {
-                    display : block;
+                    display : none;
                     position: absolute;
                     right   : 0;
                     top     : 0;
@@ -141,17 +141,18 @@
                 th{
                     font-size: 4vmin;
                     border-radius: 0;
+                    height: 8vmin;
                 }
                 td{
                     padding-left: 1vw;
                     padding-right: 1vw;
                     line-height: 4vh;
-                    font-size: 4vmin;
+                    font-size: 3vmin;
                     align-items: center;
                     .actions{
                         width: 40%;
                         .btn{
-                            font-size: 3.5vmin;
+                            font-size: 3vmin;
                             padding: 0.75vh 1vw;
                         }
                     }
@@ -161,8 +162,25 @@
                 li{
                     padding: 1.5vmin;
                     a{
-                        font-size: 4.5vmin;
+                        font-size: 3vmin;
                     }
+                }
+            }
+            form{
+                width: 100%;
+                #operateurs{
+                    height: 70vh;
+                }
+                .sauvegarde{
+                    font-size: 3vmin;
+                }
+                .input-form{
+                    font-size: 3vmin;
+                    width: 40vw;
+                }
+                label{
+                    font-size: 3vmin;
+                    width: 20vmin;
                 }
             }
             .container-admin{

@@ -131,7 +131,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
             ";
         // line 59
-        $this->loadTemplate("home/_form.html.twig", "home/home.html.twig", 59)->display($context);
+        $this->loadTemplate("home/card_cat.html.twig", "home/home.html.twig", 59)->display($context);
         // line 60
         echo "
         </div>
@@ -240,7 +240,7 @@ class __TwigTemplate_83d7c3e7c6bc4bd3cbaa100a2f83bcef extends Template
 
         <div class=\"container\">
 
-            {% include 'home/_form.html.twig' %}
+            {% include 'home/card_cat.html.twig' %}
 
         </div>
 

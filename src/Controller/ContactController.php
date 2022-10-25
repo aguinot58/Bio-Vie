@@ -12,8 +12,6 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 
-
-
 class ContactController extends AbstractController
 {
     /**
@@ -103,19 +101,24 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             
             $data = $form->getData();
+            $submittedToken = $request->request->get('token');
 
-            $message = (new Email())
-                ->from('admin@bioetvie.com')
-                ->to('admin@bioetvie.com')
-                ->subject($data['sujet'])
-                ->text('Sender : '.$data['nom'].' '.$data['prenom'].' '.$data['telephone'].' '.$data['email'].\PHP_EOL.
-                    $data['message'].\PHP_EOL,
-                    'text/plain');
-            $mailer->send($message);
+            if ($this->isCsrfTokenValid('contact-form', $submittedToken)) {
 
-            $this->addFlash('success', 'Votre message a été envoyé!');
+                $message = (new Email())
+                    ->from('admin@bioetvie.com')
+                    ->to('admin@bioetvie.com')
+                    ->subject($data['sujet'])
+                    ->text('Sender : '.$data['nom'].' '.$data['prenom'].' '.$data['telephone'].' '.$data['email'].\PHP_EOL.
+                        $data['message'].\PHP_EOL,
+                        'text/plain');
+                $mailer->send($message);
 
-            return $this->redirectToRoute('contact');
+                $this->addFlash('success', 'Votre message a été envoyé!');
+
+                return $this->redirectToRoute('contact');
+
+            }
 
         }
 

@@ -4,10 +4,12 @@ function showResponsiveMenu() {
     var root = document.getElementById("root");
     if (menu.className === "") {
         menu.className = "open";
+        menu.style.display = "block";
         icon.className = "open";
         root.style.overflowY = "hidden";
     } else {
-        menu.className = "";                    
+        menu.className = "";     
+        menu.style.display = "none";               
         icon.className = "";
         root.style.overflowY = "";
     }

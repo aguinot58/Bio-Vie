@@ -58,6 +58,7 @@ header .container .barre-nav {
   display: flex;
   flex-direction: row;
   align-content: space-around;
+  align-items: center;
 }
 header .container .barre-nav .lien-nav {
   text-decoration: none;

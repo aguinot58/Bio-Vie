@@ -27,7 +27,6 @@
 }
 .container-back header {
   min-width: 20%;
-  height: 100%;
   background-color: #2a2e34;
 }
 .container-back header .container {
@@ -228,12 +227,12 @@
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
 }
 .container-back .container-body form .input-form {
-  font-size: clamp(1.25vh, 1vw, 3vw);
+  font-size: clamp(1.75vmin, 2vmin, 3vw);
   width: 20vw;
   line-height: 3vh;
 }
 .container-back .container-body form label {
-  font-size: clamp(1vmin, 2vmin, 6vmin);
+  font-size: clamp(1.75vmin, 2vmin, 6vmin);
   margin-right: 1vh;
   width: 13vw;
   line-height: 3vh;
@@ -258,12 +257,12 @@
   justify-content: space-between;
 }
 .container-back .container-body .container-admin .card .img-back {
-  width: 250px;
+  width: 35vmin;
   height: auto;
   border-radius: 10px 0 0 10px;
 }
 .container-back .container-body .container-admin .card .card-body {
-  min-width: 12vw;
+  min-width: 12vmin;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -340,7 +339,7 @@
     overflow-y: hidden;
   }
   .container-back header .container #topnav_responsive_menu {
-    display: block;
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -412,26 +411,44 @@
   .container-back .container-body table th {
     font-size: 4vmin;
     border-radius: 0;
+    height: 8vmin;
   }
   .container-back .container-body table td {
     padding-left: 1vw;
     padding-right: 1vw;
     line-height: 4vh;
-    font-size: 4vmin;
+    font-size: 3vmin;
     align-items: center;
   }
   .container-back .container-body table td .actions {
     width: 40%;
   }
   .container-back .container-body table td .actions .btn {
-    font-size: 3.5vmin;
+    font-size: 3vmin;
     padding: 0.75vh 1vw;
   }
   .container-back .container-body ul li {
     padding: 1.5vmin;
   }
   .container-back .container-body ul li a {
-    font-size: 4.5vmin;
+    font-size: 3vmin;
+  }
+  .container-back .container-body form {
+    width: 100%;
+  }
+  .container-back .container-body form #operateurs {
+    height: 70vh;
+  }
+  .container-back .container-body form .sauvegarde {
+    font-size: 3vmin;
+  }
+  .container-back .container-body form .input-form {
+    font-size: 3vmin;
+    width: 40vw;
+  }
+  .container-back .container-body form label {
+    font-size: 3vmin;
+    width: 20vmin;
   }
   .container-back .container-body .container-admin {
     width: 100%;

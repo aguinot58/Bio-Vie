@@ -70,7 +70,7 @@ class HomeController extends AbstractController
      * @Route("/fetchData", name="fetch")
      * 
      */
-    public function FIltreArtisans(Request $request, OperateursRepository $repoOperateurs, $page = 1, $cat = "all"): Response {
+    public function FiltreArtisans(Request $request, OperateursRepository $repoOperateurs, $page = 1, $cat = "all"): Response {
 
         $request->getUri();
 
